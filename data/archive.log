@@ -1,1 +1,1 @@
-[2021-10-01T11:01:00] feat: author low-overhead asynchronous logging sink
+[2021-10-01T14:15:00] perf: reduce instruction cache misses in core execution pipeline
