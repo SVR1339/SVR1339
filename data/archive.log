@@ -1,1 +1,1 @@
-[2021-10-17T13:45:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2021-10-17T10:42:00] perf: reduce instruction cache misses in core execution pipeline
