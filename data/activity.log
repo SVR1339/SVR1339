@@ -1,1 +1,1 @@
-[2021-10-16T17:32:00] fix: alignment fault on unaligned memory access in serialization buffer
+[2021-10-19T10:14:49] refactor: extract modular trait abstractions for heterogeneous compute kernels
