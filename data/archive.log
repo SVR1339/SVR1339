@@ -1,1 +1,1 @@
-[2021-10-26T10:51:00] test: benchmark concurrent hashmap under high write contention
+[2021-10-29T11:13:00] docs: document cache coherence invariants and memory barrier semantics
