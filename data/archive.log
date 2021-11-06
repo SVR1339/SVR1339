@@ -1,1 +1,1 @@
-[2021-11-06T12:40:00] docs: update architecture specification and memory layout benchmarks
+[2021-11-06T20:27:00] feat: implement fast path for pre-allocated socket buffers
