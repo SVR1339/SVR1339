@@ -1,1 +1,1 @@
-[2021-11-03T21:44:10] docs: document cache coherence invariants and memory barrier semantics
+[2021-11-06T12:17:53] refactor: decouple event loop driver from reactor notification subsystem
