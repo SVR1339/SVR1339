@@ -1,1 +1,1 @@
-[2021-11-18T15:47:53] fix: bounds check edge case in variable-length frame decoder
+[2021-11-21T13:50:27] feat: author low-overhead asynchronous logging sink
