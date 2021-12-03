@@ -1,1 +1,1 @@
-[2021-12-03T16:12:28] refactor: isolate hardware architecture specific assembly kernels
+[2021-12-03T20:40:26] perf: reduce contention on global runtime epoch counter
