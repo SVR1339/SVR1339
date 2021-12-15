@@ -1,1 +1,1 @@
-[2021-12-15T16:12:00] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2021-12-15T11:42:00] fix: bounds check edge case in variable-length frame decoder
