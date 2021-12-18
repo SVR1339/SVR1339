@@ -1,1 +1,1 @@
-[2021-12-18T15:51:50] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2021-12-18T17:05:24] chore: update toolchain dependencies and compiler flags for release build
