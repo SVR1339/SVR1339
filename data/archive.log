@@ -1,1 +1,1 @@
-[2021-12-20T17:08:00] fix: bounds check edge case in variable-length frame decoder
+[2021-12-20T12:17:00] chore: update toolchain dependencies and compiler flags for release build
