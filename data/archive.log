@@ -1,1 +1,1 @@
-[2021-12-31T17:09:00] feat: integrate atomic CAS operations for lockless state synchronization
+[2022-01-03T10:37:00] feat: author low-overhead asynchronous logging sink
