@@ -1,1 +1,1 @@
-[2022-01-04T12:50:13] docs: update architecture specification and memory layout benchmarks
+[2022-01-04T15:08:52] feat: integrate atomic CAS operations for lockless state synchronization
