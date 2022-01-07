@@ -1,1 +1,1 @@
-[2022-01-04T21:46:04] feat: implement fast path for pre-allocated socket buffers
+[2022-01-07T13:37:45] refactor: clean up error type hierarchy and propagate context
