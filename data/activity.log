@@ -1,1 +1,1 @@
-[2022-01-22T10:11:57] refactor: decouple event loop driver from reactor notification subsystem
+[2022-01-22T10:14:20] fix: alignment fault on unaligned memory access in serialization buffer
