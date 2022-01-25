@@ -1,1 +1,1 @@
-[2022-01-25T20:56:38] perf: vectorize matrix operations with AVX-512 extensions
+[2022-01-25T21:21:41] perf: tune slab allocator bucket sizes for small object cache locality
