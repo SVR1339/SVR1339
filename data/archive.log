@@ -1,1 +1,1 @@
-[2022-01-25T11:00:00] chore: update toolchain dependencies and compiler flags for release build
+[2022-01-25T19:36:00] refactor: extract modular trait abstractions for heterogeneous compute kernels
