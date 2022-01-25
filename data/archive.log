@@ -1,1 +1,1 @@
-[2022-01-25T14:29:00] test: benchmark concurrent hashmap under high write contention
+[2022-01-25T11:00:00] chore: update toolchain dependencies and compiler flags for release build
