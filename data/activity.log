@@ -1,1 +1,1 @@
-[2022-02-12T16:13:40] feat: integrate atomic CAS operations for lockless state synchronization
+[2022-02-12T16:24:36] feat: add telemetry tracing spans for microsecond latency profiling
