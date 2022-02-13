@@ -1,1 +1,1 @@
-[2022-02-13T10:05:00] fix: memory leak in unhandled promise rejection handler
+[2022-02-13T16:53:00] fix: handle graceful termination and socket drain on SIGINT
