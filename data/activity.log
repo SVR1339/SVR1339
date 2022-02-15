@@ -1,1 +1,1 @@
-[2022-02-15T19:20:33] test: verify linearizability of raft log replication under network partition
+[2022-02-15T21:06:23] perf: optimize async memory allocator throughput with SIMD vector intrinsics
