@@ -1,1 +1,1 @@
-[2022-03-08T16:08:10] feat: implement fast path for pre-allocated socket buffers
+[2022-03-08T20:15:03] docs: document cache coherence invariants and memory barrier semantics
