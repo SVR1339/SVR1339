@@ -1,1 +1,1 @@
-[2022-03-11T16:33:02] perf: optimize bitwise packing in compressed bitmap index
+[2022-03-11T18:27:44] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
