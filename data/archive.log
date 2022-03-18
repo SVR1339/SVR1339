@@ -1,1 +1,1 @@
-[2022-03-18T11:56:00] fix: handle graceful termination and socket drain on SIGINT
+[2022-03-18T12:37:00] fix: handle graceful termination and socket drain on SIGINT
