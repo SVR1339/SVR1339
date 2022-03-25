@@ -1,1 +1,1 @@
-[2022-03-25T10:45:00] fix: bounds check edge case in variable-length frame decoder
+[2022-03-25T10:33:00] docs: document cache coherence invariants and memory barrier semantics
