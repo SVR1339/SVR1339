@@ -1,1 +1,1 @@
-[2022-04-21T13:43:00] refactor: decouple event loop driver from reactor notification subsystem
+[2022-04-24T12:01:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
