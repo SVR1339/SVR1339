@@ -1,1 +1,1 @@
-[2022-05-04T10:35:00] perf: reduce instruction cache misses in core execution pipeline
+[2022-05-07T12:51:00] chore: update toolchain dependencies and compiler flags for release build
