@@ -1,1 +1,1 @@
-[2022-05-13T19:46:22] fix: handle graceful termination and socket drain on SIGINT
+[2022-05-13T20:38:27] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
