@@ -1,1 +1,1 @@
-[2022-05-15T20:17:00] test: add stress tests for re-entrant lock acquisition
+[2022-05-15T18:31:00] fix: memory leak in unhandled promise rejection handler
