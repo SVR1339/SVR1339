@@ -1,1 +1,1 @@
-[2022-05-31T15:03:57] perf: vectorize matrix operations with AVX-512 extensions
+[2022-05-31T15:57:06] test: verify linearizability of raft log replication under network partition
