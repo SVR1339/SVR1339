@@ -1,1 +1,1 @@
-[2022-06-09T16:57:11] refactor: clean up error type hierarchy and propagate context
+[2022-06-09T17:36:47] feat: add telemetry tracing spans for microsecond latency profiling
