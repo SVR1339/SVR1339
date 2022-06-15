@@ -1,1 +1,1 @@
-[2022-06-15T10:39:56] test: add stress tests for re-entrant lock acquisition
+[2022-06-15T12:16:50] perf: optimize async memory allocator throughput with SIMD vector intrinsics
