@@ -1,1 +1,1 @@
-[2022-06-27T16:17:00] test: add stress tests for re-entrant lock acquisition
+[2022-06-27T16:16:00] fix: alignment fault on unaligned memory access in serialization buffer
