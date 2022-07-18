@@ -1,1 +1,1 @@
-[2022-07-18T20:58:24] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2022-07-18T21:41:05] feat: author low-overhead asynchronous logging sink
