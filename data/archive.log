@@ -1,1 +1,1 @@
-[2022-07-15T20:15:00] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2022-07-20T20:38:00] perf: optimize bitwise packing in compressed bitmap index
