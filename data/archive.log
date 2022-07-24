@@ -1,1 +1,1 @@
-[2022-07-24T20:21:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2022-07-24T16:52:00] feat: add telemetry tracing spans for microsecond latency profiling
