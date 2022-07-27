@@ -1,1 +1,1 @@
-[2022-07-27T10:42:09] test: verify linearizability of raft log replication under network partition
+[2022-07-27T13:15:29] test: benchmark concurrent hashmap under high write contention
