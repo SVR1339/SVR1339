@@ -1,1 +1,1 @@
-[2022-07-24T11:27:00] feat: add lock-free work-stealing scheduler for task graph execution
+[2022-07-29T21:09:00] fix: bounds check edge case in variable-length frame decoder
