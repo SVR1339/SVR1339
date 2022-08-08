@@ -1,1 +1,1 @@
-[2022-08-08T11:03:06] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2022-08-08T11:24:14] test: verify linearizability of raft log replication under network partition
