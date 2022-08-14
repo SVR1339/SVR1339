@@ -1,1 +1,1 @@
-[2022-08-14T13:46:00] fix: bounds check edge case in variable-length frame decoder
+[2022-08-14T17:35:00] test: add stress tests for re-entrant lock acquisition
