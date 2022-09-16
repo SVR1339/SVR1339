@@ -1,1 +1,1 @@
-[2022-09-13T21:38:13] fix: handle graceful termination and socket drain on SIGINT
+[2022-09-16T10:26:16] perf: optimize async memory allocator throughput with SIMD vector intrinsics
