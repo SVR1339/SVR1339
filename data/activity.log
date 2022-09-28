@@ -1,1 +1,1 @@
-[2022-09-28T11:27:41] feat: introduce priority task queues with aging and starvation prevention
+[2022-09-28T18:48:32] perf: vectorize matrix operations with AVX-512 extensions
