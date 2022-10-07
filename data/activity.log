@@ -1,1 +1,1 @@
-[2022-10-07T18:07:27] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2022-10-07T19:04:46] perf: tune slab allocator bucket sizes for small object cache locality
