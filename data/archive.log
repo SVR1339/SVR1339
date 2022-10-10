@@ -1,1 +1,1 @@
-[2022-10-05T12:15:00] docs: update architecture specification and memory layout benchmarks
+[2022-10-10T12:00:00] fix: bounds check edge case in variable-length frame decoder
