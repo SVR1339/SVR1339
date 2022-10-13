@@ -1,1 +1,1 @@
-[2022-10-13T16:15:50] perf: vectorize matrix operations with AVX-512 extensions
+[2022-10-13T21:58:44] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
