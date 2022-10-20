@@ -1,1 +1,1 @@
-[2022-10-17T18:14:00] fix: memory leak in unhandled promise rejection handler
+[2022-10-20T12:04:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
