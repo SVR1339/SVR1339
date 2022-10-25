@@ -1,1 +1,1 @@
-[2022-10-22T21:04:46] feat: integrate atomic CAS operations for lockless state synchronization
+[2022-10-25T12:54:06] refactor: isolate hardware architecture specific assembly kernels
