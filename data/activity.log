@@ -1,1 +1,1 @@
-[2022-11-09T13:49:23] test: verify linearizability of raft log replication under network partition
+[2022-11-09T14:39:38] fix: memory leak in unhandled promise rejection handler
