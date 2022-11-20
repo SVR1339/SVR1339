@@ -1,1 +1,1 @@
-[2022-11-16T15:26:00] refactor: normalize data structures for cache line alignment
+[2022-11-20T20:25:00] fix: alignment fault on unaligned memory access in serialization buffer
