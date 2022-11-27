@@ -1,1 +1,1 @@
-[2022-11-27T13:55:17] fix: bounds check edge case in variable-length frame decoder
+[2022-11-27T18:17:36] refactor: clean up error type hierarchy and propagate context
