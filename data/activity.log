@@ -1,1 +1,1 @@
-[2022-11-30T16:31:55] docs: update architecture specification and memory layout benchmarks
+[2022-11-30T20:28:18] refactor: normalize data structures for cache line alignment
