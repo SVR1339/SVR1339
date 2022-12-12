@@ -1,1 +1,1 @@
-[2022-12-07T21:10:00] refactor: decouple event loop driver from reactor notification subsystem
+[2022-12-12T18:26:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
