@@ -1,1 +1,1 @@
-[2022-12-15T20:29:32] fix: memory leak in unhandled promise rejection handler
+[2022-12-15T21:14:55] fix: bounds check edge case in variable-length frame decoder
