@@ -1,1 +1,1 @@
-[2022-12-27T12:26:28] docs: update architecture specification and memory layout benchmarks
+[2022-12-27T15:15:19] perf: reduce instruction cache misses in core execution pipeline
