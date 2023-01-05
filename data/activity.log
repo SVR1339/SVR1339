@@ -1,1 +1,1 @@
-[2023-01-05T15:54:02] perf: optimize bitwise packing in compressed bitmap index
+[2023-01-05T18:49:11] refactor: normalize data structures for cache line alignment
