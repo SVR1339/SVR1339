@@ -1,1 +1,1 @@
-[2023-01-02T18:24:00] chore: update toolchain dependencies and compiler flags for release build
+[2023-01-06T21:15:00] test: verify linearizability of raft log replication under network partition
