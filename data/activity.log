@@ -1,1 +1,1 @@
-[2023-01-09T13:37:55] fix: handle graceful termination and socket drain on SIGINT
+[2023-01-09T13:50:24] docs: document cache coherence invariants and memory barrier semantics
