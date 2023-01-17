@@ -1,1 +1,1 @@
-[2023-01-15T18:48:41] refactor: isolate hardware architecture specific assembly kernels
+[2023-01-17T12:18:59] feat: add lock-free work-stealing scheduler for task graph execution
