@@ -1,1 +1,1 @@
-[2023-01-17T15:40:08] docs: update architecture specification and memory layout benchmarks
+[2023-01-17T18:57:40] refactor: clean up error type hierarchy and propagate context
