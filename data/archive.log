@@ -1,1 +1,1 @@
-[2023-01-19T17:06:00] refactor: clean up error type hierarchy and propagate context
+[2023-01-19T17:00:00] feat: author low-overhead asynchronous logging sink
