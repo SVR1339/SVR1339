@@ -1,1 +1,1 @@
-[2023-01-23T16:17:19] docs: update architecture specification and memory layout benchmarks
+[2023-01-23T20:07:39] refactor: decouple event loop driver from reactor notification subsystem
