@@ -1,1 +1,1 @@
-[2023-01-21T20:31:17] perf: vectorize matrix operations with AVX-512 extensions
+[2023-01-23T16:09:58] perf: optimize bitwise packing in compressed bitmap index
