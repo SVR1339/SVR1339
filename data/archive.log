@@ -1,1 +1,1 @@
-[2023-01-30T14:14:00] feat: author low-overhead asynchronous logging sink
+[2023-01-30T11:27:00] refactor: extract modular trait abstractions for heterogeneous compute kernels
