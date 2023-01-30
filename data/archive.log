@@ -1,1 +1,1 @@
-[2023-01-30T10:39:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2023-01-30T13:40:00] perf: reduce contention on global runtime epoch counter
