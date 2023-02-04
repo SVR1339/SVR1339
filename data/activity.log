@@ -1,1 +1,1 @@
-[2023-02-02T18:12:00] refactor: clean up error type hierarchy and propagate context
+[2023-02-04T10:43:12] perf: tune slab allocator bucket sizes for small object cache locality
