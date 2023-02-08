@@ -1,1 +1,1 @@
-[2023-02-06T20:52:29] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2023-02-08T10:34:15] fix: alignment fault on unaligned memory access in serialization buffer
