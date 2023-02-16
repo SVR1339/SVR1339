@@ -1,1 +1,1 @@
-[2023-02-16T10:43:55] feat: integrate atomic CAS operations for lockless state synchronization
+[2023-02-16T13:02:03] fix: bounds check edge case in variable-length frame decoder
