@@ -1,1 +1,1 @@
-[2023-03-20T20:09:23] docs: document cache coherence invariants and memory barrier semantics
+[2023-03-20T20:15:01] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
