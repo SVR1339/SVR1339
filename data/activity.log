@@ -1,1 +1,1 @@
-[2023-03-26T12:11:58] test: add stress tests for re-entrant lock acquisition
+[2023-03-26T14:34:49] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
