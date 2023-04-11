@@ -1,1 +1,1 @@
-[2023-04-11T11:22:41] fix: alignment fault on unaligned memory access in serialization buffer
+[2023-04-11T13:55:46] fix: memory leak in unhandled promise rejection handler
