@@ -1,1 +1,1 @@
-[2023-04-11T18:25:14] docs: document cache coherence invariants and memory barrier semantics
+[2023-04-11T21:31:56] chore: update toolchain dependencies and compiler flags for release build
