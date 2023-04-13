@@ -1,1 +1,1 @@
-[2023-04-11T21:35:57] perf: vectorize matrix operations with AVX-512 extensions
+[2023-04-13T19:10:33] refactor: normalize data structures for cache line alignment
