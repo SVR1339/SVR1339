@@ -1,1 +1,1 @@
-[2023-04-21T16:37:18] test: verify linearizability of raft log replication under network partition
+[2023-04-21T17:11:44] fix: handle graceful termination and socket drain on SIGINT
