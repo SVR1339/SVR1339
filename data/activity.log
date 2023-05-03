@@ -1,1 +1,1 @@
-[2023-05-01T21:10:35] feat: author low-overhead asynchronous logging sink
+[2023-05-03T10:50:17] perf: tune slab allocator bucket sizes for small object cache locality
