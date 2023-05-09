@@ -1,1 +1,1 @@
-[2023-05-09T10:12:01] test: verify linearizability of raft log replication under network partition
+[2023-05-09T11:40:31] test: add rigorous fuzz testing suite for distributed consensus protocol
