@@ -1,1 +1,1 @@
-[2023-05-11T15:07:15] feat: add telemetry tracing spans for microsecond latency profiling
+[2023-05-11T19:24:08] docs: document cache coherence invariants and memory barrier semantics
