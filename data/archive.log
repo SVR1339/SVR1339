@@ -1,1 +1,1 @@
-[2023-05-22T11:28:00] refactor: clean up error type hierarchy and propagate context
+[2023-05-22T13:39:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
