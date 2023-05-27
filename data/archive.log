@@ -1,1 +1,1 @@
-[2023-05-27T18:19:00] chore: update toolchain dependencies and compiler flags for release build
+[2023-05-27T20:01:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
