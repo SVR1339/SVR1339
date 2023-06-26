@@ -1,1 +1,1 @@
-[2023-06-26T19:21:35] chore: update toolchain dependencies and compiler flags for release build
+[2023-06-26T21:17:16] feat: add lock-free work-stealing scheduler for task graph execution
