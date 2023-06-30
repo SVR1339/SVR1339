@@ -1,1 +1,1 @@
-[2023-06-30T13:08:35] test: verify linearizability of raft log replication under network partition
+[2023-06-30T17:40:04] test: verify linearizability of raft log replication under network partition
