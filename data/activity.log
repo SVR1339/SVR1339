@@ -1,1 +1,1 @@
-[2023-07-06T13:42:18] fix: memory leak in unhandled promise rejection handler
+[2023-07-06T13:59:11] refactor: decouple event loop driver from reactor notification subsystem
