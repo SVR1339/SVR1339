@@ -1,1 +1,1 @@
-[2023-07-07T13:51:00] fix: bounds check edge case in variable-length frame decoder
+[2023-07-07T18:49:00] fix: alignment fault on unaligned memory access in serialization buffer
