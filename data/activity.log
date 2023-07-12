@@ -1,1 +1,1 @@
-[2023-07-10T21:36:38] perf: vectorize matrix operations with AVX-512 extensions
+[2023-07-12T12:35:23] perf: optimize async memory allocator throughput with SIMD vector intrinsics
