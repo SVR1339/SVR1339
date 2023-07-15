@@ -1,1 +1,1 @@
-[2023-07-12T15:00:00] docs: update architecture specification and memory layout benchmarks
+[2023-07-15T20:25:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
