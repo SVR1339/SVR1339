@@ -1,1 +1,1 @@
-[2023-07-22T12:48:00] feat: implement fast path for pre-allocated socket buffers
+[2023-07-22T10:43:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
