@@ -1,1 +1,1 @@
-[2023-08-18T10:29:00] docs: document cache coherence invariants and memory barrier semantics
+[2023-08-21T19:27:00] test: verify linearizability of raft log replication under network partition
