@@ -1,1 +1,1 @@
-[2023-09-02T17:23:56] fix: alignment fault on unaligned memory access in serialization buffer
+[2023-09-04T12:49:53] perf: tune slab allocator bucket sizes for small object cache locality
