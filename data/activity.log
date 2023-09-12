@@ -1,1 +1,1 @@
-[2023-09-10T20:48:26] docs: update architecture specification and memory layout benchmarks
+[2023-09-12T12:47:29] fix: memory leak in unhandled promise rejection handler
