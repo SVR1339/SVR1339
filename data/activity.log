@@ -1,1 +1,1 @@
-[2023-09-16T19:59:20] docs: document cache coherence invariants and memory barrier semantics
+[2023-09-16T20:58:53] feat: author low-overhead asynchronous logging sink
