@@ -1,1 +1,1 @@
-[2023-09-20T11:53:28] feat: add telemetry tracing spans for microsecond latency profiling
+[2023-09-20T12:57:48] test: verify linearizability of raft log replication under network partition
