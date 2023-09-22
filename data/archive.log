@@ -1,1 +1,1 @@
-[2023-09-22T17:43:00] docs: document cache coherence invariants and memory barrier semantics
+[2023-09-22T19:41:00] fix: memory leak in unhandled promise rejection handler
