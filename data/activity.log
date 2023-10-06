@@ -1,1 +1,1 @@
-[2023-10-04T14:12:08] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2023-10-06T13:04:53] feat: add lock-free work-stealing scheduler for task graph execution
