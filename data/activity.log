@@ -1,1 +1,1 @@
-[2023-10-12T17:50:44] perf: vectorize matrix operations with AVX-512 extensions
+[2023-10-14T10:20:54] feat: add lock-free work-stealing scheduler for task graph execution
