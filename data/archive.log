@@ -1,1 +1,1 @@
-[2023-10-17T21:28:00] chore: update toolchain dependencies and compiler flags for release build
+[2023-10-17T18:33:00] feat: implement fast path for pre-allocated socket buffers
