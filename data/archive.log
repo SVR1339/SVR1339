@@ -1,1 +1,1 @@
-[2023-11-02T16:08:00] feat: implement fast path for pre-allocated socket buffers
+[2023-11-02T21:05:00] refactor: decouple event loop driver from reactor notification subsystem
