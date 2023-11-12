@@ -1,1 +1,1 @@
-[2023-11-12T20:42:00] fix: bounds check edge case in variable-length frame decoder
+[2023-11-12T18:23:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
