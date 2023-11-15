@@ -1,1 +1,1 @@
-[2023-11-15T20:47:37] refactor: normalize data structures for cache line alignment
+[2023-11-15T21:06:01] perf: optimize async memory allocator throughput with SIMD vector intrinsics
