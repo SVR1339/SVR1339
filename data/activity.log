@@ -1,1 +1,1 @@
-[2023-11-17T21:53:31] perf: vectorize matrix operations with AVX-512 extensions
+[2023-11-19T11:47:41] refactor: clean up error type hierarchy and propagate context
