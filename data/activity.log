@@ -1,1 +1,1 @@
-[2023-11-23T13:18:14] perf: optimize bitwise packing in compressed bitmap index
+[2023-11-23T18:54:54] fix: bounds check edge case in variable-length frame decoder
