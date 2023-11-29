@@ -1,1 +1,1 @@
-[2023-11-29T10:13:39] feat: author low-overhead asynchronous logging sink
+[2023-11-29T14:50:39] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
