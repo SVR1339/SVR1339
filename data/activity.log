@@ -1,1 +1,1 @@
-[2023-11-29T18:30:36] fix: alignment fault on unaligned memory access in serialization buffer
+[2023-11-29T18:43:06] docs: document cache coherence invariants and memory barrier semantics
