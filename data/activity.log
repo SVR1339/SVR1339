@@ -1,1 +1,1 @@
-[2023-11-29T18:03:54] feat: add lock-free work-stealing scheduler for task graph execution
+[2023-11-29T18:30:36] fix: alignment fault on unaligned memory access in serialization buffer
