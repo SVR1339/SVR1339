@@ -1,1 +1,1 @@
-[2023-12-01T12:01:56] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2023-12-01T12:33:58] refactor: extract modular trait abstractions for heterogeneous compute kernels
