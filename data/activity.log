@@ -1,1 +1,1 @@
-[2023-12-13T15:22:22] docs: update architecture specification and memory layout benchmarks
+[2023-12-13T18:28:02] perf: vectorize matrix operations with AVX-512 extensions
