@@ -1,1 +1,1 @@
-[2023-12-15T11:40:27] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2023-12-15T12:23:45] perf: optimize async memory allocator throughput with SIMD vector intrinsics
