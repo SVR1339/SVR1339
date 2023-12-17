@@ -1,1 +1,1 @@
-[2023-12-14T15:35:00] docs: document cache coherence invariants and memory barrier semantics
+[2023-12-17T18:54:00] refactor: extract modular trait abstractions for heterogeneous compute kernels
