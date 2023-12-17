@@ -1,1 +1,1 @@
-[2023-12-17T14:05:00] test: add stress tests for re-entrant lock acquisition
+[2023-12-17T12:17:00] chore: update toolchain dependencies and compiler flags for release build
