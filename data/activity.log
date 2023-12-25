@@ -1,1 +1,1 @@
-[2023-12-25T10:07:24] feat: integrate atomic CAS operations for lockless state synchronization
+[2023-12-25T13:25:26] fix: handle graceful termination and socket drain on SIGINT
