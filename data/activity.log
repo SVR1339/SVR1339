@@ -1,1 +1,1 @@
-[2024-01-01T20:19:37] docs: update architecture specification and memory layout benchmarks
+[2024-01-01T20:39:19] perf: optimize bitwise packing in compressed bitmap index
