@@ -1,1 +1,1 @@
-[2024-01-10T14:15:00] refactor: decouple event loop driver from reactor notification subsystem
+[2024-01-10T11:03:00] perf: reduce instruction cache misses in core execution pipeline
