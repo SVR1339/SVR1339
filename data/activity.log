@@ -1,1 +1,1 @@
-[2024-01-13T11:55:48] fix: bounds check edge case in variable-length frame decoder
+[2024-01-13T13:44:33] perf: reduce contention on global runtime epoch counter
