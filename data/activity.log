@@ -1,1 +1,1 @@
-[2024-01-19T14:04:20] refactor: normalize data structures for cache line alignment
+[2024-01-19T14:41:42] refactor: isolate hardware architecture specific assembly kernels
