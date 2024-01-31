@@ -1,1 +1,1 @@
-[2024-01-31T10:57:37] feat: add lock-free work-stealing scheduler for task graph execution
+[2024-01-31T17:46:19] refactor: extract modular trait abstractions for heterogeneous compute kernels
