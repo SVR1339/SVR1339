@@ -1,1 +1,1 @@
-[2024-02-04T13:32:53] refactor: normalize data structures for cache line alignment
+[2024-02-04T17:05:01] fix: memory leak in unhandled promise rejection handler
