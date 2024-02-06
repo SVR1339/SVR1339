@@ -1,1 +1,1 @@
-[2024-02-04T17:05:01] fix: memory leak in unhandled promise rejection handler
+[2024-02-06T16:23:32] perf: reduce instruction cache misses in core execution pipeline
