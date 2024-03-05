@@ -1,1 +1,1 @@
-[2024-03-05T20:36:58] fix: bounds check edge case in variable-length frame decoder
+[2024-03-05T20:53:25] perf: optimize async memory allocator throughput with SIMD vector intrinsics
