@@ -1,1 +1,1 @@
-[2024-03-15T13:18:29] feat: add telemetry tracing spans for microsecond latency profiling
+[2024-03-15T16:46:57] fix: alignment fault on unaligned memory access in serialization buffer
