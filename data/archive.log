@@ -1,1 +1,1 @@
-[2024-03-15T11:15:00] test: add stress tests for re-entrant lock acquisition
+[2024-03-20T15:24:00] test: verify linearizability of raft log replication under network partition
