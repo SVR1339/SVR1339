@@ -1,1 +1,1 @@
-[2024-03-31T14:02:42] fix: handle graceful termination and socket drain on SIGINT
+[2024-03-31T19:23:16] perf: vectorize matrix operations with AVX-512 extensions
