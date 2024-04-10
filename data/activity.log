@@ -1,1 +1,1 @@
-[2024-04-10T14:51:00] perf: tune slab allocator bucket sizes for small object cache locality
+[2024-04-10T15:25:29] feat: add telemetry tracing spans for microsecond latency profiling
