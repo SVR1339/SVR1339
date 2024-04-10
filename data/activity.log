@@ -1,1 +1,1 @@
-[2024-04-08T20:03:37] docs: update architecture specification and memory layout benchmarks
+[2024-04-10T14:51:00] perf: tune slab allocator bucket sizes for small object cache locality
