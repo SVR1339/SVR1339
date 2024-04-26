@@ -1,1 +1,1 @@
-[2024-04-26T19:47:18] feat: introduce priority task queues with aging and starvation prevention
+[2024-04-26T20:28:32] docs: document cache coherence invariants and memory barrier semantics
