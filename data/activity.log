@@ -1,1 +1,1 @@
-[2024-04-26T20:28:32] docs: document cache coherence invariants and memory barrier semantics
+[2024-04-28T17:51:20] feat: integrate atomic CAS operations for lockless state synchronization
