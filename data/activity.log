@@ -1,1 +1,1 @@
-[2024-05-02T18:51:56] test: add stress tests for re-entrant lock acquisition
+[2024-05-02T21:19:02] fix: bounds check edge case in variable-length frame decoder
