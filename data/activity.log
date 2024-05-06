@@ -1,1 +1,1 @@
-[2024-05-06T10:49:37] fix: bounds check edge case in variable-length frame decoder
+[2024-05-06T16:23:37] refactor: normalize data structures for cache line alignment
