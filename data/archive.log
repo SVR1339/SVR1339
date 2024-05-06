@@ -1,1 +1,1 @@
-[2024-05-06T15:59:00] refactor: normalize data structures for cache line alignment
+[2024-05-06T13:22:00] refactor: clean up error type hierarchy and propagate context
