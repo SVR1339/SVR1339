@@ -1,1 +1,1 @@
-[2024-05-12T13:45:53] fix: bounds check edge case in variable-length frame decoder
+[2024-05-12T16:05:15] refactor: isolate hardware architecture specific assembly kernels
