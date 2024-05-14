@@ -1,1 +1,1 @@
-[2024-05-14T18:50:09] perf: reduce contention on global runtime epoch counter
+[2024-05-14T21:45:05] docs: document cache coherence invariants and memory barrier semantics
