@@ -1,1 +1,1 @@
-[2024-05-18T11:37:04] docs: update architecture specification and memory layout benchmarks
+[2024-05-18T11:52:25] refactor: isolate hardware architecture specific assembly kernels
