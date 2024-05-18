@@ -1,1 +1,1 @@
-[2024-05-18T10:29:30] feat: add lock-free work-stealing scheduler for task graph execution
+[2024-05-18T11:37:04] docs: update architecture specification and memory layout benchmarks
