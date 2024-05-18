@@ -1,1 +1,1 @@
-[2024-05-18T19:02:00] fix: alignment fault on unaligned memory access in serialization buffer
+[2024-05-18T10:05:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
