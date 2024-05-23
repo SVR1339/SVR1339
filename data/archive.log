@@ -1,1 +1,1 @@
-[2024-05-23T20:01:00] feat: add telemetry tracing spans for microsecond latency profiling
+[2024-05-23T20:34:00] refactor: decouple event loop driver from reactor notification subsystem
