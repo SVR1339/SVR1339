@@ -1,1 +1,1 @@
-[2024-05-24T14:15:03] chore: update toolchain dependencies and compiler flags for release build
+[2024-05-24T21:45:41] fix: handle graceful termination and socket drain on SIGINT
