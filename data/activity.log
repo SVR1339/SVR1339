@@ -1,1 +1,1 @@
-[2024-05-24T21:45:41] fix: handle graceful termination and socket drain on SIGINT
+[2024-05-26T13:39:49] perf: reduce instruction cache misses in core execution pipeline
