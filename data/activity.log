@@ -1,1 +1,1 @@
-[2024-05-30T17:51:19] fix: memory leak in unhandled promise rejection handler
+[2024-05-30T17:53:49] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
