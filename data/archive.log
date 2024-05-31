@@ -1,1 +1,1 @@
-[2024-05-28T17:04:00] refactor: normalize data structures for cache line alignment
+[2024-05-31T17:26:00] feat: add telemetry tracing spans for microsecond latency profiling
