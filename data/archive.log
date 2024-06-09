@@ -1,1 +1,1 @@
-[2024-06-05T15:46:00] feat: introduce priority task queues with aging and starvation prevention
+[2024-06-09T12:48:00] feat: add lock-free work-stealing scheduler for task graph execution
