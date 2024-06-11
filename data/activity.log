@@ -1,1 +1,1 @@
-[2024-06-11T17:02:43] refactor: normalize data structures for cache line alignment
+[2024-06-11T19:09:15] refactor: extract modular trait abstractions for heterogeneous compute kernels
