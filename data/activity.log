@@ -1,1 +1,1 @@
-[2024-06-23T15:57:45] fix: memory leak in unhandled promise rejection handler
+[2024-06-23T17:58:59] feat: author low-overhead asynchronous logging sink
