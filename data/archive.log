@@ -1,1 +1,1 @@
-[2024-06-23T17:15:00] feat: integrate atomic CAS operations for lockless state synchronization
+[2024-06-28T10:03:00] refactor: decouple event loop driver from reactor notification subsystem
