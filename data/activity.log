@@ -1,1 +1,1 @@
-[2024-07-11T10:54:57] fix: alignment fault on unaligned memory access in serialization buffer
+[2024-07-11T11:30:10] feat: implement fast path for pre-allocated socket buffers
