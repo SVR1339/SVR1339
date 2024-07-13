@@ -1,1 +1,1 @@
-[2024-07-13T16:24:07] perf: vectorize matrix operations with AVX-512 extensions
+[2024-07-13T16:25:14] refactor: extract modular trait abstractions for heterogeneous compute kernels
