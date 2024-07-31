@@ -1,1 +1,1 @@
-[2024-07-31T10:30:55] docs: update architecture specification and memory layout benchmarks
+[2024-07-31T11:07:25] test: add stress tests for re-entrant lock acquisition
