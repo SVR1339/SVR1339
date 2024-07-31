@@ -1,1 +1,1 @@
-[2024-07-31T20:01:00] feat: implement fast path for pre-allocated socket buffers
+[2024-07-31T17:16:00] fix: memory leak in unhandled promise rejection handler
