@@ -1,1 +1,1 @@
-[2024-08-04T14:33:20] feat: author low-overhead asynchronous logging sink
+[2024-08-04T20:19:41] feat: implement fast path for pre-allocated socket buffers
