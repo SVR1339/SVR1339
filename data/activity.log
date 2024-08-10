@@ -1,1 +1,1 @@
-[2024-08-10T14:48:51] refactor: isolate hardware architecture specific assembly kernels
+[2024-08-10T16:51:30] perf: vectorize matrix operations with AVX-512 extensions
