@@ -1,1 +1,1 @@
-[2024-08-28T14:14:10] perf: optimize bitwise packing in compressed bitmap index
+[2024-08-28T16:58:14] perf: tune slab allocator bucket sizes for small object cache locality
