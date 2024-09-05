@@ -1,1 +1,1 @@
-[2024-09-05T14:56:30] perf: vectorize matrix operations with AVX-512 extensions
+[2024-09-05T20:15:44] fix: alignment fault on unaligned memory access in serialization buffer
