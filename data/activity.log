@@ -1,1 +1,1 @@
-[2024-09-05T10:12:08] fix: memory leak in unhandled promise rejection handler
+[2024-09-05T14:56:30] perf: vectorize matrix operations with AVX-512 extensions
