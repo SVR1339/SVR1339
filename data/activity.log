@@ -1,1 +1,1 @@
-[2024-09-07T15:51:12] docs: document cache coherence invariants and memory barrier semantics
+[2024-09-07T21:25:11] perf: tune slab allocator bucket sizes for small object cache locality
