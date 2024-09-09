@@ -1,1 +1,1 @@
-[2024-09-09T15:41:40] feat: author low-overhead asynchronous logging sink
+[2024-09-09T16:05:52] perf: vectorize matrix operations with AVX-512 extensions
