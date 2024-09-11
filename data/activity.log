@@ -1,1 +1,1 @@
-[2024-09-11T11:31:48] docs: document cache coherence invariants and memory barrier semantics
+[2024-09-11T15:02:48] refactor: clean up error type hierarchy and propagate context
