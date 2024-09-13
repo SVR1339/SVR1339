@@ -1,1 +1,1 @@
-[2024-09-11T15:02:48] refactor: clean up error type hierarchy and propagate context
+[2024-09-13T11:13:30] chore: update toolchain dependencies and compiler flags for release build
