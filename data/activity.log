@@ -1,1 +1,1 @@
-[2024-09-23T12:18:29] feat: add lock-free work-stealing scheduler for task graph execution
+[2024-09-23T16:25:52] test: verify linearizability of raft log replication under network partition
