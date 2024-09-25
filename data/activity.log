@@ -1,1 +1,1 @@
-[2024-09-25T17:52:54] refactor: isolate hardware architecture specific assembly kernels
+[2024-09-25T19:09:14] feat: add telemetry tracing spans for microsecond latency profiling
