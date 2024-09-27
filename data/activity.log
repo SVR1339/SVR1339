@@ -1,1 +1,1 @@
-[2024-09-27T10:57:40] refactor: decouple event loop driver from reactor notification subsystem
+[2024-09-27T13:29:31] perf: tune slab allocator bucket sizes for small object cache locality
