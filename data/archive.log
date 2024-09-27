@@ -1,1 +1,1 @@
-[2024-09-27T18:59:00] docs: update architecture specification and memory layout benchmarks
+[2024-09-27T16:41:00] docs: document cache coherence invariants and memory barrier semantics
