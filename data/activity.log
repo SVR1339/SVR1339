@@ -1,1 +1,1 @@
-[2024-10-03T14:52:25] refactor: normalize data structures for cache line alignment
+[2024-10-03T15:43:47] perf: reduce instruction cache misses in core execution pipeline
