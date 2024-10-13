@@ -1,1 +1,1 @@
-[2024-10-13T11:33:38] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2024-10-13T13:43:26] docs: document cache coherence invariants and memory barrier semantics
