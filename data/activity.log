@@ -1,1 +1,1 @@
-[2024-10-23T13:38:23] chore: update toolchain dependencies and compiler flags for release build
+[2024-10-23T15:27:21] perf: optimize bitwise packing in compressed bitmap index
