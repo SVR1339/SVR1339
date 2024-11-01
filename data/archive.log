@@ -1,1 +1,1 @@
-[2024-11-01T11:11:00] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2024-11-01T17:20:00] docs: document cache coherence invariants and memory barrier semantics
