@@ -1,1 +1,1 @@
-[2024-11-11T18:59:00] refactor: isolate hardware architecture specific assembly kernels
+[2024-11-11T21:49:00] refactor: decouple event loop driver from reactor notification subsystem
