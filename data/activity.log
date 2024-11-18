@@ -1,1 +1,1 @@
-[2024-11-16T20:27:30] fix: memory leak in unhandled promise rejection handler
+[2024-11-18T10:59:59] docs: update architecture specification and memory layout benchmarks
