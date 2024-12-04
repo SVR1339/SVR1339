@@ -1,1 +1,1 @@
-[2024-12-04T10:58:32] docs: document cache coherence invariants and memory barrier semantics
+[2024-12-04T16:37:30] perf: vectorize matrix operations with AVX-512 extensions
