@@ -1,1 +1,1 @@
-[2024-12-08T11:43:09] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2024-12-08T13:40:21] feat: introduce priority task queues with aging and starvation prevention
