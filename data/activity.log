@@ -1,1 +1,1 @@
-[2024-12-14T20:10:05] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2024-12-14T20:31:36] refactor: isolate hardware architecture specific assembly kernels
