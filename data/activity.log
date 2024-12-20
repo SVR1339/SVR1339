@@ -1,1 +1,1 @@
-[2024-12-18T20:08:02] feat: author low-overhead asynchronous logging sink
+[2024-12-20T10:06:36] fix: alignment fault on unaligned memory access in serialization buffer
