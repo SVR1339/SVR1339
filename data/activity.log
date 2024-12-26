@@ -1,1 +1,1 @@
-[2024-12-24T21:25:06] feat: introduce priority task queues with aging and starvation prevention
+[2024-12-26T10:33:13] perf: optimize async memory allocator throughput with SIMD vector intrinsics
