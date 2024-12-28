@@ -1,1 +1,1 @@
-[2024-12-28T20:42:45] perf: optimize bitwise packing in compressed bitmap index
+[2024-12-28T21:25:56] perf: reduce instruction cache misses in core execution pipeline
