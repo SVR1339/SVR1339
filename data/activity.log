@@ -1,1 +1,1 @@
-[2025-01-01T12:11:11] test: benchmark concurrent hashmap under high write contention
+[2025-01-01T14:33:43] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
