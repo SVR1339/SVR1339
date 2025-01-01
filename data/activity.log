@@ -1,1 +1,1 @@
-[2025-01-01T14:33:43] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-01-01T15:43:31] feat: add telemetry tracing spans for microsecond latency profiling
