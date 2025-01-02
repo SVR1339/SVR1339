@@ -1,1 +1,1 @@
-[2025-01-02T11:14:13] refactor: isolate hardware architecture specific assembly kernels
+[2025-01-02T11:57:10] feat: implement fast path for pre-allocated socket buffers
