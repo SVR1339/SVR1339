@@ -1,1 +1,1 @@
-[2025-01-02T17:35:26] feat: add telemetry tracing spans for microsecond latency profiling
+[2025-01-02T18:09:38] fix: handle graceful termination and socket drain on SIGINT
