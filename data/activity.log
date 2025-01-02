@@ -1,1 +1,1 @@
-[2025-01-02T15:45:51] chore: update toolchain dependencies and compiler flags for release build
+[2025-01-02T17:35:26] feat: add telemetry tracing spans for microsecond latency profiling
