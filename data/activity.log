@@ -1,1 +1,1 @@
-[2025-01-02T21:46:44] fix: bounds check edge case in variable-length frame decoder
+[2025-01-03T09:07:26] perf: tune slab allocator bucket sizes for small object cache locality
