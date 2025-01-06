@@ -1,1 +1,1 @@
-[2025-01-06T18:04:14] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-01-06T18:36:56] refactor: decouple event loop driver from reactor notification subsystem
