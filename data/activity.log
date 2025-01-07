@@ -1,1 +1,1 @@
-[2025-01-07T15:06:42] feat: author low-overhead asynchronous logging sink
+[2025-01-07T18:01:07] fix: handle graceful termination and socket drain on SIGINT
