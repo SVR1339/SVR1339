@@ -1,1 +1,1 @@
-[2025-01-08T18:09:45] feat: add telemetry tracing spans for microsecond latency profiling
+[2025-01-08T19:07:44] perf: vectorize matrix operations with AVX-512 extensions
