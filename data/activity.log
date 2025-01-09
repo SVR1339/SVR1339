@@ -1,1 +1,1 @@
-[2025-01-09T10:54:46] refactor: decouple event loop driver from reactor notification subsystem
+[2025-01-09T11:36:24] feat: add lock-free work-stealing scheduler for task graph execution
