@@ -1,1 +1,1 @@
-[2025-01-09T18:21:19] perf: reduce instruction cache misses in core execution pipeline
+[2025-01-09T20:00:13] feat: add telemetry tracing spans for microsecond latency profiling
