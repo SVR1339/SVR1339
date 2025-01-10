@@ -1,1 +1,1 @@
-[2025-01-10T19:17:43] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-01-10T20:39:51] feat: introduce priority task queues with aging and starvation prevention
