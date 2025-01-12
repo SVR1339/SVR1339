@@ -1,1 +1,1 @@
-[2025-01-11T18:32:55] fix: memory leak in unhandled promise rejection handler
+[2025-01-12T10:08:43] refactor: extract modular trait abstractions for heterogeneous compute kernels
