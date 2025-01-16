@@ -1,1 +1,1 @@
-[2025-01-16T19:10:58] refactor: normalize data structures for cache line alignment
+[2025-01-16T20:20:09] feat: add lock-free work-stealing scheduler for task graph execution
