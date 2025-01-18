@@ -1,1 +1,1 @@
-[2025-01-18T14:51:01] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2025-01-18T16:29:42] perf: optimize bitwise packing in compressed bitmap index
