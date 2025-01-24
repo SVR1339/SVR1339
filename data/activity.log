@@ -1,1 +1,1 @@
-[2025-01-23T21:35:21] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2025-01-24T10:58:06] refactor: clean up error type hierarchy and propagate context
