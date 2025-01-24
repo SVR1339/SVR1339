@@ -1,1 +1,1 @@
-[2025-01-24T13:33:45] feat: implement fast path for pre-allocated socket buffers
+[2025-01-24T14:43:24] fix: bounds check edge case in variable-length frame decoder
