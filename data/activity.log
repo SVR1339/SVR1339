@@ -1,1 +1,1 @@
-[2025-01-26T20:31:11] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-01-26T20:38:12] refactor: isolate hardware architecture specific assembly kernels
