@@ -1,1 +1,1 @@
-[2025-01-29T17:20:59] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-01-29T22:41:20] test: add stress tests for re-entrant lock acquisition
