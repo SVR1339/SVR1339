@@ -1,1 +1,1 @@
-[2025-01-30T13:15:48] refactor: clean up error type hierarchy and propagate context
+[2025-01-30T13:44:25] feat: implement zero-copy ringbuffer for low-latency network packet parsing
