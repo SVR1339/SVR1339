@@ -1,1 +1,1 @@
-[2025-02-04T10:38:51] feat: implement fast path for pre-allocated socket buffers
+[2025-02-04T11:39:19] feat: add telemetry tracing spans for microsecond latency profiling
