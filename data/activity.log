@@ -1,1 +1,1 @@
-[2025-02-10T18:39:57] chore: update toolchain dependencies and compiler flags for release build
+[2025-02-10T20:59:37] perf: vectorize matrix operations with AVX-512 extensions
