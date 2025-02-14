@@ -1,1 +1,1 @@
-[2025-02-14T16:32:46] docs: document cache coherence invariants and memory barrier semantics
+[2025-02-14T16:34:51] feat: implement zero-copy ringbuffer for low-latency network packet parsing
