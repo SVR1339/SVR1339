@@ -1,1 +1,1 @@
-[2025-02-16T17:21:43] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-02-16T18:59:03] feat: implement zero-copy ringbuffer for low-latency network packet parsing
