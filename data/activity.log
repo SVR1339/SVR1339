@@ -1,1 +1,1 @@
-[2025-02-19T11:06:29] refactor: isolate hardware architecture specific assembly kernels
+[2025-02-19T11:15:53] refactor: clean up error type hierarchy and propagate context
