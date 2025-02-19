@@ -1,1 +1,1 @@
-[2025-02-19T16:07:41] feat: author low-overhead asynchronous logging sink
+[2025-02-19T17:03:50] fix: memory leak in unhandled promise rejection handler
