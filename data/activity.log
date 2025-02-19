@@ -1,1 +1,1 @@
-[2025-02-19T11:18:33] refactor: isolate hardware architecture specific assembly kernels
+[2025-02-19T12:34:44] docs: document cache coherence invariants and memory barrier semantics
