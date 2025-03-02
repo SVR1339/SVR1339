@@ -1,1 +1,1 @@
-[2025-03-02T10:11:12] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-03-02T11:11:50] refactor: clean up error type hierarchy and propagate context
