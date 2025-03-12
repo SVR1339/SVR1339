@@ -1,1 +1,1 @@
-[2025-03-12T14:37:38] fix: memory leak in unhandled promise rejection handler
+[2025-03-12T15:22:27] feat: add telemetry tracing spans for microsecond latency profiling
