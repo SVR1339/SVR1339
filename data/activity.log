@@ -1,1 +1,1 @@
-[2025-03-13T11:20:33] perf: optimize bitwise packing in compressed bitmap index
+[2025-03-13T11:41:09] perf: optimize async memory allocator throughput with SIMD vector intrinsics
