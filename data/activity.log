@@ -1,1 +1,1 @@
-[2025-03-17T10:24:47] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-03-17T10:50:17] feat: implement fast path for pre-allocated socket buffers
