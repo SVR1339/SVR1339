@@ -1,1 +1,1 @@
-[2025-03-21T18:43:41] feat: implement fast path for pre-allocated socket buffers
+[2025-03-21T19:09:24] refactor: extract modular trait abstractions for heterogeneous compute kernels
