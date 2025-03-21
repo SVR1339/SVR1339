@@ -1,1 +1,1 @@
-[2025-03-21T19:09:24] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-03-21T19:20:12] feat: implement zero-copy ringbuffer for low-latency network packet parsing
