@@ -1,1 +1,1 @@
-[2025-03-25T14:02:40] test: benchmark concurrent hashmap under high write contention
+[2025-03-25T16:30:58] refactor: clean up error type hierarchy and propagate context
