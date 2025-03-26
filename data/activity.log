@@ -1,1 +1,1 @@
-[2025-03-26T21:04:27] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-03-26T22:50:23] docs: update architecture specification and memory layout benchmarks
