@@ -1,1 +1,1 @@
-[2025-04-04T16:55:20] test: add stress tests for re-entrant lock acquisition
+[2025-04-04T19:04:37] perf: tune slab allocator bucket sizes for small object cache locality
