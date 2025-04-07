@@ -1,1 +1,1 @@
-[2025-04-07T21:38:35] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-04-07T21:44:42] refactor: clean up error type hierarchy and propagate context
