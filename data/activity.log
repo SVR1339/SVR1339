@@ -1,1 +1,1 @@
-[2025-04-11T11:57:18] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-04-11T12:29:53] refactor: isolate hardware architecture specific assembly kernels
