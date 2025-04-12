@@ -1,1 +1,1 @@
-[2025-04-11T16:28:15] feat: implement fast path for pre-allocated socket buffers
+[2025-04-12T09:14:45] perf: reduce instruction cache misses in core execution pipeline
