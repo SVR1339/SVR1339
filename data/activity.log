@@ -1,1 +1,1 @@
-[2025-04-12T21:45:15] refactor: clean up error type hierarchy and propagate context
+[2025-04-12T21:52:35] refactor: decouple event loop driver from reactor notification subsystem
