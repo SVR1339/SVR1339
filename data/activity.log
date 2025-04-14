@@ -1,1 +1,1 @@
-[2025-04-14T19:11:53] refactor: isolate hardware architecture specific assembly kernels
+[2025-04-14T21:00:20] perf: reduce instruction cache misses in core execution pipeline
