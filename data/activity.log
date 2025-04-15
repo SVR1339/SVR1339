@@ -1,1 +1,1 @@
-[2025-04-15T20:34:30] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-04-15T21:34:04] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
