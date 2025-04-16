@@ -1,1 +1,1 @@
-[2025-04-16T14:10:43] chore: update toolchain dependencies and compiler flags for release build
+[2025-04-16T14:25:24] refactor: isolate hardware architecture specific assembly kernels
