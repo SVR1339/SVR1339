@@ -1,1 +1,1 @@
-[2025-04-15T21:34:04] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-04-16T14:10:43] chore: update toolchain dependencies and compiler flags for release build
