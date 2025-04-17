@@ -1,1 +1,1 @@
-[2025-04-17T10:55:31] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-04-17T13:13:31] refactor: clean up error type hierarchy and propagate context
