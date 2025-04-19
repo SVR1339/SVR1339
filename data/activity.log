@@ -1,1 +1,1 @@
-[2025-04-19T12:38:18] refactor: isolate hardware architecture specific assembly kernels
+[2025-04-19T14:06:47] perf: optimize bitwise packing in compressed bitmap index
