@@ -1,1 +1,1 @@
-[2025-04-24T21:10:02] docs: document cache coherence invariants and memory barrier semantics
+[2025-04-24T22:56:48] perf: reduce instruction cache misses in core execution pipeline
