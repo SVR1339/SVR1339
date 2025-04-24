@@ -1,1 +1,1 @@
-[2025-04-24T10:31:51] fix: bounds check edge case in variable-length frame decoder
+[2025-04-24T13:30:40] perf: reduce instruction cache misses in core execution pipeline
