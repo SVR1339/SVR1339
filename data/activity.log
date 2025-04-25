@@ -1,1 +1,1 @@
-[2025-04-24T22:56:48] perf: reduce instruction cache misses in core execution pipeline
+[2025-04-25T13:44:42] feat: add lock-free work-stealing scheduler for task graph execution
