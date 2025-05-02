@@ -1,1 +1,1 @@
-[2025-05-02T10:15:59] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-05-02T11:09:55] refactor: extract modular trait abstractions for heterogeneous compute kernels
