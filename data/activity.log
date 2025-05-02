@@ -1,1 +1,1 @@
-[2025-05-02T14:23:41] fix: handle graceful termination and socket drain on SIGINT
+[2025-05-02T14:54:46] docs: update architecture specification and memory layout benchmarks
