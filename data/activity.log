@@ -1,1 +1,1 @@
-[2025-05-08T22:58:57] perf: vectorize matrix operations with AVX-512 extensions
+[2025-05-09T09:00:52] refactor: decouple event loop driver from reactor notification subsystem
