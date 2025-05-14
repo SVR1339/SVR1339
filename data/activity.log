@@ -1,1 +1,1 @@
-[2025-05-14T10:39:46] refactor: normalize data structures for cache line alignment
+[2025-05-14T11:46:27] perf: reduce contention on global runtime epoch counter
