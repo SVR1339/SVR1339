@@ -1,1 +1,1 @@
-[2025-05-16T18:51:35] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-05-16T18:54:27] feat: add telemetry tracing spans for microsecond latency profiling
