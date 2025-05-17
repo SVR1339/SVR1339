@@ -1,1 +1,1 @@
-[2025-05-16T20:48:03] refactor: normalize data structures for cache line alignment
+[2025-05-17T15:43:20] test: verify linearizability of raft log replication under network partition
