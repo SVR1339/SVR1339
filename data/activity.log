@@ -1,1 +1,1 @@
-[2025-05-20T12:03:41] test: benchmark concurrent hashmap under high write contention
+[2025-05-20T14:35:17] feat: add telemetry tracing spans for microsecond latency profiling
