@@ -1,1 +1,1 @@
-[2025-05-21T12:50:11] perf: optimize bitwise packing in compressed bitmap index
+[2025-05-21T15:51:39] fix: handle graceful termination and socket drain on SIGINT
