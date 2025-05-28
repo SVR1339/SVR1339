@@ -1,1 +1,1 @@
-[2025-05-28T12:48:34] fix: handle graceful termination and socket drain on SIGINT
+[2025-05-28T13:49:43] perf: reduce contention on global runtime epoch counter
