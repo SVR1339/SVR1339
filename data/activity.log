@@ -1,1 +1,1 @@
-[2025-05-29T09:46:30] refactor: normalize data structures for cache line alignment
+[2025-05-29T11:09:06] chore: update toolchain dependencies and compiler flags for release build
