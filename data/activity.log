@@ -1,1 +1,1 @@
-[2025-06-02T09:34:55] fix: handle graceful termination and socket drain on SIGINT
+[2025-06-02T09:45:08] refactor: extract modular trait abstractions for heterogeneous compute kernels
