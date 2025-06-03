@@ -1,1 +1,1 @@
-[2025-06-03T10:28:34] feat: author low-overhead asynchronous logging sink
+[2025-06-03T13:14:16] refactor: decouple event loop driver from reactor notification subsystem
