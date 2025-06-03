@@ -1,1 +1,1 @@
-[2025-06-03T19:39:24] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-06-03T20:51:44] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
