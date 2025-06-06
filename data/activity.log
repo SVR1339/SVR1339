@@ -1,1 +1,1 @@
-[2025-06-06T16:19:20] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-06-06T17:27:33] refactor: isolate hardware architecture specific assembly kernels
