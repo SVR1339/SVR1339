@@ -1,1 +1,1 @@
-[2025-06-10T16:14:50] docs: update architecture specification and memory layout benchmarks
+[2025-06-10T16:23:51] refactor: extract modular trait abstractions for heterogeneous compute kernels
