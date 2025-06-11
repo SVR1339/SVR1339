@@ -1,1 +1,1 @@
-[2025-06-11T22:04:33] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-06-11T22:20:14] test: verify linearizability of raft log replication under network partition
