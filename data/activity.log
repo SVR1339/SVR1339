@@ -1,1 +1,1 @@
-[2025-06-13T20:34:33] refactor: decouple event loop driver from reactor notification subsystem
+[2025-06-14T14:39:09] fix: bounds check edge case in variable-length frame decoder
