@@ -1,1 +1,1 @@
-[2025-06-16T09:20:05] feat: introduce priority task queues with aging and starvation prevention
+[2025-06-16T09:50:25] refactor: isolate hardware architecture specific assembly kernels
