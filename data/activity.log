@@ -1,1 +1,1 @@
-[2025-06-18T14:10:35] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-06-18T16:31:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
