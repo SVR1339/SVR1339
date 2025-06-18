@@ -1,1 +1,1 @@
-[2025-06-18T10:18:49] docs: update architecture specification and memory layout benchmarks
+[2025-06-18T12:10:30] feat: add telemetry tracing spans for microsecond latency profiling
