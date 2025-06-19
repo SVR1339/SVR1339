@@ -1,1 +1,1 @@
-[2025-06-19T10:43:43] test: verify linearizability of raft log replication under network partition
+[2025-06-19T12:15:48] refactor: isolate hardware architecture specific assembly kernels
