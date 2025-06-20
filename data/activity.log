@@ -1,1 +1,1 @@
-[2025-06-20T09:08:32] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2025-06-20T12:04:59] feat: implement fast path for pre-allocated socket buffers
