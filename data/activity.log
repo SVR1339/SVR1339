@@ -1,1 +1,1 @@
-[2025-06-23T12:11:18] perf: optimize bitwise packing in compressed bitmap index
+[2025-06-23T13:25:55] feat: add telemetry tracing spans for microsecond latency profiling
