@@ -1,1 +1,1 @@
-[2025-06-25T18:58:19] test: benchmark concurrent hashmap under high write contention
+[2025-06-25T20:28:04] refactor: extract modular trait abstractions for heterogeneous compute kernels
