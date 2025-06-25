@@ -1,1 +1,1 @@
-[2025-06-25T14:12:53] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-06-25T15:19:19] perf: reduce instruction cache misses in core execution pipeline
