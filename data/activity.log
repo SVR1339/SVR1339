@@ -1,1 +1,1 @@
-[2025-06-26T12:39:09] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2025-06-26T13:26:26] feat: add telemetry tracing spans for microsecond latency profiling
