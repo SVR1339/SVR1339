@@ -1,1 +1,1 @@
-[2025-06-27T13:58:21] test: verify linearizability of raft log replication under network partition
+[2025-06-27T14:10:03] perf: tune slab allocator bucket sizes for small object cache locality
