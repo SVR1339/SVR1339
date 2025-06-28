@@ -1,1 +1,1 @@
-[2025-06-28T20:37:40] perf: reduce instruction cache misses in core execution pipeline
+[2025-06-28T22:51:20] refactor: extract modular trait abstractions for heterogeneous compute kernels
