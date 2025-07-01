@@ -1,1 +1,1 @@
-[2025-07-01T18:52:44] docs: update architecture specification and memory layout benchmarks
+[2025-07-01T20:26:49] feat: implement zero-copy ringbuffer for low-latency network packet parsing
