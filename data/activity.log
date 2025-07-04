@@ -1,1 +1,1 @@
-[2025-07-04T10:26:36] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-07-04T11:59:27] chore: update toolchain dependencies and compiler flags for release build
