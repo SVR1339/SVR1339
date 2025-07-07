@@ -1,1 +1,1 @@
-[2025-07-07T13:55:03] refactor: normalize data structures for cache line alignment
+[2025-07-07T14:27:12] feat: implement fast path for pre-allocated socket buffers
