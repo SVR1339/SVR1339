@@ -1,1 +1,1 @@
-[2025-07-06T22:12:11] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-07-07T09:17:31] refactor: clean up error type hierarchy and propagate context
