@@ -1,1 +1,1 @@
-[2025-07-07T09:17:31] refactor: clean up error type hierarchy and propagate context
+[2025-07-07T10:11:59] fix: handle graceful termination and socket drain on SIGINT
