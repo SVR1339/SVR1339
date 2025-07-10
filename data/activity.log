@@ -1,1 +1,1 @@
-[2025-07-09T21:27:28] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-07-10T11:00:28] perf: tune slab allocator bucket sizes for small object cache locality
