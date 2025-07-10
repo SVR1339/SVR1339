@@ -1,1 +1,1 @@
-[2025-07-10T21:27:13] feat: add telemetry tracing spans for microsecond latency profiling
+[2025-07-10T21:39:37] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
