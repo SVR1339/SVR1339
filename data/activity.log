@@ -1,1 +1,1 @@
-[2025-07-10T12:11:11] test: benchmark concurrent hashmap under high write contention
+[2025-07-10T12:28:05] perf: optimize bitwise packing in compressed bitmap index
