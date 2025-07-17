@@ -1,1 +1,1 @@
-[2025-07-17T12:59:36] chore: update toolchain dependencies and compiler flags for release build
+[2025-07-17T17:42:34] fix: memory leak in unhandled promise rejection handler
