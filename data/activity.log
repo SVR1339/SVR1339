@@ -1,1 +1,1 @@
-[2025-07-18T15:30:22] feat: add telemetry tracing spans for microsecond latency profiling
+[2025-07-18T19:52:32] fix: bounds check edge case in variable-length frame decoder
