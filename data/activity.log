@@ -1,1 +1,1 @@
-[2025-07-18T21:34:35] test: add stress tests for re-entrant lock acquisition
+[2025-07-19T09:12:06] refactor: clean up error type hierarchy and propagate context
