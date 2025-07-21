@@ -1,1 +1,1 @@
-[2025-07-21T10:48:28] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-07-21T11:09:37] refactor: normalize data structures for cache line alignment
