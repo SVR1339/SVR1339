@@ -1,1 +1,1 @@
-[2025-07-23T19:25:49] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2025-07-23T21:32:07] feat: add telemetry tracing spans for microsecond latency profiling
