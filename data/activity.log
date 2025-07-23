@@ -1,1 +1,1 @@
-[2025-07-22T18:52:48] test: add stress tests for re-entrant lock acquisition
+[2025-07-23T11:07:55] feat: implement fast path for pre-allocated socket buffers
