@@ -1,1 +1,1 @@
-[2025-07-25T11:47:48] perf: optimize bitwise packing in compressed bitmap index
+[2025-07-25T13:20:27] fix: alignment fault on unaligned memory access in serialization buffer
