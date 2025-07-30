@@ -1,1 +1,1 @@
-[2025-07-30T17:03:39] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-07-30T19:00:40] refactor: isolate hardware architecture specific assembly kernels
