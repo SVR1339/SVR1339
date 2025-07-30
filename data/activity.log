@@ -1,1 +1,1 @@
-[2025-07-29T21:43:57] feat: implement fast path for pre-allocated socket buffers
+[2025-07-30T12:01:55] perf: optimize bitwise packing in compressed bitmap index
