@@ -1,1 +1,1 @@
-[2025-07-30T20:03:52] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-07-30T20:47:54] fix: handle graceful termination and socket drain on SIGINT
