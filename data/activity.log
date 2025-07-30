@@ -1,1 +1,1 @@
-[2025-07-30T20:47:54] fix: handle graceful termination and socket drain on SIGINT
+[2025-07-30T21:43:38] refactor: decouple event loop driver from reactor notification subsystem
