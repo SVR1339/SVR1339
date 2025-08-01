@@ -1,1 +1,1 @@
-[2025-07-31T22:30:35] test: benchmark concurrent hashmap under high write contention
+[2025-08-01T13:41:14] fix: alignment fault on unaligned memory access in serialization buffer
