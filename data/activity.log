@@ -1,1 +1,1 @@
-[2025-08-01T16:33:03] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-08-01T20:49:33] feat: introduce priority task queues with aging and starvation prevention
