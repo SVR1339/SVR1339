@@ -1,1 +1,1 @@
-[2025-08-01T14:21:33] fix: handle graceful termination and socket drain on SIGINT
+[2025-08-01T14:40:51] feat: implement fast path for pre-allocated socket buffers
