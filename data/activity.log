@@ -1,1 +1,1 @@
-[2025-08-04T22:01:33] refactor: normalize data structures for cache line alignment
+[2025-08-04T22:34:38] feat: implement zero-copy ringbuffer for low-latency network packet parsing
