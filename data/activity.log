@@ -1,1 +1,1 @@
-[2025-08-05T15:28:36] test: verify linearizability of raft log replication under network partition
+[2025-08-05T18:59:12] perf: optimize bitwise packing in compressed bitmap index
