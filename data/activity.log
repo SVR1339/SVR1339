@@ -1,1 +1,1 @@
-[2025-08-05T11:20:55] perf: optimize bitwise packing in compressed bitmap index
+[2025-08-05T11:29:34] docs: document cache coherence invariants and memory barrier semantics
