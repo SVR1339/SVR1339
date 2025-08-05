@@ -1,1 +1,1 @@
-[2025-08-05T13:43:20] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-08-05T14:45:04] fix: handle graceful termination and socket drain on SIGINT
