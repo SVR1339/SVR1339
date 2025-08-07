@@ -1,1 +1,1 @@
-[2025-08-07T16:30:29] refactor: normalize data structures for cache line alignment
+[2025-08-07T22:45:41] docs: document cache coherence invariants and memory barrier semantics
