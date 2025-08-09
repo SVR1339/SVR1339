@@ -1,1 +1,1 @@
-[2025-08-09T20:27:15] perf: optimize bitwise packing in compressed bitmap index
+[2025-08-09T20:36:39] refactor: decouple event loop driver from reactor notification subsystem
