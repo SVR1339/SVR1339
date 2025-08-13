@@ -1,1 +1,1 @@
-[2025-08-13T21:39:45] chore: update toolchain dependencies and compiler flags for release build
+[2025-08-13T21:43:26] perf: tune slab allocator bucket sizes for small object cache locality
