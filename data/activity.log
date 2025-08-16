@@ -1,1 +1,1 @@
-[2025-08-16T12:10:44] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-08-16T14:42:07] fix: memory leak in unhandled promise rejection handler
