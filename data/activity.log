@@ -1,1 +1,1 @@
-[2025-08-19T09:19:53] feat: author low-overhead asynchronous logging sink
+[2025-08-19T10:31:33] refactor: normalize data structures for cache line alignment
