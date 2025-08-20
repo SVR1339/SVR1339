@@ -1,1 +1,1 @@
-[2025-08-20T11:37:56] refactor: isolate hardware architecture specific assembly kernels
+[2025-08-20T12:29:42] fix: memory leak in unhandled promise rejection handler
