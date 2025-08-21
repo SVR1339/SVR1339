@@ -1,1 +1,1 @@
-[2025-08-21T19:28:30] refactor: decouple event loop driver from reactor notification subsystem
+[2025-08-21T20:21:57] perf: reduce contention on global runtime epoch counter
