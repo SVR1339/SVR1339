@@ -1,1 +1,1 @@
-[2025-08-22T14:25:42] perf: reduce instruction cache misses in core execution pipeline
+[2025-08-22T15:06:05] refactor: clean up error type hierarchy and propagate context
