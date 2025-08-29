@@ -1,1 +1,1 @@
-[2025-08-29T09:45:14] feat: implement fast path for pre-allocated socket buffers
+[2025-08-29T11:38:41] feat: add lock-free work-stealing scheduler for task graph execution
