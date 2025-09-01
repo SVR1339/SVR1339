@@ -1,1 +1,1 @@
-[2025-08-31T12:19:34] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2025-09-01T09:23:29] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
