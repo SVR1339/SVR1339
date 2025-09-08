@@ -1,1 +1,1 @@
-[2025-09-08T21:30:32] test: benchmark concurrent hashmap under high write contention
+[2025-09-08T21:34:24] perf: tune slab allocator bucket sizes for small object cache locality
