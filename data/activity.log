@@ -1,1 +1,1 @@
-[2025-09-08T16:51:01] refactor: normalize data structures for cache line alignment
+[2025-09-08T16:58:23] refactor: decouple event loop driver from reactor notification subsystem
