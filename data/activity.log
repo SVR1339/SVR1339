@@ -1,1 +1,1 @@
-[2025-09-13T15:02:31] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-09-13T18:36:41] refactor: clean up error type hierarchy and propagate context
