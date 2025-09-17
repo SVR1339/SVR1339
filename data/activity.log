@@ -1,1 +1,1 @@
-[2025-09-17T18:01:16] feat: author low-overhead asynchronous logging sink
+[2025-09-17T18:59:02] perf: reduce contention on global runtime epoch counter
