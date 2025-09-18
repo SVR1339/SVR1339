@@ -1,1 +1,1 @@
-[2025-09-18T16:58:55] feat: implement fast path for pre-allocated socket buffers
+[2025-09-18T18:45:09] perf: vectorize matrix operations with AVX-512 extensions
