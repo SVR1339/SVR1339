@@ -1,1 +1,1 @@
-[2025-09-23T10:18:13] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-09-23T15:06:42] perf: tune slab allocator bucket sizes for small object cache locality
