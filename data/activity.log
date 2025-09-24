@@ -1,1 +1,1 @@
-[2025-09-24T17:03:40] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2025-09-24T17:26:54] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
