@@ -1,1 +1,1 @@
-[2025-09-26T09:37:20] test: add stress tests for re-entrant lock acquisition
+[2025-09-26T11:07:30] perf: optimize bitwise packing in compressed bitmap index
