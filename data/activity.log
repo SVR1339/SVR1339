@@ -1,1 +1,1 @@
-[2025-09-29T15:19:25] refactor: clean up error type hierarchy and propagate context
+[2025-09-29T17:35:51] feat: add lock-free work-stealing scheduler for task graph execution
