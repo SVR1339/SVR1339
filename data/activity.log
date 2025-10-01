@@ -1,1 +1,1 @@
-[2025-10-01T21:47:21] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-10-01T21:58:53] refactor: normalize data structures for cache line alignment
