@@ -1,1 +1,1 @@
-[2025-09-30T21:42:06] fix: memory leak in unhandled promise rejection handler
+[2025-10-01T11:01:16] test: add stress tests for re-entrant lock acquisition
