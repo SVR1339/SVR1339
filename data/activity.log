@@ -1,1 +1,1 @@
-[2025-10-01T16:57:36] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2025-10-01T21:47:21] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
