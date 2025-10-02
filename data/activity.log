@@ -1,1 +1,1 @@
-[2025-10-02T13:57:19] feat: author low-overhead asynchronous logging sink
+[2025-10-02T14:49:32] feat: add telemetry tracing spans for microsecond latency profiling
