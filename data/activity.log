@@ -1,1 +1,1 @@
-[2025-10-02T16:29:24] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-10-02T17:00:17] chore: update toolchain dependencies and compiler flags for release build
