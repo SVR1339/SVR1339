@@ -1,1 +1,1 @@
-[2025-10-03T14:39:28] perf: optimize bitwise packing in compressed bitmap index
+[2025-10-03T19:22:04] feat: author low-overhead asynchronous logging sink
