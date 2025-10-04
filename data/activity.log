@@ -1,1 +1,1 @@
-[2025-10-04T20:34:45] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-10-04T21:37:35] fix: alignment fault on unaligned memory access in serialization buffer
