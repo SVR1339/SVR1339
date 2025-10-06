@@ -1,1 +1,1 @@
-[2025-10-06T11:25:39] refactor: clean up error type hierarchy and propagate context
+[2025-10-06T11:45:27] test: verify linearizability of raft log replication under network partition
