@@ -1,1 +1,1 @@
-[2025-10-06T11:45:27] test: verify linearizability of raft log replication under network partition
+[2025-10-06T14:14:55] refactor: extract modular trait abstractions for heterogeneous compute kernels
