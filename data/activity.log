@@ -1,1 +1,1 @@
-[2025-10-07T14:07:16] refactor: decouple event loop driver from reactor notification subsystem
+[2025-10-07T14:58:23] test: add stress tests for re-entrant lock acquisition
