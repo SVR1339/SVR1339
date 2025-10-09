@@ -1,1 +1,1 @@
-[2025-10-09T16:56:32] perf: reduce instruction cache misses in core execution pipeline
+[2025-10-09T16:58:45] test: verify linearizability of raft log replication under network partition
