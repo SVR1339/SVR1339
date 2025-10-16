@@ -1,1 +1,1 @@
-[2025-10-16T22:06:57] chore: update toolchain dependencies and compiler flags for release build
+[2025-10-16T22:26:09] refactor: decouple event loop driver from reactor notification subsystem
