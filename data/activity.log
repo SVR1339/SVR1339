@@ -1,1 +1,1 @@
-[2025-10-15T22:33:49] docs: update architecture specification and memory layout benchmarks
+[2025-10-16T10:42:15] fix: alignment fault on unaligned memory access in serialization buffer
