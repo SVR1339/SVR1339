@@ -1,1 +1,1 @@
-[2025-10-17T11:55:11] fix: memory leak in unhandled promise rejection handler
+[2025-10-17T14:31:42] perf: tune slab allocator bucket sizes for small object cache locality
