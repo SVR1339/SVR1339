@@ -1,1 +1,1 @@
-[2025-10-18T18:42:28] perf: reduce instruction cache misses in core execution pipeline
+[2025-10-19T17:22:48] feat: implement zero-copy ringbuffer for low-latency network packet parsing
