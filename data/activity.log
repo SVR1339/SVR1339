@@ -1,1 +1,1 @@
-[2025-10-20T10:37:31] test: benchmark concurrent hashmap under high write contention
+[2025-10-20T10:46:58] fix: bounds check edge case in variable-length frame decoder
