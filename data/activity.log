@@ -1,1 +1,1 @@
-[2025-10-22T16:33:56] fix: handle graceful termination and socket drain on SIGINT
+[2025-10-22T17:13:28] fix: bounds check edge case in variable-length frame decoder
