@@ -1,1 +1,1 @@
-[2025-10-22T10:03:54] test: add stress tests for re-entrant lock acquisition
+[2025-10-22T11:25:08] refactor: extract modular trait abstractions for heterogeneous compute kernels
