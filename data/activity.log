@@ -1,1 +1,1 @@
-[2025-10-24T15:56:47] test: benchmark concurrent hashmap under high write contention
+[2025-10-24T16:56:09] fix: handle graceful termination and socket drain on SIGINT
