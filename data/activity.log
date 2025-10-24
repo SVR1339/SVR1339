@@ -1,1 +1,1 @@
-[2025-10-24T20:04:27] refactor: clean up error type hierarchy and propagate context
+[2025-10-24T21:25:48] feat: author low-overhead asynchronous logging sink
