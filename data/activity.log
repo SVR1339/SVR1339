@@ -1,1 +1,1 @@
-[2025-10-27T17:40:05] test: add stress tests for re-entrant lock acquisition
+[2025-10-27T17:44:33] perf: reduce instruction cache misses in core execution pipeline
