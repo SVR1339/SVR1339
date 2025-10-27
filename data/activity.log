@@ -1,1 +1,1 @@
-[2025-10-27T21:10:55] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-10-27T22:15:35] perf: reduce instruction cache misses in core execution pipeline
