@@ -1,1 +1,1 @@
-[2025-10-30T15:13:58] feat: implement fast path for pre-allocated socket buffers
+[2025-10-30T15:43:27] test: verify linearizability of raft log replication under network partition
