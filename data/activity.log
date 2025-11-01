@@ -1,1 +1,1 @@
-[2025-11-01T12:13:52] refactor: clean up error type hierarchy and propagate context
+[2025-11-01T19:16:56] perf: reduce contention on global runtime epoch counter
