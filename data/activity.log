@@ -1,1 +1,1 @@
-[2025-11-06T21:28:48] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-11-06T21:50:03] feat: implement zero-copy ringbuffer for low-latency network packet parsing
