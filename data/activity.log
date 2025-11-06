@@ -1,1 +1,1 @@
-[2025-11-06T13:36:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2025-11-06T14:29:36] docs: update architecture specification and memory layout benchmarks
