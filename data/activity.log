@@ -1,1 +1,1 @@
-[2025-11-07T12:43:55] test: add stress tests for re-entrant lock acquisition
+[2025-11-07T12:57:03] feat: author low-overhead asynchronous logging sink
