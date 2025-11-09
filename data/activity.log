@@ -1,1 +1,1 @@
-[2025-11-08T18:53:26] fix: memory leak in unhandled promise rejection handler
+[2025-11-09T13:07:48] perf: optimize bitwise packing in compressed bitmap index
