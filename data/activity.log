@@ -1,1 +1,1 @@
-[2025-11-09T13:07:48] perf: optimize bitwise packing in compressed bitmap index
+[2025-11-09T14:16:55] refactor: clean up error type hierarchy and propagate context
