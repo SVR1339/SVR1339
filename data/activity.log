@@ -1,1 +1,1 @@
-[2025-11-10T10:42:05] fix: handle graceful termination and socket drain on SIGINT
+[2025-11-10T13:06:00] test: add stress tests for re-entrant lock acquisition
