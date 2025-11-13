@@ -1,1 +1,1 @@
-[2025-11-13T11:52:41] refactor: normalize data structures for cache line alignment
+[2025-11-13T11:55:59] fix: handle graceful termination and socket drain on SIGINT
