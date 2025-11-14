@@ -1,0 +1,2 @@
+=== SVR1339 SYSTEMS ENGINEERING ACTIVITY LOG ===
+[2025-11-14T09:42:13] refactor: clean up error type hierarchy and propagate context
