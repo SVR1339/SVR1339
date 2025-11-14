@@ -3,3 +3,4 @@
 [2025-11-14T09:49:45] fix: memory leak in unhandled promise rejection handler
 [2025-11-14T12:37:27] feat: add lock-free work-stealing scheduler for task graph execution
 [2025-11-14T12:53:59] fix: bounds check edge case in variable-length frame decoder
+[2025-11-14T14:00:28] perf: vectorize matrix operations with AVX-512 extensions
