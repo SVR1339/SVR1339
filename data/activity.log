@@ -7,3 +7,4 @@
 [2025-11-14T15:25:45] docs: update architecture specification and memory layout benchmarks
 [2025-11-14T16:40:53] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2025-11-14T21:06:42] feat: integrate atomic CAS operations for lockless state synchronization
+[2025-11-14T22:38:27] fix: memory leak in unhandled promise rejection handler
