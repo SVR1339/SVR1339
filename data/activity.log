@@ -12,3 +12,4 @@
 [2025-11-15T22:49:55] feat: add telemetry tracing spans for microsecond latency profiling
 [2025-11-16T11:43:14] refactor: clean up error type hierarchy and propagate context
 [2025-11-16T12:18:32] test: add stress tests for re-entrant lock acquisition
+[2025-11-16T13:52:05] fix: handle graceful termination and socket drain on SIGINT
