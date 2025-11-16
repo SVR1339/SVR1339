@@ -10,3 +10,4 @@
 [2025-11-14T22:38:27] fix: memory leak in unhandled promise rejection handler
 [2025-11-15T12:44:15] docs: update architecture specification and memory layout benchmarks
 [2025-11-15T22:49:55] feat: add telemetry tracing spans for microsecond latency profiling
+[2025-11-16T11:43:14] refactor: clean up error type hierarchy and propagate context
