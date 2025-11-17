@@ -21,3 +21,4 @@
 [2025-11-17T17:14:48] docs: update architecture specification and memory layout benchmarks
 [2025-11-17T18:41:01] test: add stress tests for re-entrant lock acquisition
 [2025-11-17T19:30:28] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-11-17T21:26:40] test: verify linearizability of raft log replication under network partition
