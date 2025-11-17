@@ -20,3 +20,4 @@
 [2025-11-17T12:51:56] test: benchmark concurrent hashmap under high write contention
 [2025-11-17T17:14:48] docs: update architecture specification and memory layout benchmarks
 [2025-11-17T18:41:01] test: add stress tests for re-entrant lock acquisition
+[2025-11-17T19:30:28] fix: alignment fault on unaligned memory access in serialization buffer
