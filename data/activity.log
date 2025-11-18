@@ -29,3 +29,4 @@
 [2025-11-18T09:53:29] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2025-11-18T10:01:34] feat: add telemetry tracing spans for microsecond latency profiling
 [2025-11-18T15:23:46] feat: author low-overhead asynchronous logging sink
+[2025-11-18T17:00:58] docs: document cache coherence invariants and memory barrier semantics
