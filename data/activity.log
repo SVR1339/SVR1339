@@ -31,3 +31,4 @@
 [2025-11-18T15:23:46] feat: author low-overhead asynchronous logging sink
 [2025-11-18T17:00:58] docs: document cache coherence invariants and memory barrier semantics
 [2025-11-18T19:50:21] docs: update architecture specification and memory layout benchmarks
+[2025-11-18T21:29:22] fix: memory leak in unhandled promise rejection handler
