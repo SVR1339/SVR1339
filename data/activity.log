@@ -35,3 +35,4 @@
 [2025-11-19T11:02:45] feat: implement fast path for pre-allocated socket buffers
 [2025-11-19T12:01:03] chore: update toolchain dependencies and compiler flags for release build
 [2025-11-19T12:21:00] refactor: clean up error type hierarchy and propagate context
+[2025-11-19T13:01:31] fix: handle graceful termination and socket drain on SIGINT
