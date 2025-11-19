@@ -40,3 +40,4 @@
 [2025-11-19T19:05:13] feat: introduce priority task queues with aging and starvation prevention
 [2025-11-19T20:59:39] feat: introduce priority task queues with aging and starvation prevention
 [2025-11-19T21:50:59] perf: reduce instruction cache misses in core execution pipeline
+[2025-11-19T23:17:56] chore: update toolchain dependencies and compiler flags for release build
