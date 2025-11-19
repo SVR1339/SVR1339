@@ -33,3 +33,4 @@
 [2025-11-18T19:50:21] docs: update architecture specification and memory layout benchmarks
 [2025-11-18T21:29:22] fix: memory leak in unhandled promise rejection handler
 [2025-11-19T11:02:45] feat: implement fast path for pre-allocated socket buffers
+[2025-11-19T12:01:03] chore: update toolchain dependencies and compiler flags for release build
