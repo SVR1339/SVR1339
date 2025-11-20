@@ -48,3 +48,4 @@
 [2025-11-20T17:31:55] refactor: normalize data structures for cache line alignment
 [2025-11-20T17:36:31] refactor: isolate hardware architecture specific assembly kernels
 [2025-11-20T18:54:21] perf: reduce contention on global runtime epoch counter
+[2025-11-20T19:29:30] fix: alignment fault on unaligned memory access in serialization buffer
