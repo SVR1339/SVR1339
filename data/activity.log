@@ -45,3 +45,4 @@
 [2025-11-20T12:21:20] perf: tune slab allocator bucket sizes for small object cache locality
 [2025-11-20T15:38:33] refactor: decouple event loop driver from reactor notification subsystem
 [2025-11-20T16:22:18] feat: introduce priority task queues with aging and starvation prevention
+[2025-11-20T17:31:55] refactor: normalize data structures for cache line alignment
