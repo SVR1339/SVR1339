@@ -47,3 +47,4 @@
 [2025-11-20T16:22:18] feat: introduce priority task queues with aging and starvation prevention
 [2025-11-20T17:31:55] refactor: normalize data structures for cache line alignment
 [2025-11-20T17:36:31] refactor: isolate hardware architecture specific assembly kernels
+[2025-11-20T18:54:21] perf: reduce contention on global runtime epoch counter
