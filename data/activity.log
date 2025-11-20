@@ -42,3 +42,4 @@
 [2025-11-19T21:50:59] perf: reduce instruction cache misses in core execution pipeline
 [2025-11-19T23:17:56] chore: update toolchain dependencies and compiler flags for release build
 [2025-11-20T11:10:14] feat: implement fast path for pre-allocated socket buffers
+[2025-11-20T12:21:20] perf: tune slab allocator bucket sizes for small object cache locality
