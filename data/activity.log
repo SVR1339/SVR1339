@@ -55,3 +55,4 @@
 [2025-11-21T15:01:06] refactor: decouple event loop driver from reactor notification subsystem
 [2025-11-21T15:29:10] perf: reduce instruction cache misses in core execution pipeline
 [2025-11-21T16:00:45] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-11-21T17:13:19] test: verify linearizability of raft log replication under network partition
