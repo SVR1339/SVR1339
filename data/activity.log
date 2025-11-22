@@ -59,3 +59,4 @@
 [2025-11-21T17:28:32] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2025-11-21T19:53:44] fix: memory leak in unhandled promise rejection handler
 [2025-11-21T20:41:52] test: add stress tests for re-entrant lock acquisition
+[2025-11-22T10:31:41] fix: handle graceful termination and socket drain on SIGINT
