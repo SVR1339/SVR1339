@@ -62,3 +62,4 @@
 [2025-11-22T10:31:41] fix: handle graceful termination and socket drain on SIGINT
 [2025-11-22T16:19:25] refactor: clean up error type hierarchy and propagate context
 [2025-11-22T22:18:37] feat: introduce priority task queues with aging and starvation prevention
+[2025-11-23T11:07:12] fix: alignment fault on unaligned memory access in serialization buffer
