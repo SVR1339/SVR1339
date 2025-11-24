@@ -69,3 +69,4 @@
 [2025-11-23T22:53:28] fix: handle graceful termination and socket drain on SIGINT
 [2025-11-23T22:53:10] test: verify linearizability of raft log replication under network partition
 [2025-11-24T13:41:08] perf: reduce instruction cache misses in core execution pipeline
+[2025-11-24T16:39:23] feat: add lock-free work-stealing scheduler for task graph execution
