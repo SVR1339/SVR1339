@@ -72,3 +72,4 @@
 [2025-11-24T16:39:23] feat: add lock-free work-stealing scheduler for task graph execution
 [2025-11-24T16:49:11] refactor: normalize data structures for cache line alignment
 [2025-11-24T20:10:06] test: add stress tests for re-entrant lock acquisition
+[2025-11-24T20:43:40] fix: memory leak in unhandled promise rejection handler
