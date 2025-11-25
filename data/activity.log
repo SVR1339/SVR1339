@@ -75,3 +75,4 @@
 [2025-11-24T20:43:40] fix: memory leak in unhandled promise rejection handler
 [2025-11-24T21:08:59] feat: integrate atomic CAS operations for lockless state synchronization
 [2025-11-24T23:02:32] refactor: decouple event loop driver from reactor notification subsystem
+[2025-11-25T09:57:35] chore: update toolchain dependencies and compiler flags for release build
