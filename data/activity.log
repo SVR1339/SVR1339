@@ -1,4 +1,3 @@
-[2025-11-18T19:50:21] docs: update architecture specification and memory layout benchmarks
 [2025-11-18T21:29:22] fix: memory leak in unhandled promise rejection handler
 [2025-11-19T11:02:45] feat: implement fast path for pre-allocated socket buffers
 [2025-11-19T12:01:03] chore: update toolchain dependencies and compiler flags for release build
@@ -78,3 +77,4 @@
 [2025-11-28T17:58:30] feat: add telemetry tracing spans for microsecond latency profiling
 [2025-11-28T19:57:24] fix: bounds check edge case in variable-length frame decoder
 [2025-11-29T09:12:14] refactor: isolate hardware architecture specific assembly kernels
+[2025-11-29T13:53:51] test: add stress tests for re-entrant lock acquisition
