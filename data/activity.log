@@ -1,4 +1,3 @@
-[2025-11-21T20:41:52] test: add stress tests for re-entrant lock acquisition
 [2025-11-22T10:31:41] fix: handle graceful termination and socket drain on SIGINT
 [2025-11-22T16:19:25] refactor: clean up error type hierarchy and propagate context
 [2025-11-22T22:18:37] feat: introduce priority task queues with aging and starvation prevention
@@ -78,3 +77,4 @@
 [2025-12-02T15:40:28] chore: update toolchain dependencies and compiler flags for release build
 [2025-12-02T16:45:19] refactor: decouple event loop driver from reactor notification subsystem
 [2025-12-02T18:52:34] test: verify linearizability of raft log replication under network partition
+[2025-12-02T19:50:56] perf: optimize bitwise packing in compressed bitmap index
