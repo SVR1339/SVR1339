@@ -1,4 +1,3 @@
-[2025-11-22T16:19:25] refactor: clean up error type hierarchy and propagate context
 [2025-11-22T22:18:37] feat: introduce priority task queues with aging and starvation prevention
 [2025-11-23T11:07:12] fix: alignment fault on unaligned memory access in serialization buffer
 [2025-11-23T13:44:54] feat: add lock-free work-stealing scheduler for task graph execution
@@ -78,3 +77,4 @@
 [2025-12-02T18:52:34] test: verify linearizability of raft log replication under network partition
 [2025-12-02T19:50:56] perf: optimize bitwise packing in compressed bitmap index
 [2025-12-02T20:01:31] refactor: normalize data structures for cache line alignment
+[2025-12-02T20:49:05] test: benchmark concurrent hashmap under high write contention
