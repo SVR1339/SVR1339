@@ -1,4 +1,3 @@
-[2025-11-29T13:53:51] test: add stress tests for re-entrant lock acquisition
 [2025-11-29T17:48:18] perf: vectorize matrix operations with AVX-512 extensions
 [2025-11-29T18:14:34] test: add stress tests for re-entrant lock acquisition
 [2025-11-29T19:31:42] perf: optimize bitwise packing in compressed bitmap index
@@ -78,3 +77,4 @@
 [2025-12-09T16:39:31] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2025-12-09T20:55:06] perf: reduce contention on global runtime epoch counter
 [2025-12-10T10:25:16] perf: optimize bitwise packing in compressed bitmap index
+[2025-12-10T10:30:51] fix: bounds check edge case in variable-length frame decoder
