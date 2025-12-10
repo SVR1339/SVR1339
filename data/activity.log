@@ -1,4 +1,3 @@
-[2025-11-30T18:14:32] test: verify linearizability of raft log replication under network partition
 [2025-11-30T18:25:31] perf: reduce contention on global runtime epoch counter
 [2025-12-01T09:27:57] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2025-12-01T10:06:11] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2025-12-10T13:53:12] docs: document cache coherence invariants and memory barrier semantics
 [2025-12-10T14:05:12] feat: add lock-free work-stealing scheduler for task graph execution
 [2025-12-10T15:40:34] refactor: normalize data structures for cache line alignment
+[2025-12-10T17:27:09] perf: tune slab allocator bucket sizes for small object cache locality
