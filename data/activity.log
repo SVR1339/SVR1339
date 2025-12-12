@@ -1,4 +1,3 @@
-[2025-12-02T20:49:05] test: benchmark concurrent hashmap under high write contention
 [2025-12-02T23:06:37] perf: optimize bitwise packing in compressed bitmap index
 [2025-12-03T09:57:15] feat: add lock-free work-stealing scheduler for task graph execution
 [2025-12-03T10:35:21] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2025-12-12T12:33:31] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2025-12-12T12:46:09] test: verify linearizability of raft log replication under network partition
 [2025-12-12T16:06:11] perf: reduce instruction cache misses in core execution pipeline
+[2025-12-12T18:16:00] docs: update architecture specification and memory layout benchmarks
