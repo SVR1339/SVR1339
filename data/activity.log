@@ -1,4 +1,3 @@
-[2025-12-03T11:57:33] feat: author low-overhead asynchronous logging sink
 [2025-12-03T14:13:11] feat: author low-overhead asynchronous logging sink
 [2025-12-03T16:31:12] fix: handle graceful termination and socket drain on SIGINT
 [2025-12-03T17:35:28] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2025-12-14T09:37:03] feat: introduce priority task queues with aging and starvation prevention
 [2025-12-14T09:53:37] fix: alignment fault on unaligned memory access in serialization buffer
 [2025-12-14T11:05:39] feat: implement fast path for pre-allocated socket buffers
+[2025-12-14T12:08:39] docs: document cache coherence invariants and memory barrier semantics
