@@ -1,4 +1,3 @@
-[2025-12-03T11:44:26] refactor: decouple event loop driver from reactor notification subsystem
 [2025-12-03T11:57:33] feat: author low-overhead asynchronous logging sink
 [2025-12-03T14:13:11] feat: author low-overhead asynchronous logging sink
 [2025-12-03T16:31:12] fix: handle graceful termination and socket drain on SIGINT
@@ -78,3 +77,4 @@
 [2025-12-12T21:04:08] docs: update architecture specification and memory layout benchmarks
 [2025-12-14T09:37:03] feat: introduce priority task queues with aging and starvation prevention
 [2025-12-14T09:53:37] fix: alignment fault on unaligned memory access in serialization buffer
+[2025-12-14T11:05:39] feat: implement fast path for pre-allocated socket buffers
