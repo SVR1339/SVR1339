@@ -1,4 +1,3 @@
-[2025-12-04T09:49:37] refactor: clean up error type hierarchy and propagate context
 [2025-12-04T10:12:05] test: add stress tests for re-entrant lock acquisition
 [2025-12-04T10:51:02] test: add stress tests for re-entrant lock acquisition
 [2025-12-04T11:17:48] feat: add lock-free work-stealing scheduler for task graph execution
@@ -78,3 +77,4 @@
 [2025-12-15T12:10:13] feat: implement fast path for pre-allocated socket buffers
 [2025-12-15T12:12:48] perf: vectorize matrix operations with AVX-512 extensions
 [2025-12-15T14:48:14] perf: vectorize matrix operations with AVX-512 extensions
+[2025-12-15T17:22:08] perf: reduce instruction cache misses in core execution pipeline
