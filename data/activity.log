@@ -1,4 +1,3 @@
-[2025-12-10T19:14:31] test: add stress tests for re-entrant lock acquisition
 [2025-12-11T09:34:00] test: add stress tests for re-entrant lock acquisition
 [2025-12-11T12:08:37] perf: tune slab allocator bucket sizes for small object cache locality
 [2025-12-11T14:16:22] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2025-12-20T15:00:13] refactor: normalize data structures for cache line alignment
 [2025-12-20T15:11:46] fix: alignment fault on unaligned memory access in serialization buffer
 [2025-12-20T21:56:02] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2025-12-22T09:11:08] docs: document cache coherence invariants and memory barrier semantics
