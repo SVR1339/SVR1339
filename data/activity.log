@@ -1,4 +1,3 @@
-[2025-12-15T10:17:55] feat: introduce priority task queues with aging and starvation prevention
 [2025-12-15T11:16:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2025-12-15T12:10:13] feat: implement fast path for pre-allocated socket buffers
 [2025-12-15T12:12:48] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2025-12-24T20:20:02] feat: add lock-free work-stealing scheduler for task graph execution
 [2025-12-24T21:35:21] perf: tune slab allocator bucket sizes for small object cache locality
 [2025-12-24T22:24:00] feat: add lock-free work-stealing scheduler for task graph execution
+[2025-12-25T09:12:06] perf: optimize async memory allocator throughput with SIMD vector intrinsics
