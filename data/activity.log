@@ -1,4 +1,3 @@
-[2025-12-18T11:03:57] fix: bounds check edge case in variable-length frame decoder
 [2025-12-18T11:30:34] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2025-12-18T12:19:25] fix: alignment fault on unaligned memory access in serialization buffer
 [2025-12-18T14:15:11] docs: update architecture specification and memory layout benchmarks
@@ -78,3 +77,4 @@
 [2025-12-26T20:19:59] docs: update architecture specification and memory layout benchmarks
 [2025-12-26T21:34:05] test: verify linearizability of raft log replication under network partition
 [2025-12-26T22:13:00] refactor: isolate hardware architecture specific assembly kernels
+[2025-12-26T23:24:06] perf: tune slab allocator bucket sizes for small object cache locality
