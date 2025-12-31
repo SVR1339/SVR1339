@@ -1,4 +1,3 @@
-[2025-12-23T14:02:29] feat: implement fast path for pre-allocated socket buffers
 [2025-12-23T14:32:02] refactor: decouple event loop driver from reactor notification subsystem
 [2025-12-23T16:09:47] feat: author low-overhead asynchronous logging sink
 [2025-12-23T16:43:16] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2025-12-30T23:12:08] fix: memory leak in unhandled promise rejection handler
 [2025-12-31T09:26:11] perf: reduce contention on global runtime epoch counter
 [2025-12-31T10:41:41] perf: tune slab allocator bucket sizes for small object cache locality
+[2025-12-31T11:18:56] feat: add telemetry tracing spans for microsecond latency profiling
