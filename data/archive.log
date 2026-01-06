@@ -1,1 +1,1 @@
-[2026-01-05T13:52:00] docs: document cache coherence invariants and memory barrier semantics
+[2026-01-06T19:38:00] test: add stress tests for re-entrant lock acquisition
