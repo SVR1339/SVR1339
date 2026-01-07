@@ -1,1 +1,1 @@
-[2026-01-07T10:35:00] test: verify linearizability of raft log replication under network partition
+[2026-01-07T21:58:00] docs: update architecture specification and memory layout benchmarks
