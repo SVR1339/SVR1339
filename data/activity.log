@@ -1,4 +1,3 @@
-[2025-12-30T16:23:16] perf: reduce instruction cache misses in core execution pipeline
 [2025-12-30T21:39:09] test: benchmark concurrent hashmap under high write contention
 [2025-12-30T21:48:45] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2025-12-30T22:48:01] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-01-09T16:31:21] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-01-09T17:32:19] fix: memory leak in unhandled promise rejection handler
 [2026-01-09T19:03:13] refactor: clean up error type hierarchy and propagate context
+[2026-01-09T19:11:09] refactor: decouple event loop driver from reactor notification subsystem
