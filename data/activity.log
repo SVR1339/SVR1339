@@ -1,4 +1,3 @@
-[2025-12-30T12:56:31] feat: implement fast path for pre-allocated socket buffers
 [2025-12-30T13:05:01] fix: memory leak in unhandled promise rejection handler
 [2025-12-30T16:15:42] perf: tune slab allocator bucket sizes for small object cache locality
 [2025-12-30T16:23:16] perf: reduce instruction cache misses in core execution pipeline
@@ -78,3 +77,4 @@
 [2026-01-09T13:01:06] perf: vectorize matrix operations with AVX-512 extensions
 [2026-01-09T14:55:12] docs: document cache coherence invariants and memory barrier semantics
 [2026-01-09T15:59:31] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-01-09T16:31:21] refactor: extract modular trait abstractions for heterogeneous compute kernels
