@@ -1,1 +1,1 @@
-[2026-01-12T20:05:00] docs: document cache coherence invariants and memory barrier semantics
+[2026-01-12T17:54:00] feat: add lock-free work-stealing scheduler for task graph execution
