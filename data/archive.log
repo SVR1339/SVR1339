@@ -1,1 +1,1 @@
-[2026-01-13T19:46:00] perf: reduce contention on global runtime epoch counter
+[2026-01-13T18:13:00] feat: add telemetry tracing spans for microsecond latency profiling
