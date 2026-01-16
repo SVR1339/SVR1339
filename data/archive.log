@@ -1,1 +1,1 @@
-[2026-01-15T17:34:00] fix: memory leak in unhandled promise rejection handler
+[2026-01-16T14:16:00] feat: add lock-free work-stealing scheduler for task graph execution
