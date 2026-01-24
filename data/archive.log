@@ -1,1 +1,1 @@
-[2026-01-23T12:53:00] fix: memory leak in unhandled promise rejection handler
+[2026-01-24T21:09:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
