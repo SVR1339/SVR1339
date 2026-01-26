@@ -1,1 +1,1 @@
-[2026-01-26T18:46:00] fix: handle graceful termination and socket drain on SIGINT
+[2026-01-26T18:18:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
