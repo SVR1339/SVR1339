@@ -1,4 +1,3 @@
-[2026-01-14T11:06:35] refactor: clean up error type hierarchy and propagate context
 [2026-01-14T11:40:23] refactor: clean up error type hierarchy and propagate context
 [2026-01-14T12:17:05] refactor: normalize data structures for cache line alignment
 [2026-01-14T15:31:54] perf: optimize bitwise packing in compressed bitmap index
@@ -78,3 +77,4 @@
 [2026-01-25T20:09:22] docs: update architecture specification and memory layout benchmarks
 [2026-01-26T09:06:16] refactor: isolate hardware architecture specific assembly kernels
 [2026-01-26T13:02:51] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-01-26T13:36:10] refactor: extract modular trait abstractions for heterogeneous compute kernels
