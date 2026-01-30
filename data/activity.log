@@ -1,4 +1,3 @@
-[2026-01-20T15:10:29] perf: reduce contention on global runtime epoch counter
 [2026-01-20T15:12:35] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-01-20T16:39:00] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-01-20T17:41:48] feat: implement zero-copy ringbuffer for low-latency network packet parsing
@@ -78,3 +77,4 @@
 [2026-01-30T17:49:08] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-01-30T20:25:21] chore: update toolchain dependencies and compiler flags for release build
 [2026-01-30T21:28:17] fix: handle graceful termination and socket drain on SIGINT
+[2026-01-30T23:11:20] refactor: normalize data structures for cache line alignment
