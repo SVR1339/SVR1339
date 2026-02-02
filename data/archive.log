@@ -1,1 +1,1 @@
-[2026-02-02T13:57:00] feat: introduce priority task queues with aging and starvation prevention
+[2026-02-02T21:56:00] test: verify linearizability of raft log replication under network partition
