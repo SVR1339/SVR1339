@@ -1,4 +1,3 @@
-[2026-01-21T16:03:29] refactor: decouple event loop driver from reactor notification subsystem
 [2026-01-21T19:36:42] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-01-21T21:00:03] docs: document cache coherence invariants and memory barrier semantics
 [2026-01-21T22:44:27] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-02-02T13:43:14] perf: reduce instruction cache misses in core execution pipeline
 [2026-02-02T15:36:28] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-02-02T17:03:16] test: benchmark concurrent hashmap under high write contention
+[2026-02-02T18:20:30] feat: introduce priority task queues with aging and starvation prevention
