@@ -1,4 +1,3 @@
-[2026-01-21T22:44:27] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-01-22T10:40:43] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-01-22T14:13:44] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-01-22T16:11:09] fix: bounds check edge case in variable-length frame decoder
@@ -78,3 +77,4 @@
 [2026-02-02T18:20:30] feat: introduce priority task queues with aging and starvation prevention
 [2026-02-02T19:54:53] test: add stress tests for re-entrant lock acquisition
 [2026-02-02T19:56:44] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2026-02-02T23:28:30] feat: implement fast path for pre-allocated socket buffers
