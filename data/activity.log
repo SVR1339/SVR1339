@@ -1,4 +1,3 @@
-[2026-01-29T09:49:43] test: add stress tests for re-entrant lock acquisition
 [2026-01-29T12:51:04] test: benchmark concurrent hashmap under high write contention
 [2026-01-29T15:17:53] docs: document cache coherence invariants and memory barrier semantics
 [2026-01-29T15:59:01] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-02-09T11:15:55] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-02-09T18:19:53] feat: author low-overhead asynchronous logging sink
 [2026-02-09T18:27:50] feat: integrate atomic CAS operations for lockless state synchronization
+[2026-02-09T18:36:13] fix: memory leak in unhandled promise rejection handler
