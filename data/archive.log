@@ -1,1 +1,1 @@
-[2026-02-11T14:51:00] perf: reduce instruction cache misses in core execution pipeline
+[2026-02-11T21:04:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
