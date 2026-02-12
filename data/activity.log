@@ -1,4 +1,3 @@
-[2026-02-02T13:27:49] test: add stress tests for re-entrant lock acquisition
 [2026-02-02T13:43:14] perf: reduce instruction cache misses in core execution pipeline
 [2026-02-02T15:36:28] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-02-02T17:03:16] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-02-11T20:57:19] test: benchmark concurrent hashmap under high write contention
 [2026-02-11T21:41:01] refactor: decouple event loop driver from reactor notification subsystem
 [2026-02-11T23:01:34] feat: author low-overhead asynchronous logging sink
+[2026-02-12T10:46:36] docs: update architecture specification and memory layout benchmarks
