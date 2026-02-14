@@ -1,4 +1,3 @@
-[2026-02-03T21:54:13] refactor: isolate hardware architecture specific assembly kernels
 [2026-02-03T23:01:12] fix: bounds check edge case in variable-length frame decoder
 [2026-02-03T23:16:09] refactor: decouple event loop driver from reactor notification subsystem
 [2026-02-04T09:32:23] docs: update architecture specification and memory layout benchmarks
@@ -78,3 +77,4 @@
 [2026-02-13T19:47:56] perf: reduce contention on global runtime epoch counter
 [2026-02-13T21:00:44] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-02-13T23:05:02] feat: add telemetry tracing spans for microsecond latency profiling
+[2026-02-14T09:54:25] feat: add lock-free work-stealing scheduler for task graph execution
