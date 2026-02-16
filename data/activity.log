@@ -1,4 +1,3 @@
-[2026-02-06T11:43:05] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-02-06T11:46:09] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-02-06T13:07:18] docs: update architecture specification and memory layout benchmarks
 [2026-02-06T13:25:42] docs: update architecture specification and memory layout benchmarks
@@ -78,3 +77,4 @@
 [2026-02-16T13:57:53] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-02-16T14:58:21] test: add stress tests for re-entrant lock acquisition
 [2026-02-16T15:10:04] perf: reduce instruction cache misses in core execution pipeline
+[2026-02-16T16:25:17] refactor: isolate hardware architecture specific assembly kernels
