@@ -1,4 +1,3 @@
-[2026-02-05T14:39:42] feat: introduce priority task queues with aging and starvation prevention
 [2026-02-05T18:54:26] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-02-05T19:15:46] fix: handle graceful termination and socket drain on SIGINT
 [2026-02-05T21:12:35] fix: alignment fault on unaligned memory access in serialization buffer
@@ -78,3 +77,4 @@
 [2026-02-16T09:07:20] feat: implement fast path for pre-allocated socket buffers
 [2026-02-16T11:18:10] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-02-16T11:46:37] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-02-16T12:23:09] refactor: decouple event loop driver from reactor notification subsystem
