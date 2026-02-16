@@ -1,4 +1,3 @@
-[2026-02-06T13:07:18] docs: update architecture specification and memory layout benchmarks
 [2026-02-06T13:25:42] docs: update architecture specification and memory layout benchmarks
 [2026-02-06T18:08:22] feat: author low-overhead asynchronous logging sink
 [2026-02-06T18:31:01] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-02-16T15:10:04] perf: reduce instruction cache misses in core execution pipeline
 [2026-02-16T16:25:17] refactor: isolate hardware architecture specific assembly kernels
 [2026-02-16T18:31:03] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-02-16T19:42:03] test: benchmark concurrent hashmap under high write contention
