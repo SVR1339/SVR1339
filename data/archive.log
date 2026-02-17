@@ -1,1 +1,1 @@
-[2026-02-17T14:31:00] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2026-02-17T11:10:00] fix: bounds check edge case in variable-length frame decoder
