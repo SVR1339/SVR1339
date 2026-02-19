@@ -1,4 +1,3 @@
-[2026-02-09T20:46:28] fix: bounds check edge case in variable-length frame decoder
 [2026-02-09T21:09:27] perf: reduce contention on global runtime epoch counter
 [2026-02-10T09:11:28] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-02-10T09:57:20] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-02-18T20:30:58] perf: vectorize matrix operations with AVX-512 extensions
 [2026-02-19T12:00:48] perf: vectorize matrix operations with AVX-512 extensions
 [2026-02-19T12:59:30] feat: implement fast path for pre-allocated socket buffers
+[2026-02-19T17:13:44] chore: update toolchain dependencies and compiler flags for release build
