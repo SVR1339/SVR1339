@@ -1,4 +1,3 @@
-[2026-02-11T20:49:03] test: verify linearizability of raft log replication under network partition
 [2026-02-11T20:57:19] test: benchmark concurrent hashmap under high write contention
 [2026-02-11T21:41:01] refactor: decouple event loop driver from reactor notification subsystem
 [2026-02-11T23:01:34] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2026-02-20T23:04:11] feat: author low-overhead asynchronous logging sink
 [2026-02-21T12:03:33] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-02-21T12:50:46] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2026-02-21T16:50:03] test: add stress tests for re-entrant lock acquisition
