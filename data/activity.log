@@ -1,4 +1,3 @@
-[2026-02-13T11:02:10] refactor: normalize data structures for cache line alignment
 [2026-02-13T13:14:28] test: verify linearizability of raft log replication under network partition
 [2026-02-13T15:54:20] perf: reduce contention on global runtime epoch counter
 [2026-02-13T17:43:37] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-02-23T16:49:44] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-02-23T17:06:50] fix: handle graceful termination and socket drain on SIGINT
 [2026-02-23T17:31:03] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-02-23T17:43:56] fix: alignment fault on unaligned memory access in serialization buffer
