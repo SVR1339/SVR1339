@@ -1,4 +1,3 @@
-[2026-02-16T11:18:10] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-02-16T11:46:37] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-02-16T12:23:09] refactor: decouple event loop driver from reactor notification subsystem
 [2026-02-16T12:37:36] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-02-24T21:20:04] fix: handle graceful termination and socket drain on SIGINT
 [2026-02-24T23:29:59] refactor: normalize data structures for cache line alignment
 [2026-02-25T09:50:16] docs: document cache coherence invariants and memory barrier semantics
+[2026-02-25T09:57:37] perf: vectorize matrix operations with AVX-512 extensions
