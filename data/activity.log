@@ -1,4 +1,3 @@
-[2026-02-20T17:42:39] perf: optimize bitwise packing in compressed bitmap index
 [2026-02-20T18:28:57] feat: introduce priority task queues with aging and starvation prevention
 [2026-02-20T20:30:20] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-02-20T23:04:11] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2026-02-27T23:16:06] refactor: clean up error type hierarchy and propagate context
 [2026-02-28T09:46:25] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-02-28T10:46:23] refactor: clean up error type hierarchy and propagate context
+[2026-02-28T11:23:06] refactor: normalize data structures for cache line alignment
