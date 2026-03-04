@@ -1,1 +1,1 @@
-[2026-03-04T12:22:00] feat: implement zero-copy ringbuffer for low-latency network packet parsing
+[2026-03-04T17:06:00] refactor: decouple event loop driver from reactor notification subsystem
