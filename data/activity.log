@@ -1,4 +1,3 @@
-[2026-02-26T14:34:19] perf: reduce contention on global runtime epoch counter
 [2026-02-26T15:03:50] perf: reduce instruction cache misses in core execution pipeline
 [2026-02-26T15:27:24] docs: document cache coherence invariants and memory barrier semantics
 [2026-02-26T15:43:54] docs: document cache coherence invariants and memory barrier semantics
@@ -78,3 +77,4 @@
 [2026-03-09T12:44:26] refactor: isolate hardware architecture specific assembly kernels
 [2026-03-09T14:07:09] perf: optimize bitwise packing in compressed bitmap index
 [2026-03-09T15:18:59] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-03-09T16:45:53] fix: handle graceful termination and socket drain on SIGINT
