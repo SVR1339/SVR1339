@@ -1,4 +1,3 @@
-[2026-02-27T23:16:06] refactor: clean up error type hierarchy and propagate context
 [2026-02-28T09:46:25] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-02-28T10:46:23] refactor: clean up error type hierarchy and propagate context
 [2026-02-28T11:23:06] refactor: normalize data structures for cache line alignment
@@ -78,3 +77,4 @@
 [2026-03-11T21:55:40] test: add stress tests for re-entrant lock acquisition
 [2026-03-11T22:47:02] fix: handle graceful termination and socket drain on SIGINT
 [2026-03-12T10:11:11] feat: integrate atomic CAS operations for lockless state synchronization
+[2026-03-12T10:52:14] fix: memory leak in unhandled promise rejection handler
