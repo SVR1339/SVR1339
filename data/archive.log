@@ -1,1 +1,1 @@
-[2026-03-13T18:11:00] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-03-14T17:07:00] fix: handle graceful termination and socket drain on SIGINT
