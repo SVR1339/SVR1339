@@ -1,4 +1,3 @@
-[2026-03-03T15:39:13] docs: document cache coherence invariants and memory barrier semantics
 [2026-03-03T18:17:42] test: verify linearizability of raft log replication under network partition
 [2026-03-03T21:53:30] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-03-03T21:54:11] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-03-15T14:33:29] perf: reduce instruction cache misses in core execution pipeline
 [2026-03-15T18:47:37] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-03-15T19:16:52] refactor: decouple event loop driver from reactor notification subsystem
+[2026-03-15T19:50:42] feat: add telemetry tracing spans for microsecond latency profiling
