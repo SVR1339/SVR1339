@@ -1,1 +1,1 @@
-[2026-03-18T18:24:00] fix: bounds check edge case in variable-length frame decoder
+[2026-03-18T19:08:00] test: verify linearizability of raft log replication under network partition
