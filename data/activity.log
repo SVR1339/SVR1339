@@ -1,4 +1,3 @@
-[2026-03-10T21:27:14] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-03-10T21:59:46] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-03-11T12:49:12] refactor: isolate hardware architecture specific assembly kernels
 [2026-03-11T13:45:04] refactor: decouple event loop driver from reactor notification subsystem
@@ -78,3 +77,4 @@
 [2026-03-19T19:02:25] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-03-19T21:31:15] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-03-19T21:48:30] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-03-19T23:17:15] feat: introduce priority task queues with aging and starvation prevention
