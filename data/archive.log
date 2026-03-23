@@ -1,1 +1,1 @@
-[2026-03-22T20:31:00] fix: bounds check edge case in variable-length frame decoder
+[2026-03-23T17:10:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
