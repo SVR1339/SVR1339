@@ -1,1 +1,1 @@
-[2026-03-31T13:51:00] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2026-03-31T19:22:00] perf: tune slab allocator bucket sizes for small object cache locality
