@@ -1,4 +1,3 @@
-[2026-03-23T16:59:22] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-03-23T20:41:44] perf: reduce contention on global runtime epoch counter
 [2026-03-23T20:59:07] refactor: decouple event loop driver from reactor notification subsystem
 [2026-03-24T09:51:14] feat: introduce priority task queues with aging and starvation prevention
@@ -78,3 +77,4 @@
 [2026-04-01T13:44:33] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-04-01T14:12:31] docs: document cache coherence invariants and memory barrier semantics
 [2026-04-01T16:07:05] docs: document cache coherence invariants and memory barrier semantics
+[2026-04-01T17:11:31] perf: vectorize matrix operations with AVX-512 extensions
