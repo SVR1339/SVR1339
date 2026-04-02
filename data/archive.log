@@ -1,1 +1,1 @@
-[2026-04-01T18:57:00] perf: reduce contention on global runtime epoch counter
+[2026-04-02T12:48:00] perf: optimize bitwise packing in compressed bitmap index
