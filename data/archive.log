@@ -1,1 +1,1 @@
-[2026-04-03T21:20:00] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-04-03T13:48:00] fix: alignment fault on unaligned memory access in serialization buffer
