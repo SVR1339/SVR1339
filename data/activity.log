@@ -1,4 +1,3 @@
-[2026-03-26T16:35:31] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-03-26T17:21:47] feat: introduce priority task queues with aging and starvation prevention
 [2026-03-26T17:25:43] docs: update architecture specification and memory layout benchmarks
 [2026-03-26T17:36:06] refactor: isolate hardware architecture specific assembly kernels
@@ -78,3 +77,4 @@
 [2026-04-06T14:36:21] refactor: clean up error type hierarchy and propagate context
 [2026-04-06T16:17:41] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-04-06T16:53:42] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2026-04-06T18:12:50] perf: reduce instruction cache misses in core execution pipeline
