@@ -1,4 +1,3 @@
-[2026-03-29T17:00:31] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-03-29T19:26:36] perf: optimize bitwise packing in compressed bitmap index
 [2026-03-29T23:05:10] docs: update architecture specification and memory layout benchmarks
 [2026-03-30T13:30:31] perf: optimize async memory allocator throughput with SIMD vector intrinsics
@@ -78,3 +77,4 @@
 [2026-04-09T14:21:04] perf: reduce instruction cache misses in core execution pipeline
 [2026-04-09T14:48:02] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-09T15:56:51] perf: reduce instruction cache misses in core execution pipeline
+[2026-04-09T15:56:34] perf: vectorize matrix operations with AVX-512 extensions
