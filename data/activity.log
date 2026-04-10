@@ -1,4 +1,3 @@
-[2026-03-31T11:28:10] refactor: clean up error type hierarchy and propagate context
 [2026-03-31T11:31:48] refactor: isolate hardware architecture specific assembly kernels
 [2026-03-31T15:08:18] refactor: clean up error type hierarchy and propagate context
 [2026-03-31T17:13:41] feat: integrate atomic CAS operations for lockless state synchronization
@@ -78,3 +77,4 @@
 [2026-04-10T19:51:33] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-10T20:24:04] feat: author low-overhead asynchronous logging sink
 [2026-04-10T21:01:41] perf: vectorize matrix operations with AVX-512 extensions
+[2026-04-10T21:34:59] test: verify linearizability of raft log replication under network partition
