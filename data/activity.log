@@ -1,4 +1,3 @@
-[2026-03-30T14:51:05] docs: update architecture specification and memory layout benchmarks
 [2026-03-30T15:49:09] feat: introduce priority task queues with aging and starvation prevention
 [2026-03-30T16:31:35] test: add stress tests for re-entrant lock acquisition
 [2026-03-30T17:01:52] fix: alignment fault on unaligned memory access in serialization buffer
@@ -78,3 +77,4 @@
 [2026-04-09T20:33:56] feat: author low-overhead asynchronous logging sink
 [2026-04-09T22:27:31] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-04-09T22:44:02] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-04-10T10:44:44] feat: add telemetry tracing spans for microsecond latency profiling
