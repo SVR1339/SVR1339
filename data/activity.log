@@ -1,4 +1,3 @@
-[2026-04-02T15:28:21] feat: introduce priority task queues with aging and starvation prevention
 [2026-04-02T15:40:23] refactor: normalize data structures for cache line alignment
 [2026-04-02T16:03:40] test: add stress tests for re-entrant lock acquisition
 [2026-04-02T16:18:47] refactor: isolate hardware architecture specific assembly kernels
@@ -78,3 +77,4 @@
 [2026-04-12T23:27:44] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-13T09:19:47] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-13T10:05:56] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-04-13T11:29:36] fix: handle graceful termination and socket drain on SIGINT
