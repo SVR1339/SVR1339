@@ -1,4 +1,3 @@
-[2026-04-04T22:35:29] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-05T10:57:29] docs: update architecture specification and memory layout benchmarks
 [2026-04-05T11:59:11] test: add stress tests for re-entrant lock acquisition
 [2026-04-05T13:11:22] refactor: decouple event loop driver from reactor notification subsystem
@@ -78,3 +77,4 @@
 [2026-04-13T22:06:13] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-04-13T22:48:32] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-04-14T09:22:34] test: benchmark concurrent hashmap under high write contention
+[2026-04-14T10:45:39] refactor: decouple event loop driver from reactor notification subsystem
