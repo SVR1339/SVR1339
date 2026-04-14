@@ -1,4 +1,3 @@
-[2026-04-05T21:00:19] refactor: clean up error type hierarchy and propagate context
 [2026-04-06T11:05:56] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-04-06T11:07:56] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-04-06T12:35:25] refactor: clean up error type hierarchy and propagate context
@@ -78,3 +77,4 @@
 [2026-04-14T14:14:45] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-14T15:23:07] fix: memory leak in unhandled promise rejection handler
 [2026-04-14T15:51:17] perf: reduce contention on global runtime epoch counter
+[2026-04-14T16:01:54] feat: add lock-free work-stealing scheduler for task graph execution
