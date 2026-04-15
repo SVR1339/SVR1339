@@ -1,4 +1,3 @@
-[2026-04-07T12:19:08] docs: update architecture specification and memory layout benchmarks
 [2026-04-07T14:50:26] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-04-07T16:16:18] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-07T17:46:02] refactor: clean up error type hierarchy and propagate context
@@ -78,3 +77,4 @@
 [2026-04-15T13:23:15] perf: reduce instruction cache misses in core execution pipeline
 [2026-04-15T15:49:56] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-04-15T20:51:42] fix: handle graceful termination and socket drain on SIGINT
+[2026-04-15T21:29:43] feat: introduce priority task queues with aging and starvation prevention
