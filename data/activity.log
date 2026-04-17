@@ -1,4 +1,3 @@
-[2026-04-09T15:56:34] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-09T17:38:36] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-04-09T19:30:59] fix: bounds check edge case in variable-length frame decoder
 [2026-04-09T20:33:56] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2026-04-17T11:19:44] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-04-17T12:25:58] docs: update architecture specification and memory layout benchmarks
 [2026-04-17T13:15:50] refactor: isolate hardware architecture specific assembly kernels
+[2026-04-17T13:45:51] fix: handle graceful termination and socket drain on SIGINT
