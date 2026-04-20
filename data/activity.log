@@ -1,4 +1,3 @@
-[2026-04-10T21:01:41] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-10T21:34:59] test: verify linearizability of raft log replication under network partition
 [2026-04-10T23:24:59] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-04-11T10:17:07] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2026-04-20T09:30:56] test: verify linearizability of raft log replication under network partition
 [2026-04-20T10:31:17] docs: update architecture specification and memory layout benchmarks
 [2026-04-20T11:19:01] docs: update architecture specification and memory layout benchmarks
+[2026-04-20T13:06:28] docs: update architecture specification and memory layout benchmarks
