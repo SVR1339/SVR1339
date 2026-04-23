@@ -1,1 +1,1 @@
-[2026-04-23T21:24:00] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-04-23T16:20:00] perf: optimize bitwise packing in compressed bitmap index
