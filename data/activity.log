@@ -1,4 +1,3 @@
-[2026-04-14T17:49:12] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-04-14T18:02:31] test: add stress tests for re-entrant lock acquisition
 [2026-04-14T19:32:22] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-14T22:04:49] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2026-04-24T11:24:46] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-04-24T16:02:58] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-04-24T16:11:47] test: add stress tests for re-entrant lock acquisition
+[2026-04-24T17:28:38] feat: introduce priority task queues with aging and starvation prevention
