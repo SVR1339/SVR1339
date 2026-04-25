@@ -1,4 +1,3 @@
-[2026-04-15T15:49:56] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-04-15T20:51:42] fix: handle graceful termination and socket drain on SIGINT
 [2026-04-15T21:29:43] feat: introduce priority task queues with aging and starvation prevention
 [2026-04-15T21:34:36] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-04-25T14:25:47] test: benchmark concurrent hashmap under high write contention
 [2026-04-25T16:04:34] docs: document cache coherence invariants and memory barrier semantics
 [2026-04-25T18:15:47] refactor: normalize data structures for cache line alignment
+[2026-04-25T19:36:24] fix: alignment fault on unaligned memory access in serialization buffer
