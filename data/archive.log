@@ -1,1 +1,1 @@
-[2026-04-28T13:31:00] fix: memory leak in unhandled promise rejection handler
+[2026-04-28T19:04:00] refactor: clean up error type hierarchy and propagate context
