@@ -1,4 +1,3 @@
-[2026-04-19T17:05:51] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-20T09:30:56] test: verify linearizability of raft log replication under network partition
 [2026-04-20T10:31:17] docs: update architecture specification and memory layout benchmarks
 [2026-04-20T11:19:01] docs: update architecture specification and memory layout benchmarks
@@ -78,3 +77,4 @@
 [2026-04-29T12:08:19] test: add stress tests for re-entrant lock acquisition
 [2026-04-29T13:12:29] refactor: decouple event loop driver from reactor notification subsystem
 [2026-04-29T17:49:37] docs: document cache coherence invariants and memory barrier semantics
+[2026-04-29T21:28:01] feat: implement zero-copy ringbuffer for low-latency network packet parsing
