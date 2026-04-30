@@ -1,1 +1,1 @@
-[2026-04-29T12:24:00] feat: introduce priority task queues with aging and starvation prevention
+[2026-04-30T15:34:00] perf: reduce contention on global runtime epoch counter
