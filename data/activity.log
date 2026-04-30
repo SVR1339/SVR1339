@@ -1,4 +1,3 @@
-[2026-04-20T17:21:47] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-20T18:11:30] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-04-21T09:21:02] docs: update architecture specification and memory layout benchmarks
 [2026-04-21T10:17:44] feat: add telemetry tracing spans for microsecond latency profiling
@@ -78,3 +77,4 @@
 [2026-04-30T11:38:43] test: benchmark concurrent hashmap under high write contention
 [2026-04-30T13:31:43] perf: reduce contention on global runtime epoch counter
 [2026-04-30T14:26:33] test: benchmark concurrent hashmap under high write contention
+[2026-04-30T19:08:47] fix: handle graceful termination and socket drain on SIGINT
