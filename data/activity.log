@@ -1,4 +1,3 @@
-[2026-04-21T14:30:36] refactor: normalize data structures for cache line alignment
 [2026-04-21T17:14:16] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-21T17:40:02] fix: bounds check edge case in variable-length frame decoder
 [2026-04-21T17:44:29] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2026-04-30T21:32:07] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-30T21:50:50] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-01T09:13:31] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2026-05-01T11:23:33] test: add stress tests for re-entrant lock acquisition
