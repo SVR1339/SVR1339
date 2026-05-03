@@ -1,4 +1,3 @@
-[2026-04-22T20:31:31] refactor: decouple event loop driver from reactor notification subsystem
 [2026-04-22T21:19:32] fix: bounds check edge case in variable-length frame decoder
 [2026-04-23T11:19:30] refactor: isolate hardware architecture specific assembly kernels
 [2026-04-23T11:25:58] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2026-05-03T13:51:47] docs: document cache coherence invariants and memory barrier semantics
 [2026-05-03T15:27:59] fix: handle graceful termination and socket drain on SIGINT
 [2026-05-03T17:30:07] refactor: clean up error type hierarchy and propagate context
+[2026-05-03T20:16:38] feat: introduce priority task queues with aging and starvation prevention
