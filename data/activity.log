@@ -1,4 +1,3 @@
-[2026-04-23T15:58:04] feat: author low-overhead asynchronous logging sink
 [2026-04-23T18:37:46] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-04-23T21:27:02] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-04-24T11:24:46] feat: add lock-free work-stealing scheduler for task graph execution
@@ -78,3 +77,4 @@
 [2026-05-04T13:02:33] refactor: normalize data structures for cache line alignment
 [2026-05-04T18:30:38] chore: update toolchain dependencies and compiler flags for release build
 [2026-05-04T19:20:50] refactor: normalize data structures for cache line alignment
+[2026-05-05T09:28:27] perf: tune slab allocator bucket sizes for small object cache locality
