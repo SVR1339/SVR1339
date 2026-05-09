@@ -1,4 +1,3 @@
-[2026-04-28T15:07:50] perf: vectorize matrix operations with AVX-512 extensions
 [2026-04-28T18:18:08] refactor: clean up error type hierarchy and propagate context
 [2026-04-28T19:27:27] docs: update architecture specification and memory layout benchmarks
 [2026-04-28T22:07:48] chore: update toolchain dependencies and compiler flags for release build
@@ -78,3 +77,4 @@
 [2026-05-08T17:07:04] feat: author low-overhead asynchronous logging sink
 [2026-05-08T22:26:36] fix: handle graceful termination and socket drain on SIGINT
 [2026-05-09T20:02:56] refactor: isolate hardware architecture specific assembly kernels
+[2026-05-09T23:19:58] feat: add lock-free work-stealing scheduler for task graph execution
