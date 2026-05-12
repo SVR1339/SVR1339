@@ -1,4 +1,3 @@
-[2026-04-30T21:32:07] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-04-30T21:50:50] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-01T09:13:31] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-05-01T11:23:33] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-05-12T17:02:13] chore: update toolchain dependencies and compiler flags for release build
 [2026-05-12T17:12:10] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-05-12T19:57:13] chore: update toolchain dependencies and compiler flags for release build
+[2026-05-12T22:00:05] test: verify linearizability of raft log replication under network partition
