@@ -1,4 +1,3 @@
-[2026-04-30T11:38:43] test: benchmark concurrent hashmap under high write contention
 [2026-04-30T13:31:43] perf: reduce contention on global runtime epoch counter
 [2026-04-30T14:26:33] test: benchmark concurrent hashmap under high write contention
 [2026-04-30T19:08:47] fix: handle graceful termination and socket drain on SIGINT
@@ -78,3 +77,4 @@
 [2026-05-12T11:27:52] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-05-12T12:19:06] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-05-12T13:35:03] docs: update architecture specification and memory layout benchmarks
+[2026-05-12T14:59:06] fix: bounds check edge case in variable-length frame decoder
