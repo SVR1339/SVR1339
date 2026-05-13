@@ -1,4 +1,3 @@
-[2026-05-01T15:38:15] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-05-01T17:04:24] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-05-01T18:24:36] fix: memory leak in unhandled promise rejection handler
 [2026-05-01T18:50:52] fix: memory leak in unhandled promise rejection handler
@@ -78,3 +77,4 @@
 [2026-05-13T12:14:05] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-13T16:42:15] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-05-13T18:15:58] chore: update toolchain dependencies and compiler flags for release build
+[2026-05-13T20:18:11] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
