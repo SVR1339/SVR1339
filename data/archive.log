@@ -1,1 +1,1 @@
-[2026-05-15T12:59:00] feat: introduce priority task queues with aging and starvation prevention
+[2026-05-15T10:35:00] perf: optimize bitwise packing in compressed bitmap index
