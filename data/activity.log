@@ -1,4 +1,3 @@
-[2026-05-05T09:28:27] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-05-05T09:53:29] refactor: clean up error type hierarchy and propagate context
 [2026-05-05T10:37:37] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-05-05T13:17:29] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2026-05-15T22:53:12] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-15T22:54:35] refactor: isolate hardware architecture specific assembly kernels
 [2026-05-16T14:50:10] perf: reduce contention on global runtime epoch counter
+[2026-05-16T16:05:14] refactor: isolate hardware architecture specific assembly kernels
