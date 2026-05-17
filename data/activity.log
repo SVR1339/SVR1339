@@ -1,4 +1,3 @@
-[2026-05-05T17:54:58] docs: document cache coherence invariants and memory barrier semantics
 [2026-05-05T18:40:21] perf: reduce contention on global runtime epoch counter
 [2026-05-05T20:22:11] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-05-05T22:47:53] feat: add telemetry tracing spans for microsecond latency profiling
@@ -78,3 +77,4 @@
 [2026-05-17T14:13:12] fix: handle graceful termination and socket drain on SIGINT
 [2026-05-17T15:48:12] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-05-17T19:56:57] perf: vectorize matrix operations with AVX-512 extensions
+[2026-05-17T20:29:21] feat: implement zero-copy ringbuffer for low-latency network packet parsing
