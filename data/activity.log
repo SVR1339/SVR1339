@@ -1,4 +1,3 @@
-[2026-05-06T09:37:34] refactor: clean up error type hierarchy and propagate context
 [2026-05-06T12:07:06] feat: implement fast path for pre-allocated socket buffers
 [2026-05-06T12:36:31] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-06T15:52:28] test: verify linearizability of raft log replication under network partition
@@ -78,3 +77,4 @@
 [2026-05-17T21:56:47] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-05-17T22:16:48] perf: optimize bitwise packing in compressed bitmap index
 [2026-05-18T10:36:24] docs: update architecture specification and memory layout benchmarks
+[2026-05-18T10:50:25] refactor: decouple event loop driver from reactor notification subsystem
