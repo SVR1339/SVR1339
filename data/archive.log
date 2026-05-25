@@ -1,1 +1,1 @@
-[2026-05-22T18:22:00] fix: memory leak in unhandled promise rejection handler
+[2026-05-25T10:48:00] perf: reduce contention on global runtime epoch counter
