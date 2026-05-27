@@ -1,4 +1,3 @@
-[2026-05-15T20:57:56] feat: introduce priority task queues with aging and starvation prevention
 [2026-05-15T22:53:12] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-15T22:54:35] refactor: isolate hardware architecture specific assembly kernels
 [2026-05-16T14:50:10] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-05-26T23:12:43] docs: document cache coherence invariants and memory barrier semantics
 [2026-05-27T09:05:38] refactor: clean up error type hierarchy and propagate context
 [2026-05-27T09:40:31] feat: introduce priority task queues with aging and starvation prevention
+[2026-05-27T10:21:36] test: benchmark concurrent hashmap under high write contention
