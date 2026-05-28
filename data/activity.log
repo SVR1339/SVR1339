@@ -1,4 +1,3 @@
-[2026-05-18T18:36:42] chore: update toolchain dependencies and compiler flags for release build
 [2026-05-18T18:58:53] perf: optimize bitwise packing in compressed bitmap index
 [2026-05-18T20:15:30] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-05-19T09:58:32] test: add rigorous fuzz testing suite for distributed consensus protocol
@@ -78,3 +77,4 @@
 [2026-05-28T11:09:19] test: verify linearizability of raft log replication under network partition
 [2026-05-28T12:51:52] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-28T13:22:07] refactor: clean up error type hierarchy and propagate context
+[2026-05-28T14:22:29] fix: handle graceful termination and socket drain on SIGINT
