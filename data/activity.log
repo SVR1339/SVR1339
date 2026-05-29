@@ -1,4 +1,3 @@
-[2026-05-19T19:07:29] fix: handle graceful termination and socket drain on SIGINT
 [2026-05-19T21:06:55] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-05-19T23:29:05] test: add stress tests for re-entrant lock acquisition
 [2026-05-20T09:40:49] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-05-29T12:45:09] feat: introduce priority task queues with aging and starvation prevention
 [2026-05-29T16:10:34] fix: bounds check edge case in variable-length frame decoder
 [2026-05-29T16:43:14] feat: introduce priority task queues with aging and starvation prevention
+[2026-05-29T18:42:54] test: add rigorous fuzz testing suite for distributed consensus protocol
