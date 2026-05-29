@@ -1,4 +1,3 @@
-[2026-05-19T12:52:01] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-05-19T14:11:55] fix: bounds check edge case in variable-length frame decoder
 [2026-05-19T17:24:23] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-05-19T17:56:17] test: verify linearizability of raft log replication under network partition
@@ -78,3 +77,4 @@
 [2026-05-28T20:34:18] docs: update architecture specification and memory layout benchmarks
 [2026-05-28T21:52:53] docs: document cache coherence invariants and memory barrier semantics
 [2026-05-28T22:57:12] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-05-29T10:55:58] feat: add lock-free work-stealing scheduler for task graph execution
