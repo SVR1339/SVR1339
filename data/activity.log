@@ -1,4 +1,3 @@
-[2026-05-20T11:58:14] refactor: clean up error type hierarchy and propagate context
 [2026-05-20T15:56:16] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-05-20T16:24:14] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-05-20T19:53:52] fix: alignment fault on unaligned memory access in serialization buffer
@@ -78,3 +77,4 @@
 [2026-05-29T19:10:46] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-05-30T09:39:18] fix: bounds check edge case in variable-length frame decoder
 [2026-05-30T12:57:28] perf: vectorize matrix operations with AVX-512 extensions
+[2026-05-30T14:06:32] feat: add telemetry tracing spans for microsecond latency profiling
