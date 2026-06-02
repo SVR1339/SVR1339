@@ -1,4 +1,3 @@
-[2026-05-22T20:13:34] refactor: normalize data structures for cache line alignment
 [2026-05-22T20:42:39] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-05-22T22:05:59] fix: bounds check edge case in variable-length frame decoder
 [2026-05-23T09:47:19] perf: optimize async memory allocator throughput with SIMD vector intrinsics
@@ -78,3 +77,4 @@
 [2026-06-02T16:07:08] perf: vectorize matrix operations with AVX-512 extensions
 [2026-06-02T17:34:47] refactor: clean up error type hierarchy and propagate context
 [2026-06-02T19:34:13] docs: document cache coherence invariants and memory barrier semantics
+[2026-06-02T20:48:07] perf: tune slab allocator bucket sizes for small object cache locality
