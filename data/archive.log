@@ -1,1 +1,1 @@
-[2026-06-02T10:13:00] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-06-02T15:09:00] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
