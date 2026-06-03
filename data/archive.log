@@ -1,1 +1,1 @@
-[2026-06-03T18:03:00] perf: reduce contention on global runtime epoch counter
+[2026-06-03T14:16:00] fix: alignment fault on unaligned memory access in serialization buffer
