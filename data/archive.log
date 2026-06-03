@@ -1,1 +1,1 @@
-[2026-06-02T21:15:00] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-06-03T18:03:00] perf: reduce contention on global runtime epoch counter
