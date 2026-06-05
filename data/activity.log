@@ -1,4 +1,3 @@
-[2026-05-26T14:12:06] docs: update architecture specification and memory layout benchmarks
 [2026-05-26T15:30:22] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-05-26T16:38:00] test: verify linearizability of raft log replication under network partition
 [2026-05-26T18:14:18] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-06-04T13:15:43] test: add stress tests for re-entrant lock acquisition
 [2026-06-04T17:48:03] perf: reduce instruction cache misses in core execution pipeline
 [2026-06-04T21:38:25] test: verify linearizability of raft log replication under network partition
+[2026-06-05T12:07:28] feat: author low-overhead asynchronous logging sink
