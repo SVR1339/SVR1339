@@ -1,4 +1,3 @@
-[2026-05-26T23:12:43] docs: document cache coherence invariants and memory barrier semantics
 [2026-05-27T09:05:38] refactor: clean up error type hierarchy and propagate context
 [2026-05-27T09:40:31] feat: introduce priority task queues with aging and starvation prevention
 [2026-05-27T10:21:36] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-06-05T12:11:00] fix: memory leak in unhandled promise rejection handler
 [2026-06-05T13:29:57] feat: author low-overhead asynchronous logging sink
 [2026-06-05T16:02:07] fix: memory leak in unhandled promise rejection handler
+[2026-06-05T16:39:42] fix: bounds check edge case in variable-length frame decoder
