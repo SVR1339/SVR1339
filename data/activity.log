@@ -1,4 +1,3 @@
-[2026-05-28T11:09:19] test: verify linearizability of raft log replication under network partition
 [2026-05-28T12:51:52] perf: vectorize matrix operations with AVX-512 extensions
 [2026-05-28T13:22:07] refactor: clean up error type hierarchy and propagate context
 [2026-05-28T14:22:29] fix: handle graceful termination and socket drain on SIGINT
@@ -78,3 +77,4 @@
 [2026-06-08T15:34:47] feat: implement fast path for pre-allocated socket buffers
 [2026-06-08T19:07:52] perf: reduce contention on global runtime epoch counter
 [2026-06-08T20:15:59] perf: reduce instruction cache misses in core execution pipeline
+[2026-06-08T20:52:39] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
