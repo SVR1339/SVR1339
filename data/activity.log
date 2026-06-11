@@ -1,4 +1,3 @@
-[2026-05-30T20:21:24] refactor: isolate hardware architecture specific assembly kernels
 [2026-05-31T12:58:06] docs: update architecture specification and memory layout benchmarks
 [2026-05-31T20:50:25] docs: document cache coherence invariants and memory barrier semantics
 [2026-06-01T11:06:27] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-06-11T11:29:41] perf: reduce contention on global runtime epoch counter
 [2026-06-11T13:49:36] feat: introduce priority task queues with aging and starvation prevention
 [2026-06-11T16:53:40] feat: implement fast path for pre-allocated socket buffers
+[2026-06-11T17:45:07] feat: add telemetry tracing spans for microsecond latency profiling
