@@ -1,4 +1,3 @@
-[2026-05-31T20:50:25] docs: document cache coherence invariants and memory barrier semantics
 [2026-06-01T11:06:27] perf: vectorize matrix operations with AVX-512 extensions
 [2026-06-01T12:17:45] refactor: isolate hardware architecture specific assembly kernels
 [2026-06-01T13:01:12] refactor: decouple event loop driver from reactor notification subsystem
@@ -78,3 +77,4 @@
 [2026-06-11T16:53:40] feat: implement fast path for pre-allocated socket buffers
 [2026-06-11T17:45:07] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-06-11T18:27:40] fix: handle graceful termination and socket drain on SIGINT
+[2026-06-11T19:06:05] fix: memory leak in unhandled promise rejection handler
