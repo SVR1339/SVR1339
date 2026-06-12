@@ -1,4 +1,3 @@
-[2026-06-01T14:32:03] docs: update architecture specification and memory layout benchmarks
 [2026-06-01T16:02:35] refactor: decouple event loop driver from reactor notification subsystem
 [2026-06-01T20:57:39] perf: vectorize matrix operations with AVX-512 extensions
 [2026-06-02T12:51:59] feat: integrate atomic CAS operations for lockless state synchronization
@@ -78,3 +77,4 @@
 [2026-06-11T22:54:06] test: verify linearizability of raft log replication under network partition
 [2026-06-12T09:51:39] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-06-12T10:05:59] fix: bounds check edge case in variable-length frame decoder
+[2026-06-12T10:47:43] test: benchmark concurrent hashmap under high write contention
