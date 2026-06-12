@@ -1,4 +1,3 @@
-[2026-06-02T21:04:22] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-06-02T21:50:13] fix: bounds check edge case in variable-length frame decoder
 [2026-06-03T11:01:08] perf: vectorize matrix operations with AVX-512 extensions
 [2026-06-03T11:07:08] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-06-12T16:11:50] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-06-12T16:42:43] refactor: decouple event loop driver from reactor notification subsystem
 [2026-06-12T17:28:21] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-06-12T20:20:43] fix: bounds check edge case in variable-length frame decoder
