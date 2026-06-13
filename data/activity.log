@@ -1,4 +1,3 @@
-[2026-06-03T11:01:08] perf: vectorize matrix operations with AVX-512 extensions
 [2026-06-03T11:07:08] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-06-03T11:50:37] feat: implement fast path for pre-allocated socket buffers
 [2026-06-03T13:28:52] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-06-12T17:28:21] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-06-12T20:20:43] fix: bounds check edge case in variable-length frame decoder
 [2026-06-13T11:00:35] feat: integrate atomic CAS operations for lockless state synchronization
+[2026-06-13T14:02:16] fix: alignment fault on unaligned memory access in serialization buffer
