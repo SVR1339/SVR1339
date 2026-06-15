@@ -1,4 +1,3 @@
-[2026-06-03T18:15:57] docs: update architecture specification and memory layout benchmarks
 [2026-06-03T19:00:36] test: add stress tests for re-entrant lock acquisition
 [2026-06-03T19:15:27] feat: introduce priority task queues with aging and starvation prevention
 [2026-06-03T21:32:58] test: add rigorous fuzz testing suite for distributed consensus protocol
@@ -78,3 +77,4 @@
 [2026-06-14T14:23:28] perf: optimize bitwise packing in compressed bitmap index
 [2026-06-14T17:18:08] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-06-14T18:08:31] test: benchmark concurrent hashmap under high write contention
+[2026-06-15T10:58:35] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
