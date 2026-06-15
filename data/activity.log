@@ -1,4 +1,3 @@
-[2026-06-04T12:22:25] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-06-04T13:15:43] test: add stress tests for re-entrant lock acquisition
 [2026-06-04T17:48:03] perf: reduce instruction cache misses in core execution pipeline
 [2026-06-04T21:38:25] test: verify linearizability of raft log replication under network partition
@@ -78,3 +77,4 @@
 [2026-06-15T14:56:58] feat: introduce priority task queues with aging and starvation prevention
 [2026-06-15T17:33:39] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-06-15T18:08:18] refactor: isolate hardware architecture specific assembly kernels
+[2026-06-15T19:04:31] refactor: clean up error type hierarchy and propagate context
