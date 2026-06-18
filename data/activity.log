@@ -1,4 +1,3 @@
-[2026-06-09T15:50:15] fix: bounds check edge case in variable-length frame decoder
 [2026-06-09T16:18:27] refactor: clean up error type hierarchy and propagate context
 [2026-06-09T17:11:37] docs: document cache coherence invariants and memory barrier semantics
 [2026-06-09T20:57:52] chore: update toolchain dependencies and compiler flags for release build
@@ -78,3 +77,4 @@
 [2026-06-18T17:18:57] perf: optimize bitwise packing in compressed bitmap index
 [2026-06-18T22:12:36] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-06-18T22:23:10] docs: update architecture specification and memory layout benchmarks
+[2026-06-18T23:28:31] test: add stress tests for re-entrant lock acquisition
