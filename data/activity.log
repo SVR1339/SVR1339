@@ -1,4 +1,3 @@
-[2026-06-12T10:05:59] fix: bounds check edge case in variable-length frame decoder
 [2026-06-12T10:47:43] test: benchmark concurrent hashmap under high write contention
 [2026-06-12T11:07:39] feat: author low-overhead asynchronous logging sink
 [2026-06-12T11:54:28] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-06-22T17:29:43] fix: handle graceful termination and socket drain on SIGINT
 [2026-06-22T18:50:06] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-06-22T20:37:44] feat: implement fast path for pre-allocated socket buffers
+[2026-06-22T21:54:35] perf: tune slab allocator bucket sizes for small object cache locality
