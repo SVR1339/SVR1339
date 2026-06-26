@@ -1,4 +1,3 @@
-[2026-06-15T20:32:34] fix: bounds check edge case in variable-length frame decoder
 [2026-06-15T20:39:03] feat: implement fast path for pre-allocated socket buffers
 [2026-06-16T09:08:39] feat: implement fast path for pre-allocated socket buffers
 [2026-06-16T10:22:16] fix: bounds check edge case in variable-length frame decoder
@@ -78,3 +77,4 @@
 [2026-06-26T10:45:47] chore: update toolchain dependencies and compiler flags for release build
 [2026-06-26T15:43:11] perf: reduce instruction cache misses in core execution pipeline
 [2026-06-26T17:14:35] refactor: decouple event loop driver from reactor notification subsystem
+[2026-06-26T20:11:47] feat: author low-overhead asynchronous logging sink
