@@ -1,1 +1,1 @@
-[2026-06-29T13:42:00] test: verify linearizability of raft log replication under network partition
+[2026-06-29T12:24:00] refactor: decouple event loop driver from reactor notification subsystem
