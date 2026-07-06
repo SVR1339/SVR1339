@@ -1,4 +1,3 @@
-[2026-06-25T09:05:11] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-06-25T20:06:51] refactor: isolate hardware architecture specific assembly kernels
 [2026-06-25T20:23:55] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-06-25T20:45:57] test: add rigorous fuzz testing suite for distributed consensus protocol
@@ -78,3 +77,4 @@
 [2026-07-06T13:02:28] docs: update architecture specification and memory layout benchmarks
 [2026-07-06T13:12:15] feat: author low-overhead asynchronous logging sink
 [2026-07-06T15:31:42] perf: optimize bitwise packing in compressed bitmap index
+[2026-07-06T16:27:09] refactor: clean up error type hierarchy and propagate context
