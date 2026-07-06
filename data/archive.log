@@ -1,1 +1,1 @@
-[2026-07-06T16:06:00] fix: alignment fault on unaligned memory access in serialization buffer
+[2026-07-06T17:50:00] feat: introduce priority task queues with aging and starvation prevention
