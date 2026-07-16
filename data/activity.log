@@ -1,4 +1,3 @@
-[2026-07-05T17:39:32] refactor: isolate hardware architecture specific assembly kernels
 [2026-07-05T18:35:29] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-07-05T20:17:55] feat: implement fast path for pre-allocated socket buffers
 [2026-07-05T22:42:11] perf: optimize async memory allocator throughput with SIMD vector intrinsics
@@ -78,3 +77,4 @@
 [2026-07-15T15:44:55] fix: bounds check edge case in variable-length frame decoder
 [2026-07-15T17:18:43] perf: reduce contention on global runtime epoch counter
 [2026-07-15T21:52:05] perf: vectorize matrix operations with AVX-512 extensions
+[2026-07-16T10:22:31] refactor: extract modular trait abstractions for heterogeneous compute kernels
