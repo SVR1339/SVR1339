@@ -1,4 +1,3 @@
-[2026-07-07T15:40:59] fix: bounds check edge case in variable-length frame decoder
 [2026-07-07T18:09:06] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-07-07T19:04:22] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-07-08T10:43:20] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-07-19T11:06:58] refactor: decouple event loop driver from reactor notification subsystem
 [2026-07-19T11:48:23] perf: reduce instruction cache misses in core execution pipeline
 [2026-07-19T12:59:44] refactor: isolate hardware architecture specific assembly kernels
+[2026-07-19T13:25:20] docs: document cache coherence invariants and memory barrier semantics
