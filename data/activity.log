@@ -1,4 +1,3 @@
-[2026-07-20T20:42:50] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-07-20T21:59:33] refactor: decouple event loop driver from reactor notification subsystem
 [2026-07-20T22:13:46] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-07-21T09:33:37] feat: add lock-free work-stealing scheduler for task graph execution
@@ -78,3 +77,4 @@
 [2026-07-30T19:30:33] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-07-30T19:40:56] docs: document cache coherence invariants and memory barrier semantics
 [2026-07-30T21:30:25] test: add stress tests for re-entrant lock acquisition
+[2026-07-30T23:19:29] chore: update toolchain dependencies and compiler flags for release build
