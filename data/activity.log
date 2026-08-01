@@ -1,4 +1,3 @@
-[2026-07-22T19:59:07] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-07-22T20:58:47] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-07-23T11:07:09] perf: optimize bitwise packing in compressed bitmap index
 [2026-07-23T15:10:13] perf: tune slab allocator bucket sizes for small object cache locality
@@ -78,3 +77,4 @@
 [2026-08-01T12:05:03] docs: update architecture specification and memory layout benchmarks
 [2026-08-01T12:44:08] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-08-01T13:38:20] perf: vectorize matrix operations with AVX-512 extensions
+[2026-08-01T18:19:58] test: benchmark concurrent hashmap under high write contention
