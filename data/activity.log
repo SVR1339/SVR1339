@@ -1,4 +1,3 @@
-[2026-07-23T15:10:13] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-07-23T15:36:35] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-07-23T15:43:44] refactor: isolate hardware architecture specific assembly kernels
 [2026-07-23T17:07:36] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-08-01T18:19:58] test: benchmark concurrent hashmap under high write contention
 [2026-08-01T21:57:51] feat: implement fast path for pre-allocated socket buffers
 [2026-08-03T09:34:00] perf: reduce instruction cache misses in core execution pipeline
+[2026-08-03T12:25:05] refactor: isolate hardware architecture specific assembly kernels
