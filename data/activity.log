@@ -1,4 +1,3 @@
-[2026-07-23T21:54:54] perf: reduce instruction cache misses in core execution pipeline
 [2026-07-24T10:26:11] docs: document cache coherence invariants and memory barrier semantics
 [2026-07-24T11:39:37] test: verify linearizability of raft log replication under network partition
 [2026-07-24T12:08:41] refactor: normalize data structures for cache line alignment
@@ -78,3 +77,4 @@
 [2026-08-03T19:06:13] test: verify linearizability of raft log replication under network partition
 [2026-08-03T20:10:29] test: benchmark concurrent hashmap under high write contention
 [2026-08-03T20:24:19] test: verify linearizability of raft log replication under network partition
+[2026-08-03T21:35:33] test: benchmark concurrent hashmap under high write contention
