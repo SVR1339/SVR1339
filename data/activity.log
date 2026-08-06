@@ -1,4 +1,3 @@
-[2026-07-27T22:14:53] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-07-28T14:00:24] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-07-28T15:06:28] feat: author low-overhead asynchronous logging sink
 [2026-07-28T16:25:44] refactor: clean up error type hierarchy and propagate context
@@ -78,3 +77,4 @@
 [2026-08-06T13:13:04] test: verify linearizability of raft log replication under network partition
 [2026-08-06T13:27:47] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-06T14:04:52] perf: vectorize matrix operations with AVX-512 extensions
+[2026-08-06T16:38:16] feat: introduce priority task queues with aging and starvation prevention
