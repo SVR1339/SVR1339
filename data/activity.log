@@ -1,4 +1,3 @@
-[2026-07-31T10:28:55] docs: update architecture specification and memory layout benchmarks
 [2026-07-31T11:05:57] refactor: isolate hardware architecture specific assembly kernels
 [2026-07-31T11:48:48] perf: optimize bitwise packing in compressed bitmap index
 [2026-07-31T11:59:20] feat: implement zero-copy ringbuffer for low-latency network packet parsing
@@ -78,3 +77,4 @@
 [2026-08-10T17:06:36] feat: implement fast path for pre-allocated socket buffers
 [2026-08-10T17:32:29] chore: update toolchain dependencies and compiler flags for release build
 [2026-08-10T18:12:54] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2026-08-10T19:26:27] fix: memory leak in unhandled promise rejection handler
