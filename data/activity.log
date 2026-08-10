@@ -1,4 +1,3 @@
-[2026-07-30T18:41:34] refactor: decouple event loop driver from reactor notification subsystem
 [2026-07-30T19:30:33] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-07-30T19:40:56] docs: document cache coherence invariants and memory barrier semantics
 [2026-07-30T21:30:25] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-08-08T17:14:21] fix: bounds check edge case in variable-length frame decoder
 [2026-08-08T17:47:44] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-08-08T20:17:55] fix: handle graceful termination and socket drain on SIGINT
+[2026-08-10T10:27:29] feat: implement zero-copy ringbuffer for low-latency network packet parsing
