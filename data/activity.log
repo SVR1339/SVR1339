@@ -1,4 +1,3 @@
-[2026-08-05T10:04:31] refactor: clean up error type hierarchy and propagate context
 [2026-08-05T11:10:40] docs: update architecture specification and memory layout benchmarks
 [2026-08-05T12:24:21] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-08-05T13:27:30] refactor: isolate hardware architecture specific assembly kernels
@@ -78,3 +77,4 @@
 [2026-08-13T13:21:44] docs: update architecture specification and memory layout benchmarks
 [2026-08-13T14:54:22] perf: reduce contention on global runtime epoch counter
 [2026-08-13T16:12:01] docs: document cache coherence invariants and memory barrier semantics
+[2026-08-13T17:06:15] fix: alignment fault on unaligned memory access in serialization buffer
