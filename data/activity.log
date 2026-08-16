@@ -1,4 +1,3 @@
-[2026-08-06T13:27:47] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-06T14:04:52] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-06T16:38:16] feat: introduce priority task queues with aging and starvation prevention
 [2026-08-06T17:12:21] perf: optimize bitwise packing in compressed bitmap index
@@ -78,3 +77,4 @@
 [2026-08-14T23:29:13] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-08-15T19:38:03] chore: update toolchain dependencies and compiler flags for release build
 [2026-08-15T23:18:49] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-08-16T10:15:26] test: add stress tests for re-entrant lock acquisition
