@@ -1,4 +1,3 @@
-[2026-08-07T19:07:12] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-08-07T20:30:17] docs: update architecture specification and memory layout benchmarks
 [2026-08-07T21:26:35] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-08-07T21:40:50] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-08-17T21:49:39] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-08-18T09:39:59] fix: handle graceful termination and socket drain on SIGINT
 [2026-08-18T10:10:07] fix: bounds check edge case in variable-length frame decoder
+[2026-08-18T10:53:12] feat: implement zero-copy ringbuffer for low-latency network packet parsing
