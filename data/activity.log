@@ -1,4 +1,3 @@
-[2026-08-10T10:27:29] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-08-10T10:47:20] refactor: isolate hardware architecture specific assembly kernels
 [2026-08-10T13:19:48] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-10T17:06:36] feat: implement fast path for pre-allocated socket buffers
@@ -78,3 +77,4 @@
 [2026-08-19T14:53:19] docs: update architecture specification and memory layout benchmarks
 [2026-08-19T15:15:11] perf: reduce contention on global runtime epoch counter
 [2026-08-19T15:41:05] fix: handle graceful termination and socket drain on SIGINT
+[2026-08-19T18:32:08] perf: tune slab allocator bucket sizes for small object cache locality
