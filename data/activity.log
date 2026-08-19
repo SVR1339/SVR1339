@@ -1,4 +1,3 @@
-[2026-08-07T22:42:32] feat: author low-overhead asynchronous logging sink
 [2026-08-08T10:29:49] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-08-08T13:34:49] refactor: isolate hardware architecture specific assembly kernels
 [2026-08-08T16:35:41] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-08-18T13:53:42] test: add stress tests for re-entrant lock acquisition
 [2026-08-18T14:45:27] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-08-18T18:55:26] perf: vectorize matrix operations with AVX-512 extensions
+[2026-08-19T09:49:27] chore: update toolchain dependencies and compiler flags for release build
