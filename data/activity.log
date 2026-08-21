@@ -1,4 +1,3 @@
-[2026-08-11T22:14:34] feat: implement fast path for pre-allocated socket buffers
 [2026-08-11T22:43:38] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-08-12T09:12:58] test: benchmark concurrent hashmap under high write contention
 [2026-08-12T10:06:15] chore: update toolchain dependencies and compiler flags for release build
@@ -78,3 +77,4 @@
 [2026-08-21T18:16:15] fix: memory leak in unhandled promise rejection handler
 [2026-08-21T19:57:47] refactor: normalize data structures for cache line alignment
 [2026-08-21T20:11:36] feat: implement fast path for pre-allocated socket buffers
+[2026-08-21T21:06:23] fix: bounds check edge case in variable-length frame decoder
