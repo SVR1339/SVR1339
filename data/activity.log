@@ -1,4 +1,3 @@
-[2026-08-12T20:40:03] refactor: clean up error type hierarchy and propagate context
 [2026-08-13T09:00:17] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-08-13T10:01:08] perf: reduce instruction cache misses in core execution pipeline
 [2026-08-13T11:50:26] refactor: normalize data structures for cache line alignment
@@ -78,3 +77,4 @@
 [2026-08-24T12:04:15] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-24T13:43:53] feat: integrate atomic CAS operations for lockless state synchronization
 [2026-08-24T15:39:56] perf: optimize async memory allocator throughput with SIMD vector intrinsics
+[2026-08-24T19:03:57] test: verify linearizability of raft log replication under network partition
