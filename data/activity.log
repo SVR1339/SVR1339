@@ -1,4 +1,3 @@
-[2026-08-13T16:12:01] docs: document cache coherence invariants and memory barrier semantics
 [2026-08-13T17:06:15] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-08-13T17:32:40] perf: optimize bitwise packing in compressed bitmap index
 [2026-08-13T21:34:23] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-08-24T23:20:58] fix: memory leak in unhandled promise rejection handler
 [2026-08-25T09:44:29] refactor: normalize data structures for cache line alignment
 [2026-08-25T10:04:24] test: verify linearizability of raft log replication under network partition
+[2026-08-25T16:00:19] chore: update toolchain dependencies and compiler flags for release build
