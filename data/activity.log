@@ -1,4 +1,3 @@
-[2026-08-18T09:39:59] fix: handle graceful termination and socket drain on SIGINT
 [2026-08-18T10:10:07] fix: bounds check edge case in variable-length frame decoder
 [2026-08-18T10:53:12] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-08-18T13:32:29] refactor: extract modular trait abstractions for heterogeneous compute kernels
@@ -78,3 +77,4 @@
 [2026-08-27T19:04:40] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-08-27T19:05:36] fix: handle graceful termination and socket drain on SIGINT
 [2026-08-27T19:09:50] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2026-08-27T19:31:14] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
