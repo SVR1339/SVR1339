@@ -1,4 +1,3 @@
-[2026-08-17T13:06:50] docs: document cache coherence invariants and memory barrier semantics
 [2026-08-17T13:13:28] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-08-17T13:33:03] perf: reduce instruction cache misses in core execution pipeline
 [2026-08-17T13:55:56] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-08-27T09:45:34] feat: introduce priority task queues with aging and starvation prevention
 [2026-08-27T10:35:03] docs: update architecture specification and memory layout benchmarks
 [2026-08-27T13:03:49] perf: vectorize matrix operations with AVX-512 extensions
+[2026-08-27T14:45:20] fix: memory leak in unhandled promise rejection handler
