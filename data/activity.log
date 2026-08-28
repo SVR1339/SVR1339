@@ -1,4 +1,3 @@
-[2026-08-18T14:45:27] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-08-18T18:55:26] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-19T09:49:27] chore: update toolchain dependencies and compiler flags for release build
 [2026-08-19T11:09:36] perf: reduce instruction cache misses in core execution pipeline
@@ -78,3 +77,4 @@
 [2026-08-27T20:54:54] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-27T23:26:55] perf: reduce contention on global runtime epoch counter
 [2026-08-28T09:29:47] feat: introduce priority task queues with aging and starvation prevention
+[2026-08-28T12:41:33] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
