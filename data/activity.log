@@ -1,4 +1,3 @@
-[2026-08-19T15:15:11] perf: reduce contention on global runtime epoch counter
 [2026-08-19T15:41:05] fix: handle graceful termination and socket drain on SIGINT
 [2026-08-19T18:32:08] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-08-19T19:34:43] feat: introduce priority task queues with aging and starvation prevention
@@ -78,3 +77,4 @@
 [2026-08-28T16:49:56] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-08-28T18:04:04] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-08-28T21:49:24] test: benchmark concurrent hashmap under high write contention
+[2026-08-28T22:17:57] refactor: clean up error type hierarchy and propagate context
