@@ -1,4 +1,3 @@
-[2026-08-20T14:31:11] docs: update architecture specification and memory layout benchmarks
 [2026-08-20T14:33:06] refactor: normalize data structures for cache line alignment
 [2026-08-20T17:04:42] perf: reduce instruction cache misses in core execution pipeline
 [2026-08-20T17:45:24] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-08-31T09:04:20] perf: vectorize matrix operations with AVX-512 extensions
 [2026-08-31T09:16:25] chore: update toolchain dependencies and compiler flags for release build
 [2026-08-31T10:40:52] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-08-31T14:15:06] fix: memory leak in unhandled promise rejection handler
