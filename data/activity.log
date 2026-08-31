@@ -1,4 +1,3 @@
-[2026-08-20T11:41:30] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-08-20T13:54:54] feat: introduce priority task queues with aging and starvation prevention
 [2026-08-20T14:31:11] docs: update architecture specification and memory layout benchmarks
 [2026-08-20T14:33:06] refactor: normalize data structures for cache line alignment
@@ -78,3 +77,4 @@
 [2026-08-30T17:03:07] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-08-30T22:33:04] refactor: decouple event loop driver from reactor notification subsystem
 [2026-08-31T09:04:20] perf: vectorize matrix operations with AVX-512 extensions
+[2026-08-31T09:16:25] chore: update toolchain dependencies and compiler flags for release build
