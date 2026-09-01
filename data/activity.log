@@ -1,4 +1,3 @@
-[2026-08-21T19:57:47] refactor: normalize data structures for cache line alignment
 [2026-08-21T20:11:36] feat: implement fast path for pre-allocated socket buffers
 [2026-08-21T21:06:23] fix: bounds check edge case in variable-length frame decoder
 [2026-08-21T21:22:20] fix: alignment fault on unaligned memory access in serialization buffer
@@ -78,3 +77,4 @@
 [2026-09-01T16:31:57] test: verify linearizability of raft log replication under network partition
 [2026-09-01T21:20:27] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-09-01T22:06:08] test: add rigorous fuzz testing suite for distributed consensus protocol
+[2026-09-01T22:09:42] perf: tune slab allocator bucket sizes for small object cache locality
