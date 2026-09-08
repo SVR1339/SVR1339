@@ -1,4 +1,3 @@
-[2026-08-27T23:26:55] perf: reduce contention on global runtime epoch counter
 [2026-08-28T09:29:47] feat: introduce priority task queues with aging and starvation prevention
 [2026-08-28T12:41:33] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-08-28T15:19:59] docs: document cache coherence invariants and memory barrier semantics
@@ -78,3 +77,4 @@
 [2026-09-07T22:05:51] refactor: normalize data structures for cache line alignment
 [2026-09-07T23:07:40] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-09-08T09:10:56] test: add stress tests for re-entrant lock acquisition
+[2026-09-08T09:10:06] fix: memory leak in unhandled promise rejection handler
