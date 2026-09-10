@@ -1,4 +1,3 @@
-[2026-08-31T21:40:49] feat: introduce priority task queues with aging and starvation prevention
 [2026-09-01T10:04:02] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-01T13:31:58] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-01T15:53:48] feat: author low-overhead asynchronous logging sink
@@ -78,3 +77,4 @@
 [2026-09-09T17:49:04] perf: reduce contention on global runtime epoch counter
 [2026-09-09T19:12:03] feat: introduce priority task queues with aging and starvation prevention
 [2026-09-09T22:16:22] refactor: decouple event loop driver from reactor notification subsystem
+[2026-09-10T09:40:10] feat: add telemetry tracing spans for microsecond latency profiling
