@@ -1,4 +1,3 @@
-[2026-09-05T12:12:41] test: verify linearizability of raft log replication under network partition
 [2026-09-06T09:11:52] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-09-06T12:45:33] refactor: normalize data structures for cache line alignment
 [2026-09-06T17:20:44] test: add stress tests for re-entrant lock acquisition
@@ -78,3 +77,4 @@
 [2026-09-15T17:32:25] docs: update architecture specification and memory layout benchmarks
 [2026-09-15T18:59:09] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-09-15T19:21:41] refactor: extract modular trait abstractions for heterogeneous compute kernels
+[2026-09-15T19:53:59] refactor: extract modular trait abstractions for heterogeneous compute kernels
