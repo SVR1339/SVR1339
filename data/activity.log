@@ -1,4 +1,3 @@
-[2026-09-04T14:11:35] perf: reduce instruction cache misses in core execution pipeline
 [2026-09-04T14:34:17] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-09-04T15:49:21] feat: implement fast path for pre-allocated socket buffers
 [2026-09-04T16:24:57] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-09-14T23:06:56] perf: optimize async memory allocator throughput with SIMD vector intrinsics
 [2026-09-15T09:45:17] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-09-15T12:54:19] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-09-15T13:07:04] test: add stress tests for re-entrant lock acquisition
