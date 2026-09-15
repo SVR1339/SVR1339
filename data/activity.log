@@ -1,4 +1,3 @@
-[2026-09-04T16:24:57] perf: reduce contention on global runtime epoch counter
 [2026-09-04T19:11:40] test: verify linearizability of raft log replication under network partition
 [2026-09-05T10:06:47] perf: reduce contention on global runtime epoch counter
 [2026-09-05T12:12:41] test: verify linearizability of raft log replication under network partition
@@ -78,3 +77,4 @@
 [2026-09-15T13:07:04] test: add stress tests for re-entrant lock acquisition
 [2026-09-15T13:45:24] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-15T14:45:57] perf: vectorize matrix operations with AVX-512 extensions
+[2026-09-15T17:32:25] docs: update architecture specification and memory layout benchmarks
