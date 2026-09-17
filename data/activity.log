@@ -1,4 +1,3 @@
-[2026-09-08T14:27:42] feat: author low-overhead asynchronous logging sink
 [2026-09-08T15:18:04] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-09-08T16:23:21] refactor: normalize data structures for cache line alignment
 [2026-09-08T16:42:51] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-09-17T17:41:00] test: benchmark concurrent hashmap under high write contention
 [2026-09-17T19:19:50] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-09-17T19:31:34] feat: add lock-free work-stealing scheduler for task graph execution
+[2026-09-17T20:35:41] fix: memory leak in unhandled promise rejection handler
