@@ -1,4 +1,3 @@
-[2026-09-15T13:07:04] test: add stress tests for re-entrant lock acquisition
 [2026-09-15T13:45:24] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-15T14:45:57] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-15T17:32:25] docs: update architecture specification and memory layout benchmarks
@@ -78,3 +77,4 @@
 [2026-09-24T18:09:02] test: add stress tests for re-entrant lock acquisition
 [2026-09-24T23:07:06] refactor: isolate hardware architecture specific assembly kernels
 [2026-09-25T11:23:19] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-09-25T13:21:44] fix: alignment fault on unaligned memory access in serialization buffer
