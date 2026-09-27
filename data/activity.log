@@ -1,4 +1,3 @@
-[2026-09-16T09:56:07] fix: handle graceful termination and socket drain on SIGINT
 [2026-09-16T10:52:18] refactor: clean up error type hierarchy and propagate context
 [2026-09-16T13:23:42] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-09-16T14:04:26] test: benchmark concurrent hashmap under high write contention
@@ -78,3 +77,4 @@
 [2026-09-27T11:28:19] perf: reduce contention on global runtime epoch counter
 [2026-09-27T16:44:24] feat: add telemetry tracing spans for microsecond latency profiling
 [2026-09-27T17:50:26] fix: bounds check edge case in variable-length frame decoder
+[2026-09-27T18:03:32] test: verify linearizability of raft log replication under network partition
