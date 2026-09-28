@@ -1,4 +1,3 @@
-[2026-09-16T14:04:26] test: benchmark concurrent hashmap under high write contention
 [2026-09-16T16:16:11] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-09-16T16:16:53] test: add rigorous fuzz testing suite for distributed consensus protocol
 [2026-09-16T16:41:06] refactor: decouple event loop driver from reactor notification subsystem
@@ -78,3 +77,4 @@
 [2026-09-27T18:03:32] test: verify linearizability of raft log replication under network partition
 [2026-09-27T20:15:21] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-28T13:47:13] fix: bounds check edge case in variable-length frame decoder
+[2026-09-28T14:41:02] test: benchmark concurrent hashmap under high write contention
