@@ -1,4 +1,3 @@
-[2026-09-22T16:31:51] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-09-22T16:50:19] fix: memory leak in unhandled promise rejection handler
 [2026-09-22T17:18:44] test: verify linearizability of raft log replication under network partition
 [2026-09-22T17:35:46] perf: reduce contention on global runtime epoch counter
@@ -78,3 +77,4 @@
 [2026-10-02T22:31:25] refactor: extract modular trait abstractions for heterogeneous compute kernels
 [2026-10-03T17:27:55] feat: implement fast path for pre-allocated socket buffers
 [2026-10-03T18:01:05] perf: reduce instruction cache misses in core execution pipeline
+[2026-10-03T18:44:32] refactor: decouple event loop driver from reactor notification subsystem
