@@ -1,4 +1,3 @@
-[2026-09-27T17:50:26] fix: bounds check edge case in variable-length frame decoder
 [2026-09-27T18:03:32] test: verify linearizability of raft log replication under network partition
 [2026-09-27T20:15:21] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-28T13:47:13] fix: bounds check edge case in variable-length frame decoder
@@ -78,3 +77,4 @@
 [2026-10-07T12:16:56] test: add stress tests for re-entrant lock acquisition
 [2026-10-07T13:28:19] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-10-07T13:52:06] perf: tune slab allocator bucket sizes for small object cache locality
+[2026-10-07T14:31:21] docs: update architecture specification and memory layout benchmarks
