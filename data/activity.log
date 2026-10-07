@@ -1,4 +1,3 @@
-[2026-09-27T20:15:21] perf: vectorize matrix operations with AVX-512 extensions
 [2026-09-28T13:47:13] fix: bounds check edge case in variable-length frame decoder
 [2026-09-28T14:41:02] test: benchmark concurrent hashmap under high write contention
 [2026-09-28T15:45:52] feat: integrate atomic CAS operations for lockless state synchronization
@@ -78,3 +77,4 @@
 [2026-10-07T13:52:06] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-10-07T14:31:21] docs: update architecture specification and memory layout benchmarks
 [2026-10-07T14:42:29] chore: update toolchain dependencies and compiler flags for release build
+[2026-10-07T14:59:14] test: verify linearizability of raft log replication under network partition
