@@ -1,4 +1,3 @@
-[2026-10-05T21:53:40] perf: vectorize matrix operations with AVX-512 extensions
 [2026-10-05T22:07:15] refactor: clean up error type hierarchy and propagate context
 [2026-10-06T10:43:12] test: verify linearizability of raft log replication under network partition
 [2026-10-06T11:10:45] refactor: clean up error type hierarchy and propagate context
@@ -78,3 +77,4 @@
 [2026-10-15T09:18:36] refactor: normalize data structures for cache line alignment
 [2026-10-15T10:18:17] test: add stress tests for re-entrant lock acquisition
 [2026-10-15T10:30:00] refactor: clean up error type hierarchy and propagate context
+[2026-10-15T12:18:47] docs: update architecture specification and memory layout benchmarks
