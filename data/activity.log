@@ -1,4 +1,3 @@
-[2026-10-09T09:06:35] test: verify linearizability of raft log replication under network partition
 [2026-10-09T09:36:53] perf: reduce contention on global runtime epoch counter
 [2026-10-09T10:16:53] feat: author low-overhead asynchronous logging sink
 [2026-10-09T11:33:29] perf: vectorize matrix operations with AVX-512 extensions
@@ -78,3 +77,4 @@
 [2026-10-19T11:33:30] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-10-19T11:58:38] feat: implement zero-copy ringbuffer for low-latency network packet parsing
 [2026-10-19T12:14:22] feat: author low-overhead asynchronous logging sink
+[2026-10-19T12:49:35] perf: tune slab allocator bucket sizes for small object cache locality
