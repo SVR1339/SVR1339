@@ -1,4 +1,3 @@
-[2026-10-14T12:50:05] refactor: decouple event loop driver from reactor notification subsystem
 [2026-10-14T13:30:38] fix: alignment fault on unaligned memory access in serialization buffer
 [2026-10-14T15:48:13] fix: bounds check edge case in variable-length frame decoder
 [2026-10-14T16:01:51] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
@@ -78,3 +77,4 @@
 [2026-10-23T10:43:52] perf: reduce contention on global runtime epoch counter
 [2026-10-23T15:59:26] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-10-23T16:53:59] perf: vectorize matrix operations with AVX-512 extensions
+[2026-10-23T18:46:45] refactor: normalize data structures for cache line alignment
