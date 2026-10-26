@@ -1,4 +1,3 @@
-[2026-10-15T10:30:00] refactor: clean up error type hierarchy and propagate context
 [2026-10-15T12:18:47] docs: update architecture specification and memory layout benchmarks
 [2026-10-15T12:28:14] perf: tune slab allocator bucket sizes for small object cache locality
 [2026-10-15T15:49:36] fix: alignment fault on unaligned memory access in serialization buffer
@@ -78,3 +77,4 @@
 [2026-10-24T19:26:30] feat: implement fast path for pre-allocated socket buffers
 [2026-10-24T20:35:58] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
 [2026-10-26T11:12:15] fix: resolve worker threadpool deadlock during high-concurrency event dispatch
+[2026-10-26T12:10:33] refactor: clean up error type hierarchy and propagate context
