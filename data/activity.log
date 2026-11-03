@@ -1,4 +1,3 @@
-[2026-10-23T10:43:52] perf: reduce contention on global runtime epoch counter
 [2026-10-23T15:59:26] feat: add lock-free work-stealing scheduler for task graph execution
 [2026-10-23T16:53:59] perf: vectorize matrix operations with AVX-512 extensions
 [2026-10-23T18:46:45] refactor: normalize data structures for cache line alignment
@@ -78,3 +77,4 @@
 [2026-11-03T15:45:45] docs: update architecture specification and memory layout benchmarks
 [2026-11-03T16:22:16] refactor: normalize data structures for cache line alignment
 [2026-11-03T18:12:21] refactor: normalize data structures for cache line alignment
+[2026-11-03T19:24:19] perf: optimize async memory allocator throughput with SIMD vector intrinsics
