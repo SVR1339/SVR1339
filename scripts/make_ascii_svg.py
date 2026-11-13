@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Convert the Roman marble bust with headphones into a high-density,
-dark, bold '@' wave style ASCII-art SVG.
-Produces:
-  - svr-ascii.svg (standalone terminal window with typing animation)
-  - data/ascii_rows.json (consumed by render_cards.py for hero.svg)
+Generate high-fidelity, high-contrast 3D Roman marble bust ASCII art with headphones.
+Features:
+  - Natural whitespace and delicate punctuation for highlights (forehead, nose, lit cheek)
+  - Dense, bold '@' wave glyphs for deep contours, beard curls, and headphones
+  - True 1:1 square aspect ratio (180 cols x 96 rows, cell ratio 15:8)
 """
 import os, sys, html, json
 import numpy as np
-from PIL import Image, ImageEnhance, ImageOps, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
@@ -21,7 +21,7 @@ COLS = 180
 ART_W_TARGET = 800
 CELL_W = ART_W_TARGET / COLS
 CELL_H = CELL_W * 15 / 8
-ROWS = round(COLS * 8 / 15)  # 96 rows
+ROWS = round(COLS * 8 / 15)  # exactly 96 rows
 
 PAD = 20
 TITLEBAR_H = 30
@@ -41,15 +41,14 @@ CURSOR = "#58a6ff"
 ROW_DUR = 5.8 / ROWS
 STAGGER = ROW_DUR
 
-# Dense '@' wave character ramp for dark bold ink
-RAMP_INK = " .:=+*sS#%@@@@"
-RAMP_PHOSPHOR = " .:=+*sS#%@@"
+RAMP_PAPER = "  ..::--==++**ssSS##%%@@@@"
+RAMP_TERM = " .:=+*sS#%@@"
 
 def generate():
     im = Image.open(SRC).convert("L")
     arr = np.array(im)
 
-    # 1. Square bounding box centered on the sculpture to ensure 1:1 classical proportions
+    # 1. 1:1 Square bounding box centered on sculpture
     ys, xs = np.where(arr > 25)
     cx = int((xs.min() + xs.max()) / 2)
     cy = int((ys.min() + ys.max()) / 2)
@@ -68,11 +67,17 @@ def generate():
     cropped = im.crop((crop_x0, crop_y0, crop_x1, crop_y1))
     sq_im.paste(cropped, (crop_x0 - x0, crop_y0 - y0))
 
-    # Resize to exact ASCII resolution
     grid = sq_im.resize((COLS, ROWS), Image.LANCZOS)
     g_arr = np.array(grid).astype(np.float32) / 255.0
 
-    # Local ridge and edge extraction (finds headphones headband, curls, eyes, nose, folds)
+    # Difference of Gaussians (DoG) for sharp contour extraction
+    g1 = grid.filter(ImageFilter.GaussianBlur(radius=0.8))
+    g2 = grid.filter(ImageFilter.GaussianBlur(radius=2.5))
+    arr_g1 = np.array(g1).astype(np.float32) / 255.0
+    arr_g2 = np.array(g2).astype(np.float32) / 255.0
+    dog = np.clip((arr_g2 - arr_g1) * 3.6, 0.0, 1.0)
+
+    # Edges
     edges = grid.filter(ImageFilter.FIND_EDGES)
     e_arr = np.array(edges).astype(np.float32) / 255.0
 
@@ -85,27 +90,31 @@ def generate():
         for x in range(COLS):
             v = g_arr[y, x]
             e = e_arr[y, x]
+            d = dog[y, x]
 
             if v < 0.12:
                 p_chars.append(" ")
                 t_chars.append(" ")
             else:
-                # PAPER MODE: Dark, bold '@' wave ink on light paper
-                # Edges pop with @/%, shadows get heavy ink, highlights stay structured
-                edge_boost = e * 1.9
-                shadow = (1.0 - v) * 1.45
-                ink = max(edge_boost, shadow * 0.9 + 0.28)
-                ink = min(1.0, max(0.0, ink))
-                ink_curve = pow(ink, 0.68)
-                idx_p = int(round(ink_curve * (len(RAMP_INK) - 1)))
-                idx_p = max(1, min(len(RAMP_INK) - 1, idx_p))
-                p_chars.append(RAMP_INK[idx_p])
+                # PAPER 3D SCULPTURE:
+                # Bright marble highlights -> let paper show through (spaces or subtle dots)
+                # Shadows & contours -> dense bold '@' wave characters
+                shadow = np.clip((0.96 - v) / 0.84, 0.0, 1.0)
+                contour = max(e * 1.6, d * 1.9)
+                ink = max(contour * 0.88, pow(shadow, 1.35))
 
-                # TERMINAL MODE: Glowing phosphor
-                lum = min(1.0, max(0.0, v * 0.90 + e * 0.50))
-                idx_t = int(round(lum * (len(RAMP_PHOSPHOR) - 1)))
-                idx_t = max(0, min(len(RAMP_PHOSPHOR) - 1, idx_t))
-                t_chars.append(RAMP_PHOSPHOR[idx_t])
+                if ink < 0.09:
+                    p_chars.append(" ")
+                else:
+                    idx_p = int(ink * (len(RAMP_PAPER) - 1))
+                    idx_p = min(len(RAMP_PAPER) - 1, max(0, idx_p))
+                    p_chars.append(RAMP_PAPER[idx_p])
+
+                # TERMINAL PHOSPHOR:
+                lum = min(1.0, max(0.0, v * 0.92 + contour * 0.45))
+                idx_t = int(round(lum * (len(RAMP_TERM) - 1)))
+                idx_t = max(0, min(len(RAMP_TERM) - 1, idx_t))
+                t_chars.append(RAMP_TERM[idx_t])
 
         paper_rows.append("".join(p_chars))
         term_rows.append("".join(t_chars))

@@ -140,8 +140,7 @@ def hero():
             y = 12 + i * 8.333 + 6.0
             safe = escape(txt)
             portrait_lines.append(
-                f'<text class="f" style="animation-delay:{0.20 + i * 0.015:.3f}s;animation-duration:.35s" '
-                f'xml:space="preserve" x="20" y="{y:.1f}" fill="#000000" font-weight="700" font-size="7.4" '
+                f'<text xml:space="preserve" x="20" y="{y:.1f}" fill="#111111" font-weight="700" font-size="7.4" '
                 f'textLength="800" lengthAdjust="spacing">{safe}</text>'
             )
     s = 0.38
@@ -154,6 +153,11 @@ def hero():
     <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
       keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
   </linearGradient>
+  <clipPath id="sculpture_reveal">
+    <rect x="0" y="0" width="850" height="0">
+      <animate attributeName="height" from="0" to="850" dur="2.4s" begin="0.25s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1"/>
+    </rect>
+  </clipPath>
 </defs>
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
 <g class="f" {d(0)}>
@@ -170,7 +174,15 @@ def hero():
   <text class="nu" x="132" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
 <g transform="translate(535 26) scale({s}) translate(-20 -15)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-  {''.join(portrait_lines)}
+  <g clip-path="url(#sculpture_reveal)">
+    {''.join(portrait_lines)}
+  </g>
+  <line x1="20" y1="0" x2="820" y2="0" stroke="{TECH}" stroke-width="2.5" opacity="0">
+    <animate attributeName="y1" from="0" to="810" dur="2.4s" begin="0.25s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1"/>
+    <animate attributeName="y2" from="0" to="810" dur="2.4s" begin="0.25s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1"/>
+    <set attributeName="opacity" to="0.8" begin="0.25s"/>
+    <set attributeName="opacity" to="0" begin="2.68s"/>
+  </line>
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
