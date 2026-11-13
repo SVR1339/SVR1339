@@ -141,10 +141,10 @@ def hero():
             safe = escape(txt)
             portrait_lines.append(
                 f'<text class="f" style="animation-delay:{0.20 + i * 0.015:.3f}s;animation-duration:.35s" '
-                f'xml:space="preserve" x="20" y="{y:.1f}" fill="#050505" font-weight="700" font-size="7.8" '
+                f'xml:space="preserve" x="20" y="{y:.1f}" fill="#000000" font-weight="700" font-size="7.4" '
                 f'textLength="800" lengthAdjust="spacing">{safe}</text>'
             )
-    s = 0.435
+    s = 0.38
     body = f"""
 <defs>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
@@ -163,13 +163,13 @@ def hero():
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Sai</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Vardhan</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["Full-Stack Systems Engineer & Architect.", "Building high-performance runtimes and autonomous tooling."], 27, f'font-family="{SANS}" font-size="17" fill="{INK_SOFT}"')}
+  {text_lines(48, 338, ["Full-Stack Systems Engineer & Architect.", "High-performance runtimes & autonomous systems."], 27, f'font-family="{SANS}" font-size="17" fill="{INK_SOFT}"')}
 </g>
 <g class="f" {d(0.8)}>
   <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">bsvr.work</text>
   <text class="nu" x="132" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
-<g transform="translate(500 38) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<g transform="translate(535 26) scale({s}) translate(-20 -15)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait_lines)}
 </g>
 """
