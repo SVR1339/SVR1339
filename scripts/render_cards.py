@@ -158,12 +158,12 @@ def hero():
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
 <g class="f" {d(0)}>
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
-  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">PRINCIPAL SYSTEMS ENGINEER · HIREPAT LTD</text>
+  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">PRINCIPAL SYSTEMS ENGINEER · 5+ YRS CORE SYSTEMS · HIREPAT LTD</text>
 </g>
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Sai</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Vardhan</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["Full-Stack Systems Engineer & Architect.", "High-performance runtimes & autonomous systems."], 27, f'font-family="{SANS}" font-size="17" fill="{INK_SOFT}"')}
+  {text_lines(48, 338, ["Full-Stack Systems Engineer & Architect.", "5+ years building high-performance runtimes & autonomous systems."], 27, f'font-family="{SANS}" font-size="17" fill="{INK_SOFT}"')}
 </g>
 <g class="f" {d(0.8)}>
   <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">bsvr.work</text>
@@ -439,8 +439,8 @@ def run():
     hero()
 
     # 2. Tiles
-    tile("build", "BUILD", TECH, "#ffffff", "4+", "systems",
-         "HidingJackson, PRUBETH runtime, Mercury installer & SmartThings standalone hub.", 3.1, 0)
+    tile("build", "EXPERIENCE", TECH, "#ffffff", "5+", "years",
+         "5 years architecting high-performance distributed runtimes, low-latency proxies & autonomous tooling.", 3.1, 0)
     tile("forge", "PLATFORM", STUDIO, "#ffffff", "HIREPATH", "suite",
          "Full-stack AI job platform: smart resume tailoring, match scoring and automated workflow.", 3.35, 1)
     tile("deploy", "INFRASTRUCTURE", LEARN, INK, "GLOBAL", "scale",
