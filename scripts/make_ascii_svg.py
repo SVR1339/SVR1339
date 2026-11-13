@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Convert the marble-bust-with-headphones image into a high-density,
+Convert the Roman marble bust with headphones into a high-density,
 dark, bold '@' wave style ASCII-art SVG.
-Outputs:
-  - svr-ascii.svg (standalone terminal window)
+Produces:
+  - svr-ascii.svg (standalone terminal window with typing animation)
   - data/ascii_rows.json (consumed by render_cards.py for hero.svg)
 """
 import os, sys, html, json
 import numpy as np
-from PIL import Image, ImageEnhance, ImageOps
+from PIL import Image, ImageEnhance, ImageOps, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
@@ -41,74 +41,80 @@ CURSOR = "#58a6ff"
 ROW_DUR = 5.8 / ROWS
 STAGGER = ROW_DUR
 
-# '@' Wave density ramp: dark glyphs dominated by @, %, #, S, s
-RAMP_AT = " .-=+*sS#%@"
+# Dense '@' wave character ramp for dark bold ink
+RAMP_INK = " .:=+*sS#%@@@@"
+RAMP_PHOSPHOR = " .:=+*sS#%@@"
 
 def generate():
     im = Image.open(SRC).convert("L")
-    arr_full = np.array(im)
+    arr = np.array(im)
 
-    # 1. Square crop centered on the sculpture to maintain true 1:1 classical proportions
-    ys, xs = np.where(arr_full > 18)
-    cx = (xs.min() + xs.max()) // 2
-    cy = (ys.min() + ys.max()) // 2
-    side = max(xs.max() - xs.min(), ys.max() - ys.min()) + 40
-    x0 = max(0, cx - side // 2)
-    y0 = max(0, cy - side // 2)
-    im_sq = im.crop((x0, y0, min(im.width, x0 + side), min(im.height, y0 + side)))
+    # 1. Square bounding box centered on the sculpture to ensure 1:1 classical proportions
+    ys, xs = np.where(arr > 25)
+    cx = int((xs.min() + xs.max()) / 2)
+    cy = int((ys.min() + ys.max()) / 2)
+    bw = xs.max() - xs.min()
+    bh = ys.max() - ys.min()
+    side = int(max(bw, bh) * 1.05)
 
-    if im_sq.width != im_sq.height:
-        sz = max(im_sq.width, im_sq.height)
-        canvas = Image.new("L", (sz, sz), 0)
-        canvas.paste(im_sq, ((sz - im_sq.width) // 2, (sz - im_sq.height) // 2))
-        im_sq = canvas
+    sq_im = Image.new("L", (side, side), 0)
+    x0 = cx - side // 2
+    y0 = cy - side // 2
+
+    crop_x0 = max(0, x0)
+    crop_y0 = max(0, y0)
+    crop_x1 = min(im.width, x0 + side)
+    crop_y1 = min(im.height, y0 + side)
+    cropped = im.crop((crop_x0, crop_y0, crop_x1, crop_y1))
+    sq_im.paste(cropped, (crop_x0 - x0, crop_y0 - y0))
 
     # Resize to exact ASCII resolution
-    im_scaled = im_sq.resize((COLS, ROWS), Image.LANCZOS)
+    grid = sq_im.resize((COLS, ROWS), Image.LANCZOS)
+    g_arr = np.array(grid).astype(np.float32) / 255.0
 
-    # Local contrast & edge sharpening for bold, defined '@' waves
-    im_eq = ImageOps.equalize(im_scaled)
-    im_blend = Image.blend(im_scaled, im_eq, 0.65)
-    im_sharp = ImageEnhance.Sharpness(im_blend).enhance(2.5)
-    im_contrast = ImageEnhance.Contrast(im_sharp).enhance(1.6)
-    arr_s = np.array(im_contrast) / 255.0
+    # Local ridge and edge extraction (finds headphones headband, curls, eyes, nose, folds)
+    edges = grid.filter(ImageFilter.FIND_EDGES)
+    e_arr = np.array(edges).astype(np.float32) / 255.0
 
-    # 1. Dark '@' Wave Paper Rows (for hero.svg)
     paper_rows = []
-    for y in range(ROWS):
-        chars = []
-        for x in range(COLS):
-            val = arr_s[y, x]
-            if val < 0.12:
-                chars.append(" ")
-            else:
-                norm = (val - 0.12) / 0.88
-                norm_inv = pow(1.0 - norm, 0.52)
-                idx = int(norm_inv * (len(RAMP_AT) - 1) + 0.5)
-                idx = max(1, min(len(RAMP_AT) - 1, idx))
-                chars.append(RAMP_AT[idx])
-        paper_rows.append("".join(chars))
-
-    # 2. Terminal Mode Rows
     term_rows = []
+
     for y in range(ROWS):
-        chars = []
+        p_chars = []
+        t_chars = []
         for x in range(COLS):
-            val = arr_s[y, x]
-            if val < 0.12:
-                chars.append(" ")
+            v = g_arr[y, x]
+            e = e_arr[y, x]
+
+            if v < 0.12:
+                p_chars.append(" ")
+                t_chars.append(" ")
             else:
-                norm = (val - 0.12) / 0.88
-                idx = int(norm * (len(RAMP_AT) - 1) + 0.5)
-                idx = max(0, min(len(RAMP_AT) - 1, idx))
-                chars.append(RAMP_AT[idx])
-        term_rows.append("".join(chars))
+                # PAPER MODE: Dark, bold '@' wave ink on light paper
+                # Edges pop with @/%, shadows get heavy ink, highlights stay structured
+                edge_boost = e * 1.9
+                shadow = (1.0 - v) * 1.45
+                ink = max(edge_boost, shadow * 0.9 + 0.28)
+                ink = min(1.0, max(0.0, ink))
+                ink_curve = pow(ink, 0.68)
+                idx_p = int(round(ink_curve * (len(RAMP_INK) - 1)))
+                idx_p = max(1, min(len(RAMP_INK) - 1, idx_p))
+                p_chars.append(RAMP_INK[idx_p])
+
+                # TERMINAL MODE: Glowing phosphor
+                lum = min(1.0, max(0.0, v * 0.90 + e * 0.50))
+                idx_t = int(round(lum * (len(RAMP_PHOSPHOR) - 1)))
+                idx_t = max(0, min(len(RAMP_PHOSPHOR) - 1, idx_t))
+                t_chars.append(RAMP_PHOSPHOR[idx_t])
+
+        paper_rows.append("".join(p_chars))
+        term_rows.append("".join(t_chars))
 
     with open(ROWS_JSON, "w", encoding="utf-8") as f:
-        json.dump({"terminal": term_rows, "paper": paper_rows}, f)
-    print(f"✓ Saved bold '@' wave ASCII rows ({len(paper_rows)} rows) to data/ascii_rows.json")
+        json.dump({"paper": paper_rows, "terminal": term_rows, "cols": COLS, "rows": ROWS}, f, indent=2)
+    print(f"✓ Saved {ROWS} rows of {COLS} cols to {ROWS_JSON}")
 
-    # 3. Assemble svr-ascii.svg (standalone terminal card)
+    # Build standalone terminal card svr-ascii.svg
     art_top = TITLEBAR_H + PAD * 0.35
     parts = []
     parts.append(
@@ -156,16 +162,17 @@ def generate():
     status_y = status_line_y + 19
     parts.append(f'<line x1="0" y1="{status_line_y:.1f}" x2="{CANVAS_W}" y2="{status_line_y:.1f}" stroke="{FRAME}"/>')
     parts.append(f'<text x="{PAD}" y="{status_y:.1f}" fill="{TITLE_TEXT}" font-size="13">'
-                 f'svr1339@github:~$ whoami <tspan fill="{INK}">Banda Sai Vardhan Reddy</tspan></text>')
-    status_chars = len("svr1339@github:~$ whoami Banda Sai Vardhan Reddy ")
+                 f'svr1339@github:~$ whoami <tspan fill="{INK}">Sai Vardhan</tspan></text>')
+    status_chars = len("svr1339@github:~$ whoami Sai Vardhan ")
     parts.append(f'<rect x="{PAD + status_chars * 13 * 0.6:.1f}" y="{status_y-12:.1f}" width="8" height="14" fill="{CURSOR}">'
                  f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" '
                  f'dur="1s" repeatCount="indefinite"/></rect>')
-    parts.append("</svg>")
 
+    parts.append("</svg>")
+    svg_content = "".join(parts)
     with open(OUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(parts))
-    print("✓ Saved bold '@' wave terminal SVG to svr-ascii.svg")
+        f.write(svg_content)
+    print(f"✓ Wrote {OUT} ({len(svg_content)} bytes)")
 
 if __name__ == "__main__":
     generate()
