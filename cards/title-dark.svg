@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="56" viewBox="0 0 880 56">
+<defs>
+<style>
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+  @keyframes grow     { from { transform:scaleY(0); transform-origin:bottom; } to { transform:scaleY(1); transform-origin:bottom; } }
+  @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+  @keyframes shimmer  { 0% { stop-color:#f5a623; stop-opacity:0.1; } 50% { stop-color:#f5a623; stop-opacity:0.4; } 100% { stop-color:#f5a623; stop-opacity:0.1; } }
+  .fu0  { animation: fadeUp 0.5s ease 0.0s both; }
+  .fu1  { animation: fadeUp 0.5s ease 0.1s both; }
+  .fu2  { animation: fadeUp 0.5s ease 0.2s both; }
+  .fu3  { animation: fadeUp 0.5s ease 0.3s both; }
+  .fu4  { animation: fadeUp 0.5s ease 0.4s both; }
+  .fu5  { animation: fadeUp 0.5s ease 0.5s both; }
+  .fu6  { animation: fadeUp 0.5s ease 0.6s both; }
+  .fu7  { animation: fadeUp 0.5s ease 0.7s both; }
+  .fu8  { animation: fadeUp 0.5s ease 0.8s both; }
+  .fi0  { animation: fadeIn 0.6s ease 0.0s both; }
+  .fi1  { animation: fadeIn 0.6s ease 0.15s both; }
+  .fi2  { animation: fadeIn 0.6s ease 0.3s both; }
+  .fi3  { animation: fadeIn 0.6s ease 0.45s both; }
+  .fi4  { animation: fadeIn 0.6s ease 0.6s both; }
+</style>
+
+</defs>
+<rect width="880" height="56" fill="#0a0a0a"/>
+
+<rect width="880" height="56" fill="#0a0a0a"/>
+<text x="28" y="36" font-size="15" font-weight="600" font-family="Geist Mono, ui-monospace, 'Cascadia Code', Menlo, monospace"
+  fill="#f5a623" letter-spacing="0.08em">$ ls ~/builds  —  What I'm building</text>
+<text x="852" y="36" text-anchor="end" font-size="11" font-family="Geist Mono, ui-monospace, 'Cascadia Code', Menlo, monospace"
+  fill="#f5a623" opacity="0.5">SVR1339</text>
+</svg>
