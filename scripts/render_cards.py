@@ -100,7 +100,7 @@ def svg(w, h, body, fonts, label, extra_css="", left=0, right=0, bottom=BOTTOM):
     w, h = w + left + right, h + bottom
     css = font_face(fonts) + BASE_CSS + extra_css
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" '
         f'role="img" aria-label="{escape(label)}"><title>{escape(label)}</title>'
         f"<style>{css}</style>{body}</svg>"
     )
@@ -156,7 +156,7 @@ def hero():
   </linearGradient>
 </defs>
 <g clip-path="url(#hero_clip)">
-  <image href="data:image/jpeg;base64,{b64_bg}" x="0" y="-35" width="{W}" height="491" preserveAspectRatio="xMidYMid slice"/>
+  <image href="data:image/jpeg;base64,{b64_bg}" xlink:href="data:image/jpeg;base64,{b64_bg}" x="0" y="-35" width="{W}" height="491" preserveAspectRatio="xMidYMid slice"/>
   <rect width="{W}" height="{h}" fill="url(#scrim)"/>
 </g>
 <rect width="{W}" height="{h}" rx="14" fill="none" stroke="{RULE}" stroke-width="1"/>
@@ -174,8 +174,10 @@ def hero():
   <text class="nu" x="132" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
 """
-    write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Sai Vardhan. Principal Systems Engineer at HIREPAT Ltd. Full-Stack Systems Engineer & Architect."))
+    card_svg = svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
+                   "Sai Vardhan. Principal Systems Engineer at HIREPAT Ltd. Full-Stack Systems Engineer & Architect.")
+    write("hero-header.svg", card_svg)
+    write("hero.svg", card_svg)
 
 # 2. WORLD TILES
 TILE_W, TILE_H = 880 / 3 - 8, 210
