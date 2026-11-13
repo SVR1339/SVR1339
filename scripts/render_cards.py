@@ -140,11 +140,11 @@ def hero():
             y = 12 + i * 8.333 + 6.0
             safe = escape(txt)
             portrait_lines.append(
-                f'<text class="f" style="animation-delay:{0.25 + i * 0.018:.3f}s;animation-duration:.35s" '
-                f'xml:space="preserve" x="20" y="{y:.1f}" fill="{INK}" font-size="7.2" '
+                f'<text class="f" style="animation-delay:{0.20 + i * 0.015:.3f}s;animation-duration:.35s" '
+                f'xml:space="preserve" x="20" y="{y:.1f}" fill="#050505" font-weight="700" font-size="7.8" '
                 f'textLength="800" lengthAdjust="spacing">{safe}</text>'
             )
-    s = 0.41
+    s = 0.435
     body = f"""
 <defs>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
@@ -169,7 +169,7 @@ def hero():
   <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">bsvr.work</text>
   <text class="nu" x="132" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
-<g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<g transform="translate(500 38) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait_lines)}
 </g>
 """

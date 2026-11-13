@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Convert the marble-bust-with-headphones image into a high-precision,
-monochrome ASCII-art SVG that prints like an animated terminal, then holds.
+Convert the marble-bust-with-headphones image into a high-density,
+punchy, BOLD monochrome ASCII-art SVG.
 Outputs:
-  - svr-ascii.svg (standalone terminal window with macOS controls)
-  - data/ascii_rows.json (consumed directly by render_cards.py for hero.svg)
+  - svr-ascii.svg (standalone terminal window)
+  - data/ascii_rows.json (consumed by render_cards.py for hero.svg)
 """
 import os, sys, html, json
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
@@ -17,12 +17,11 @@ OUT = os.path.join(ROOT, "svr-ascii.svg")
 ROWS_JSON = os.path.join(ROOT, "data", "ascii_rows.json")
 os.makedirs(os.path.dirname(ROWS_JSON), exist_ok=True)
 
-COLS = 180
+COLS = 160
 ART_W_TARGET = 800
 CELL_W = ART_W_TARGET / COLS
 CELL_H = CELL_W * 15 / 8
-ROWS = round(COLS * 8 / 15)  # 96 rows
-RAMP = " .`:-=+*cs#%@"
+ROWS = round(COLS * 8 / 15)  # 85 rows
 
 PAD = 20
 TITLEBAR_H = 30
@@ -36,54 +35,73 @@ BG = "#0d1117"
 BG2 = "#111722"
 FRAME = "#30363d"
 TITLE_TEXT = "#7d8590"
-INK = "#c9d1d9"
+INK = "#e6edf3"
 CURSOR = "#58a6ff"
 
 ROW_DUR = 5.8 / ROWS
 STAGGER = ROW_DUR
 
+RAMP_PAPER = " .:-=+*xS8%#@"
+RAMP_TERM  = " .`:-=+*cs#%@"
+
 def generate():
     im = Image.open(SRC).convert("L")
-    im = ImageEnhance.Contrast(im).enhance(1.25)
-    im = ImageEnhance.Sharpness(im).enhance(1.4)
-    im = im.resize((COLS, ROWS), Image.LANCZOS)
-    arr = np.array(im) / 255.0
+    arr_full = np.array(im)
 
-    # 1. Generate rows for Terminal Mode (dark screen, glowing characters)
-    rows_txt = []
-    for y in range(ROWS):
-        chars = []
-        for x in range(COLS):
-            val = arr[y, x]
-            if val < 0.08:
-                chars.append(" ")
-            else:
-                norm = (val - 0.08) / 0.92
-                idx = int(norm * (len(RAMP) - 1) + 0.5)
-                idx = max(0, min(len(RAMP) - 1, idx))
-                chars.append(RAMP[idx])
-        rows_txt.append("".join(chars))
+    # Tight crop around the sculpture to maximize detail and size
+    ys, xs = np.where(arr_full > 18)
+    y_min, y_max = max(0, ys.min() - 15), min(im.height, ys.max() + 15)
+    x_min, x_max = max(0, xs.min() - 15), min(im.width, xs.max() + 15)
+    im_cropped = im.crop((x_min, y_min, x_max, y_max))
 
-    # 2. Generate rows for Paper/Hero Mode (shadows & contours mapped to dark ink)
+    # Resize to ASCII grid
+    im_scaled = im_cropped.resize((COLS, ROWS), Image.LANCZOS)
+
+    # Tone mapping & sharpness enhancement for punchy bold detail
+    im_eq = ImageOps.equalize(im_scaled)
+    im_blend = Image.blend(im_scaled, im_eq, 0.55)
+    im_sharp = ImageEnhance.Sharpness(im_blend).enhance(2.2)
+    im_contrast = ImageEnhance.Contrast(im_sharp).enhance(1.4)
+    arr = np.array(im_contrast) / 255.0
+
+    # 1. BOLD Paper Mode (for hero.svg on light/paper background)
+    # Heavy dark ink glyphs for contours, deep beard/hair curls, and headphones
     paper_rows = []
     for y in range(ROWS):
         chars = []
         for x in range(COLS):
             val = arr[y, x]
-            if val < 0.08:
+            if val < 0.10:
                 chars.append(" ")
             else:
-                norm = pow(1.0 - (val - 0.08) / 0.92, 1.15)
-                idx = int(norm * (len(RAMP) - 1) + 0.5)
-                idx = max(0, min(len(RAMP) - 1, idx))
-                chars.append(RAMP[idx])
+                norm = (val - 0.10) / 0.90
+                # Invert: shadows get heavy ink, highlights get crisp structured hatching
+                norm_inv = pow(1.0 - norm, 0.58)
+                idx = int(norm_inv * (len(RAMP_PAPER) - 1) + 0.5)
+                idx = max(1, min(len(RAMP_PAPER) - 1, idx))
+                chars.append(RAMP_PAPER[idx])
         paper_rows.append("".join(chars))
 
-    with open(ROWS_JSON, "w", encoding="utf-8") as f:
-        json.dump({"terminal": rows_txt, "paper": paper_rows}, f)
-    print(f"✓ Saved ASCII rows ({len(rows_txt)} rows) to data/ascii_rows.json")
+    # 2. Terminal Mode (glowing phosphor on dark background)
+    term_rows = []
+    for y in range(ROWS):
+        chars = []
+        for x in range(COLS):
+            val = arr[y, x]
+            if val < 0.10:
+                chars.append(" ")
+            else:
+                norm = (val - 0.10) / 0.90
+                idx = int(norm * (len(RAMP_TERM) - 1) + 0.5)
+                idx = max(0, min(len(RAMP_TERM) - 1, idx))
+                chars.append(RAMP_TERM[idx])
+        term_rows.append("".join(chars))
 
-    # 3. Assemble standalone animated SVG: svr-ascii.svg
+    with open(ROWS_JSON, "w", encoding="utf-8") as f:
+        json.dump({"terminal": term_rows, "paper": paper_rows}, f)
+    print(f"✓ Saved high-contrast ASCII rows ({len(paper_rows)} rows) to data/ascii_rows.json")
+
+    # 3. Assemble svr-ascii.svg (standalone terminal card)
     art_top = TITLEBAR_H + PAD * 0.35
     parts = []
     parts.append(
@@ -104,13 +122,13 @@ def generate():
     parts.append(f'<text x="{CANVAS_W/2}" y="{TITLEBAR_H/2 + 4}" fill="{TITLE_TEXT}" font-size="12" '
                  f'text-anchor="middle">svr1339@github: ~$ ./sculpture.sh</text>')
 
-    font_size = CELL_H * 0.86
-    for ry, line in enumerate(rows_txt):
+    font_size = CELL_H * 0.90
+    for ry, line in enumerate(term_rows):
         y = art_top + ry * CELL_H + CELL_H * 0.74
         row_y = art_top + ry * CELL_H
         delay = ry * STAGGER
         safe = html.escape(line)
-        text = (f'<text xml:space="preserve" x="{PAD}" y="{y:.1f}" fill="{INK}" '
+        text = (f'<text xml:space="preserve" x="{PAD}" y="{y:.1f}" fill="{INK}" font-weight="700" '
                 f'font-size="{font_size:.1f}" textLength="{ART_W}" lengthAdjust="spacing">{safe}</text>')
 
         parts.append(
@@ -140,7 +158,7 @@ def generate():
 
     with open(OUT, "w", encoding="utf-8") as f:
         f.write("\n".join(parts))
-    print(f"✓ Saved terminal portrait SVG to svr-ascii.svg ({len(parts)} tags)")
+    print(f"✓ Saved bold terminal SVG to svr-ascii.svg")
 
 if __name__ == "__main__":
     generate()
