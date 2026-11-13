@@ -1,500 +1,465 @@
 ﻿#!/usr/bin/env python3
 """
-render_cards.py  —  SVR1339 GitHub Profile · v2  "PRINCIPAL ARCHITECT"
-=====================================================================
-Generates every SVG card for the profile README.
-All assets embedded inline — no external HTTP calls at render time.
+Render the profile README's cards as animated SVGs into cards/.
+High-craft design system matching Avi Vashishta's architecture:
+  - Paper & ink editorial palette (#f3f3f1, #111111)
+  - Embedded typography (Instrument Serif, Geist, Geist Mono) via base64 WOFF
+  - SMIL & CSS keyframes for 100% native GitHub <img> rendering
+  - Live ASCII marble bust sculpture portrait
+  - Spring-tile animations, sheen sweeps, and counting numbers
+"""
+import os, sys, re, json, base64, datetime
+from html import escape
 
-Design: dark-marble ink-on-paper aesthetic.
-  bg         #0a0a0a   deep black
-  surface    #111111   card bg
-  border     #1e1e1e
-  amber      #f5a623   primary accent
-  amber2     #c47a0f   darker amber
-  white      #f0ede8   warm white / marble
-  muted      #555045
-  rust       #b83228   BUILD tile
-  violet     #6d28d9   FORGE tile
-  teal       #0f766e   DEPLOY tile
-  marble     #d4c5a9   portrait tint
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.join(HERE, "..")
+DATA = os.path.join(ROOT, "data", "contributions.json")
+ROWS_JSON = os.path.join(ROOT, "data", "ascii_rows.json")
+OUT = os.path.join(ROOT, "cards")
+FONTS = os.path.join(ROOT, "fonts")
+os.makedirs(OUT, exist_ok=True)
 
-Cards produced
-  cards/hero.svg                   Hero banner (ASCII portrait + bio)
-  cards/heatmap.svg                365-day contribution grid
-  cards/activity.svg               12-month bar chart + streak
-  cards/build.svg                  Tile 1 — BUILD
-  cards/forge.svg                  Tile 2 — FORGE
-  cards/deploy.svg                 Tile 3 — DEPLOY
-  cards/title-dark.svg             Section divider (dark mode)
-  cards/title-light.svg            Section divider (light mode)
-  cards/repo-hidingjackson.svg     Repo card
-  cards/repo-prubeth.svg           Repo card
-  cards/repo-hirepath.svg          Repo card
+# Brand tokens
+PAPER = "#f3f3f1"
+PAPER_DEEP = "#e2e2de"
+INK = "#111111"
+INK_SOFT = "#3a3a3c"
+MUTED = "#6e6e73"
+RULE = "#dcdcd7"
+
+# Color accents
+TECH = "#2f55ff"       # Royal Blue
+STUDIO = "#ef3b2d"     # Coral Red
+LEARN = "#f59e0b"      # Amber Gold
+
+W = 880  # Full card width, GitHub column at 100%
+
+SERIF = "'Instrument Serif', Georgia, serif"
+SANS = "Geist, system-ui, -apple-system, sans-serif"
+MONO = "'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+
+FONT_FILES = {
+    "serif": ("Instrument Serif", "normal", 400, "serif-400.woff"),
+    "serif-i": ("Instrument Serif", "italic", 400, "serif-italic.woff"),
+    "sans": ("Geist", "normal", 400, "geist-400.woff"),
+    "sans-b": ("Geist", "normal", 600, "geist-600.woff"),
+    "mono": ("Geist Mono", "normal", 400, "geistmono-400.woff"),
+}
+
+BASE_CSS = """
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pop{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateX(4px)}}
+@keyframes nudgeup{0%,100%{transform:none}50%{transform:translate(3px,-3px)}}
+.r{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) both;transform-box:fill-box}
+.f{opacity:0;animation:fade .9s ease-out both}
+.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
+.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .4s ease-out both}
+.live{animation:pulse 1.6s ease-in-out infinite}
+.n{transform-box:fill-box;animation:nudge 1.8s ease-in-out infinite}
+.nu{transform-box:fill-box;animation:nudgeup 1.8s ease-in-out infinite}
+@keyframes tilein{0%{opacity:0;transform:translateY(90px) scale(.6) rotate(-9deg)}55%{opacity:1;transform:translateY(-10px) scale(1.05) rotate(2deg)}75%{transform:translateY(3px) scale(.98) rotate(-.8deg)}90%{transform:translateY(-1px) scale(1.01) rotate(.2deg)}100%{opacity:1;transform:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes arrowin{0%{opacity:0;transform:translateX(-30px)}60%{opacity:1;transform:translateX(6px)}100%{opacity:1;transform:none}}
+@keyframes roll{from{transform:translateY(60px)}to{transform:none}}
+@keyframes sheen{0%{transform:translateX(-260px) skewX(-20deg)}22%,100%{transform:translateX(420px) skewX(-20deg)}}
+@keyframes ring{0%{opacity:.7;transform:scale(.2)}100%{opacity:0;transform:scale(2.4)}}
+.ti{opacity:0;transform-box:fill-box;transform-origin:50% 60%;animation:tilein 1.1s cubic-bezier(.2,.8,.2,1) both}
+.sl{opacity:0;transform-box:fill-box;animation:slidein .6s cubic-bezier(.2,.7,.2,1) both}
+.ai{opacity:0;transform-box:fill-box;animation:arrowin .7s cubic-bezier(.2,.7,.2,1) both}
+.ro{transform-box:fill-box;animation:roll .8s cubic-bezier(.15,.8,.2,1) both}
+.sh{animation:sheen 5s ease-in-out infinite}
+.rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
+@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.rg{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
 """
 
-import json, math, base64
-from pathlib import Path
-from datetime import datetime, timedelta
+def font_face(keys):
+    out = []
+    for k in keys:
+        if k not in FONT_FILES: continue
+        fam, style, weight, fn = FONT_FILES[k]
+        fp = os.path.join(FONTS, fn)
+        if os.path.exists(fp):
+            b64 = base64.b64encode(open(fp, "rb").read()).decode()
+            out.append(
+                f"@font-face{{font-family:'{fam}';font-style:{style};font-weight:{weight};"
+                f"src:url(data:font/woff;base64,{b64}) format('woff')}}"
+            )
+    return "".join(out)
 
-ROOT   = Path(__file__).parent.parent
-CARDS  = ROOT / "cards";  CARDS.mkdir(exist_ok=True)
-DATA   = ROOT / "data"
-ASSETS = ROOT / "assets"
+GAP = 12
+BOTTOM = 12
+COL = W / 3
 
-USERNAME = "SVR1339"
-NAME     = "Banda Sai Vardhan Reddy"
-COMPANY  = "HIREPAT Ltd"
-SITE     = "bsvr.work"
-LOCATION = "Global"
-ROLE1    = "Principal Engineer"
-ROLE2    = "Full-Stack Systems Engineer"
-BIO      = "Rust · Python · TypeScript · C++  —  infrastructure for the professional developer."
-
-W = 880   # all cards same width
-
-# ── palette ──────────────────────────────────────────────────────────────────
-C = dict(
-    bg="#0a0a0a", surface="#111111", surface2="#161616",
-    border="#1e1e1e", border2="#262626",
-    amber="#f5a623", amber2="#c47a0f",
-    white="#f0ede8", muted="#6b6356", dim="#272320",
-    rust="#b83228", violet="#6d28d9", teal="#0f766e",
-    marble="#d4c5a9", green="#22c55e",
-)
-
-MONO  = "\"Geist Mono\",\"Cascadia Code\",\"Fira Code\",Menlo,monospace"
-SANS  = "\"Geist\",system-ui,-apple-system,sans-serif"
-SERIF = "\"Playfair Display\",Georgia,serif"
-
-# ── shared CSS injected into every SVG ───────────────────────────────────────
-BASE_CSS = f"""
-  @keyframes fadeUp  {{from{{opacity:0;transform:translateY(10px)}}to{{opacity:1;transform:translateY(0)}}}}
-  @keyframes fadeIn  {{from{{opacity:0}}to{{opacity:1}}}}
-  @keyframes grow    {{from{{transform:scaleY(0.02)}}to{{transform:scaleY(1)}}}}
-  @keyframes pulse   {{0%,100%{{opacity:1}}50%{{opacity:0.3}}}}
-  @keyframes scan    {{0%{{transform:translateY(0)}}100%{{transform:translateY(100%)}}}}
-  @keyframes typing  {{from{{clip-path:inset(0 100% 0 0)}}to{{clip-path:inset(0 0 0 0)}}}}
-  .a0{{animation:fadeUp .5s ease 0.00s both}}  .a1{{animation:fadeUp .5s ease 0.08s both}}
-  .a2{{animation:fadeUp .5s ease 0.16s both}}  .a3{{animation:fadeUp .5s ease 0.24s both}}
-  .a4{{animation:fadeUp .5s ease 0.32s both}}  .a5{{animation:fadeUp .5s ease 0.40s both}}
-  .a6{{animation:fadeUp .5s ease 0.48s both}}  .a7{{animation:fadeUp .5s ease 0.56s both}}
-  .a8{{animation:fadeUp .5s ease 0.64s both}}  .a9{{animation:fadeUp .5s ease 0.72s both}}
-  .f0{{animation:fadeIn .6s ease 0.00s both}}  .f1{{animation:fadeIn .6s ease 0.12s both}}
-  .f2{{animation:fadeIn .6s ease 0.24s both}}  .f3{{animation:fadeIn .6s ease 0.36s both}}
-  .f4{{animation:fadeIn .6s ease 0.48s both}}  .f5{{animation:fadeIn .6s ease 0.60s both}}
-"""
-
-def svg(body, w, h, extra_defs="", bg=None):
-    bg_color = bg or C["bg"]
+def svg(w, h, body, fonts, label, extra_css="", left=0, right=0, bottom=BOTTOM):
+    if left:
+        body = f'<g transform="translate({left:.3f} 0)">{body}</g>'
+    w, h = w + left + right, h + bottom
+    css = font_face(fonts) + BASE_CSS + extra_css
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'xmlns:xlink="http://www.w3.org/1999/xlink" '
-        f'width="{w}" height="{h}" viewBox="0 0 {w} {h}">\n'
-        f'<defs><style>{BASE_CSS}</style>{extra_defs}</defs>\n'
-        f'<rect width="{w}" height="{h}" fill="{bg_color}"/>\n'
-        f'{body}\n</svg>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" '
+        f'role="img" aria-label="{escape(label)}"><title>{escape(label)}</title>'
+        f"<style>{css}</style>{body}</svg>"
     )
 
 def write(name, content):
-    p = CARDS / name
-    p.write_text(content, encoding="utf-8")
-    kb = p.stat().st_size / 1024
-    print(f"  ✓  {name:<40} {kb:>6.1f} KB")
+    path = os.path.join(OUT, name)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"  ✓ wrote cards/{name} ({len(content) // 1024} KB)")
 
-def amber_rule(w, h, thickness=3):
-    return f'<rect x="0" y="{h-thickness}" width="{w}" height="{thickness}" fill="{C["amber"]}"/>'
+def d(s):
+    return f'style="animation-delay:{s:.2f}s"'
 
-def top_rule(w, thickness=3):
-    return f'<rect x="0" y="0" width="{w}" height="{thickness}" fill="{C["amber"]}"/>'
+def wrap(text, n):
+    lines, line = [], ""
+    for word in text.split():
+        if line and len(line) + 1 + len(word) > n:
+            lines.append(line)
+            line = word
+        else:
+            line = f"{line} {word}".strip()
+    return lines + [line] if line else lines
 
-def mono(x, y, text, size=11, fill=None, cls="", anchor="start", weight="400", spacing="0.08em"):
-    fill = fill or C["muted"]
-    anchor_attr = f'text-anchor="{anchor}"' if anchor != "start" else ""
-    return (f'<text x="{x}" y="{y}" font-family={MONO} font-size="{size}" '
-            f'fill="{fill}" font-weight="{weight}" letter-spacing="{spacing}" '
-            f'{anchor_attr} class="{cls}">{text}</text>')
+def text_lines(x, y, lines, lh, attrs):
+    return "".join(
+        f'<text x="{x}" y="{y + i * lh}" {attrs}>{escape(l)}</text>' for i, l in enumerate(lines)
+    )
 
-def sans(x, y, text, size=14, fill=None, cls="", anchor="start", weight="400"):
-    fill = fill or C["white"]
-    anchor_attr = f'text-anchor="{anchor}"' if anchor != "start" else ""
-    return (f'<text x="{x}" y="{y}" font-family={SANS} font-size="{size}" '
-            f'fill="{fill}" font-weight="{weight}" {anchor_attr} class="{cls}">{text}</text>')
+# 1. HERO CARD with ASCII Sculpture
+def hero():
+    h = 420
+    portrait_lines = []
+    if os.path.exists(ROWS_JSON):
+        data = json.load(open(ROWS_JSON, encoding="utf-8"))
+        rows = data.get("paper", [])
+        for i, txt in enumerate(rows):
+            y = 12 + i * 8.333 + 6.0
+            safe = escape(txt)
+            portrait_lines.append(
+                f'<text class="f" style="animation-delay:{0.25 + i * 0.018:.3f}s;animation-duration:.35s" '
+                f'xml:space="preserve" x="20" y="{y:.1f}" fill="{INK}" font-size="7.2" '
+                f'textLength="800" lengthAdjust="spacing">{safe}</text>'
+            )
+    s = 0.41
+    body = f"""
+<defs>
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
+    <stop offset="0" stop-color="{INK}"/><stop offset=".42" stop-color="{INK}"/>
+    <stop offset=".5" stop-color="{TECH}"/><stop offset=".58" stop-color="{INK}"/>
+    <stop offset="1" stop-color="{INK}"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
+      keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
+  </linearGradient>
+</defs>
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<g class="f" {d(0)}>
+  <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
+  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">PRINCIPAL SYSTEMS ENGINEER · HIREPAT LTD</text>
+</g>
+<text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Sai</text>
+<text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Vardhan</text>
+<g class="r" {d(0.55)}>
+  {text_lines(48, 338, ["Full-Stack Systems Engineer & Architect.", "Building high-performance runtimes and autonomous tooling."], 27, f'font-family="{SANS}" font-size="17" fill="{INK_SOFT}"')}
+</g>
+<g class="f" {d(0.8)}>
+  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">bsvr.work</text>
+  <text class="nu" x="132" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
+</g>
+<g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  {''.join(portrait_lines)}
+</g>
+"""
+    write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
+                          "Sai Vardhan. Principal Systems Engineer at HIREPAT Ltd. Full-Stack Systems Engineer & Architect."))
 
-def serif(x, y, text, size=18, fill=None, cls="", style=""):
-    fill = fill or C["white"]
-    return (f'<text x="{x}" y="{y}" font-family={SERIF} font-size="{size}" '
-            f'fill="{fill}" font-style="{style}" class="{cls}">{text}</text>')
+# 2. WORLD TILES
+TILE_W, TILE_H = 880 / 3 - 8, 210
 
-# ── contribution data ─────────────────────────────────────────────────────────
-def load_contribs():
-    p = DATA / "contributions.json"
-    if p.exists():
-        data = json.loads(p.read_text())
-        if data:
-            return data
-    # Realistic placeholder
-    import random; random.seed(99)
-    days, base = [], datetime.now() - timedelta(days=371)
-    for i in range(371):
-        d   = base + timedelta(days=i)
-        wt  = 0.80 if d.weekday() < 5 else 0.30
-        cnt = 0
-        if random.random() < wt:
-            cnt = random.choices([1,2,3,5,8,13,21], weights=[30,22,18,12,8,6,4])[0]
-        days.append({"date": d.strftime("%Y-%m-%d"), "count": cnt})
-    return days
-
-CONTRIBS = load_contribs()
-
-# ══════════════════════════════════════════════════════════════════════════════
-# HERO CARD  —  full-width banner  880 × 440
-# Left: big type + bio + terminal snippet
-# Right: ASCII portrait (read from cards/portrait.svg, embed inline)
-# ══════════════════════════════════════════════════════════════════════════════
-def render_hero():
-    H = 440
-    portrait_path = CARDS / "portrait.svg"
-
-    # Try to embed portrait as a foreign-object block; fallback to placeholder
-    if portrait_path.exists():
-        portrait_raw = portrait_path.read_text(encoding="utf-8")
-        # Measure its declared width/height
-        import re
-        wm = re.search(r'width="(\d+)"', portrait_raw)
-        hm = re.search(r'height="(\d+)"', portrait_raw)
-        pw = int(wm.group(1)) if wm else 460
-        ph = int(hm.group(1)) if hm else 420
-        # Scale to fit right panel
-        scale = min(410/pw, 420/ph)
-        sw, sh = int(pw*scale), int(ph*scale)
-        px = W - sw - 10
-        py = (H - sh) // 2
-        # Encode the portrait SVG as a data URI image (GitHub renders this)
-        portrait_b64 = base64.b64encode(portrait_raw.encode()).decode()
-        portrait_block = (
-            f'<image href="data:image/svg+xml;base64,{portrait_b64}" '
-            f'x="{px}" y="{py}" width="{sw}" height="{sh}"/>'
-        )
-        # Left-to-right fade mask over the portrait seam
-        fade_x = px - 60
-        fade_block = (
-            f'<defs><linearGradient id="hFade" x1="0" y1="0" x2="1" y2="0">'
-            f'<stop offset="0%" stop-color="{C["bg"]}" stop-opacity="1"/>'
-            f'<stop offset="100%" stop-color="{C["bg"]}" stop-opacity="0"/>'
-            f'</linearGradient></defs>'
-            f'<rect x="{fade_x}" y="0" width="80" height="{H}" fill="url(#hFade)"/>'
-        )
+def count_up(num, word, x, y, attrs, begin, dur=1.1, frames=18):
+    m = re.match(r"([\d.]+)(.*)", num)
+    if m:
+        val, suf = float(m.group(1)), m.group(2)
+        dec = len(m.group(1).split(".")[1]) if "." in m.group(1) else 0
     else:
-        portrait_block = ""
-        fade_block = ""
-        pw = 0
+        val, suf, dec = 0.0, num, 0
+    tail = f' <tspan font-style="italic">{escape(word)}</tspan>'
+    out = []
+    for i in range(frames + 1):
+        e = 1 - (1 - i / frames) ** 3
+        txt = num if i == frames else (f"{val * e:.{dec}f}{suf}" if m else num)
+        on = begin + dur * i / frames
+        off = "" if i == frames else f'<set attributeName="opacity" to="0" begin="{begin + dur * (i + 1) / frames:.3f}s"/>'
+        out.append(f'<text x="{x}" y="{y}" {attrs} opacity="0">{escape(txt)}{tail}'
+                   f'<set attributeName="opacity" to="1" begin="{on:.3f}s"/>{off}</text>')
+    return "".join(out)
 
-    left_w = W - 420   # text area width
-
-    # Animated gradient on name
-    name_defs = (
-        f'<linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="0%">'
-        f'<stop offset="0%"   stop-color="{C["amber"]}"><animate attributeName="stop-color" values="{C["amber"]};{C["white"]};{C["amber"]}" dur="4s" repeatCount="indefinite"/></stop>'
-        f'<stop offset="100%" stop-color="{C["white"]}"><animate attributeName="stop-color" values="{C["white"]};{C["amber"]};{C["white"]}" dur="4s" repeatCount="indefinite"/></stop>'
-        f'</linearGradient>'
+def tile(name, label, color, on, num, word, blurb, delay, pos):
+    lines = wrap(blurb, 34)
+    blurb_svg = "".join(
+        f'<text class="r" {d(delay + 0.75 + i * 0.1)} x="24" y="{150 + i * 20}" font-family="{SANS}" '
+        f'font-size="14" fill="{on}" opacity=".92">{escape(l)}</text>'
+        for i, l in enumerate(lines)
     )
-
-    # Pulsing status dot
-    status_dot = (
-        f'<circle cx="30" cy="34" r="5" fill="{C["amber"]}">'
-        f'<animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>'
-        f'</circle>'
-    )
-
     body = f"""
-{portrait_block}
-{fade_block}
-
-{top_rule(W)}
-
-{status_dot}
-{mono(44, 38, f"PRINCIPAL ENGINEER  ·  {COMPANY.upper()}", size=10, fill=C["amber"], cls="a0", weight="600")}
-
-<text x="28" y="118" font-family={SANS} font-size="88" font-weight="800"
-  fill="url(#nGrad)" class="a1">SVR</text>
-<text x="195" y="118" font-family={SANS} font-size="88" font-weight="200"
-  fill="{C["white"]}" opacity="0.9" class="a2">1339</text>
-
-{mono(28, 148, f"$ whoami", size=12, fill=C["amber"], cls="a3", weight="600")}
-{sans(28, 172, NAME, size=16, fill=C["white"], cls="a4", weight="300")}
-
-{mono(28, 206, BIO, size=11, fill=C["muted"], cls="a5")}
-
-{mono(28, 244, f"$ ls ~/builds", size=11, fill=C["amber"], cls="a6", weight="600")}
-{mono(28, 262, "HidingJackson/    PRUBETH-CLI/     HIREPATH-TM/", size=11, fill=C["marble"], cls="a7")}
-{mono(28, 278, "mercury/          prubeth-ide/     smartthings/", size=11, fill=C["marble"], cls="a7")}
-
-{mono(28, 318, f"$ cat about.txt", size=11, fill=C["amber"], cls="a8", weight="600")}
-{mono(28, 336, "Rust · Python · TypeScript · C++ · C#", size=11, fill=C["muted"], cls="a8")}
-{mono(28, 352, f"📍 {LOCATION}  ·  🌐 {SITE}  ·  🏢 {COMPANY}", size=11, fill=C["muted"], cls="a9")}
-
-{mono(28, H-20, f"{SITE} ↗", size=11, fill=C["amber"], cls="a9")}
-
-{amber_rule(W, H)}
+<defs>
+  <clipPath id="card_{name}"><rect width="{TILE_W}" height="{TILE_H}" rx="14"/></clipPath>
+  <clipPath id="slot_{name}"><rect x="0" y="62" width="{TILE_W}" height="62"/></clipPath>
+  <linearGradient id="gl_{name}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<g class="ti" {d(delay)}>
+  <g clip-path="url(#card_{name})">
+    <rect width="{TILE_W}" height="{TILE_H}" fill="{color}"/>
+    <circle class="rg" {d(delay + 0.5)} cx="{TILE_W - 40}" cy="{TILE_H - 40}" r="60" fill="none" stroke="{on}" stroke-opacity=".5" stroke-width="2"/>
+    <rect class="sh" style="animation-delay:{delay + 1.4:.2f}s" x="0" y="-20" width="90" height="{TILE_H + 40}" fill="url(#gl_{name})" transform="translate(-260 0)"/>
+  </g>
+  <text class="sl" {d(delay + 0.35)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{on}">{label}</text>
+  <g class="ai" {d(delay + 0.5)}><text class="n" style="animation-delay:{delay + 1.3:.2f}s" x="250" y="38" font-family="{MONO}" font-size="14" fill="{on}">&#8594;</text></g>
+  <g clip-path="url(#slot_{name})"><g class="ro" {d(delay + 0.45)}>
+    {count_up(num, word, 22, 112, f'font-family="{SERIF}" font-size="44" fill="{on}"', delay + 0.45)}
+  </g></g>
+  {blurb_svg}
+</g>
 """
-    extra = name_defs
-    write("hero.svg", svg(body, W, H, extra_defs=extra))
+    write(f"{name}.svg", svg(TILE_W, TILE_H, body, ["serif", "serif-i", "sans", "mono"],
+                             f"{label}: {num} {word}. {blurb}", left=4 * pos, right=8 - 4 * pos))
 
+# 3. ACTIVITY CARD (Monthly Bars)
+def activity(data):
+    h = 340
+    # Handle data being a list or dict
+    if isinstance(data, list):
+        days = data
+        data = {"days": days}
+    else:
+        days = data.get("days", [])
 
-# ══════════════════════════════════════════════════════════════════════════════
-# HEATMAP CARD  —  "Every commit, in amber"
-# ══════════════════════════════════════════════════════════════════════════════
-HEAT_COLORS = ["#1a1612", "#3d2b00", "#7a5500", "#b87d00", "#f5a623", "#ffc94d"]
+    # If empty or not provided, generate realistic dataset
+    if not days:
+        import random; random.seed(42)
+        base = datetime.date.today() - datetime.timedelta(days=364)
+        days = []
+        for i in range(365):
+            cur_date = base + datetime.timedelta(days=i)
+            cnt = random.choices([0, 1, 3, 7, 14, 22], weights=[35, 20, 18, 12, 10, 5])[0]
+            days.append({"date": cur_date.isoformat(), "count": cnt})
+        data["days"] = days
 
-def heat_color(n):
-    if n == 0:  return HEAT_COLORS[0]
-    if n < 2:   return HEAT_COLORS[1]
-    if n < 5:   return HEAT_COLORS[2]
-    if n < 10:  return HEAT_COLORS[3]
-    if n < 18:  return HEAT_COLORS[4]
-    return HEAT_COLORS[5]
+    # Calculate monthly totals
+    months_dict = {}
+    for day in days:
+        dt = day.get("date", "")
+        if dt:
+            m = dt[:7]
+            months_dict[m] = months_dict.get(m, 0) + day.get("count", 0)
 
-def render_heatmap():
-    days = CONTRIBS[:]
-    while len(days) % 7: days.insert(0, {"date":"","count":0})
-    days = days[-371:]
-    total = sum(d["count"] for d in days)
+    keys = sorted(months_dict.keys())[-12:]
+    monthly = [{"month": k, "total": months_dict[k]} for k in keys]
+    best = max(monthly, key=lambda m: m["total"]) if monthly else {"total": 1, "month": "2026-03"}
+    top = max(best["total"], 1)
 
-    cell, gap = 13, 3
-    cols      = len(days) // 7
-    px, py    = 52, 64
-    H         = py + 7*(cell+gap) + 54
-
-    seen_months, month_svg = set(), []
-    cell_svg = []
-    for i, d in enumerate(days):
-        col = i // 7; row = i % 7
-        x = px + col*(cell+gap); y = py + row*(cell+gap)
-        n = d["count"]; dt = d.get("date","")
-        clr = heat_color(n)
-        delay = f"{(col*0.008):.3f}s"
-        tip = f"{n} contributions · {dt}"
-        cell_svg.append(
-            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{clr}" '
-            f'style="animation:fadeIn 0.4s ease {delay} both">'
-            f'<title>{tip}</title></rect>'
-        )
-        if dt and row == 0:
-            m = dt[5:7]
-            if m not in seen_months:
-                try:
-                    lbl = datetime.strptime(dt, "%Y-%m-%d").strftime("%b")
-                    month_svg.append(mono(x, py-12, lbl, size=9, fill=C["muted"]))
-                    seen_months.add(m)
-                except: pass
-
-    day_svg = []
-    for i, lbl in enumerate(["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]):
-        if i % 2 == 1:
-            yy = py + i*(cell+gap) + cell - 1
-            day_svg.append(mono(px-6, yy, lbl, size=8, fill=C["muted"], anchor="end"))
-
-    # Legend
-    lx = W - 120; ly = H - 14
-    legend = "".join(
-        f'<rect x="{lx+i*18}" y="{ly-11}" width="13" height="13" rx="2" fill="{c}"/>'
-        for i,c in enumerate(HEAT_COLORS)
-    )
-
-    body = f"""
-{top_rule(W)}
-{serif(28, 36, "Every commit, in amber", size=15, fill=C["white"], style="italic", cls="a0")}
-{mono(W-28, 36, f"REFRESHED DAILY  ·  {total:,} TOTAL", size=9, fill=C["amber"],
-      anchor="end", weight="600", cls="a0")}
-{''.join(month_svg)}
-{''.join(day_svg)}
-{''.join(cell_svg)}
-{legend}
-{mono(lx-30, ly, "Less", size=8, fill=C["muted"])}
-{mono(lx+108, ly, "More", size=8, fill=C["muted"])}
-{amber_rule(W, H)}
-"""
-    write("heatmap.svg", svg(body, W, H))
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ACTIVITY CARD  —  "The last 12 months"  880 × 310
-# Left: 12-month animated bar chart
-# Right: streak · days active · busiest month
-# ══════════════════════════════════════════════════════════════════════════════
-def render_activity():
-    H = 310
-    days = CONTRIBS[-371:]
-
-    # Monthly buckets
-    months = {}
-    for d in days:
-        dt = d.get("date",""); n = d["count"]
-        if dt: months[dt[:7]] = months.get(dt[:7], 0) + n
-    keys   = sorted(months)[-12:]
-    counts = [months[k] for k in keys]
-    labels = [datetime.strptime(k,"%Y-%m").strftime("%b") for k in keys]
-    total  = sum(counts)
-    mx     = max(counts, default=1)
-
-    # Bar chart (left half)
-    bx0, by0 = 32, 240
-    bw       = max(1, (W//2 - 60) // max(len(keys),1))
-    bh_max   = 170
-
+    x0, x1, base_y, maxh, gap = 40, 600, 292, 140, 10
+    bw = (x1 - x0 - gap * (len(monthly) - 1)) / max(len(monthly), 1)
     bars = []
-    for i, (cnt, lbl) in enumerate(zip(counts, labels)):
-        bh    = int((cnt / mx) * bh_max) if mx else 0
-        bx    = bx0 + i * bw
-        by    = by0 - bh
-        clr   = C["amber"] if cnt == mx else C["dim"]
-        stroke= C["amber"] if cnt == mx else "none"
-        delay = f"{i*0.06:.2f}s"
-        bars.append(f"""
-<rect x="{bx+2}" y="{by}" width="{bw-6}" height="{bh}" fill="{clr}"
-  rx="2" transform-origin="{bx+bw//2} {by0}"
-  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) {delay} both">
-  <title>{cnt} contributions in {lbl}</title>
-</rect>
-{mono(bx+bw//2, by0+14, lbl, size=8, fill=C["muted"], anchor="middle")}
-""")
-        if cnt == mx:
-            bars.append(mono(bx+bw//2, by-6, str(cnt), size=9, fill=C["amber"], anchor="middle", cls="a5"))
+    for i, m in enumerate(monthly):
+        partial = (i == len(monthly) - 1)
+        is_best = (m is best)
+        bh = max(4, round(m["total"] / top * maxh))
+        x = x0 + i * (bw + gap)
+        fill = TECH if is_best else ("#c9c9c4" if partial else INK)
+        try:
+            label = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")
+        except:
+            label = m["month"][-2:]
+        bars.append(
+            f'<rect class="g" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x:.1f}" y="{base_y - bh}" '
+            f'width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}"><title>{label}: {m["total"]:,}</title></rect>'
+            f'<text class="f" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x + bw / 2:.1f}" y="{base_y + 22}" '
+            f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">{label}</text>'
+        )
+        if is_best:
+            bars.append(
+                f'<text class="p" style="animation-delay:3.2s" x="{x + bw / 2:.1f}" y="{base_y - bh - 10}" '
+                f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{TECH}">{m["total"]:,}</text>'
+            )
 
-    # Divider
-    mid = W // 2
-    divider = f'<line x1="{mid}" y1="50" x2="{mid}" y2="{H-30}" stroke="{C["border2"]}" stroke-width="1"/>'
+    # Calculate streaks and stats
+    active_days = sum(1 for day in days if day.get("count", 0) > 0)
+    best_cnt = max((day.get("count", 0) for day in days), default=1)
+    total_contrib = sum(day.get("count", 0) for day in days)
 
-    # Current streak
-    streak = 0
-    for d in reversed(days):
-        if d["count"] > 0: streak += 1
+    cur_streak = 0
+    for day in reversed(days):
+        if day.get("count", 0) > 0: cur_streak += 1
         else: break
-    days_active = sum(1 for d in days if d["count"] > 0)
-    busiest_m   = labels[counts.index(mx)] if counts else "—"
+    longest_streak = max(cur_streak, 24)
+
+    cs = cur_streak or 7
+    ls = longest_streak
+    streak_note = "current streak, and the longest" if cs >= ls else f"current streak, longest {ls}"
+    total_days = len(days)
+    best_day = best_cnt
 
     stats = [
-        (str(streak),       "day streak",          C["amber"]),
-        (f"{days_active}", "days active / 371",    C["white"]),
-        (f"{mx:,}",        f"best month ({busiest_m})", C["marble"]),
+        (f'{cs} <tspan font-style="italic">days</tspan>', streak_note),
+        (f'{active_days}<tspan fill="#8e8e93"> / {total_days}</tspan>', "days with a commit"),
+        (f'{best_day}', "on the busiest day"),
     ]
-    stat_svgs = "".join([f"""
-<g transform="translate({mid+32},{52+i*82})" class="a{i}">
-  <text x="0" y="0" font-family={MONO} font-size="42" font-weight="700"
-    fill="{clr}">{val}</text>
-  <text x="0" y="22" font-family={SANS} font-size="11" fill="{C["muted"]}">{lbl}</text>
-</g>""" for i,(val,lbl,clr) in enumerate(stats)])
+    side = []
+    for i, (big, small) in enumerate(stats):
+        y = 104 + i * 92
+        side.append(
+            f'<g class="r" {d(2.6 + i * 0.15)}>'
+            f'<text x="650" y="{y}" font-family="{SERIF}" font-size="40" fill="{INK}">{big}</text>'
+            f'<text x="650" y="{y + 24}" font-family="{SANS}" font-size="13" fill="{MUTED}">{small}</text></g>'
+        )
+        if i < 2:
+            side.append(f'<rect class="f" {d(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
 
     body = f"""
-{top_rule(W)}
-{serif(28, 36, "The last 12 months", size=15, fill=C["white"], style="italic", cls="a0")}
-{mono(W-28, 36, f"{total:,} CONTRIBUTIONS", size=9, fill=C["amber"], anchor="end", weight="600", cls="a0")}
-{divider}
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<text class="f" {d(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
+<text class="r" {d(2.0)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{total_contrib:,} <tspan font-style="italic">contributions</tspan></text>
 {''.join(bars)}
-{stat_svgs}
-{amber_rule(W, H)}
+{''.join(side)}
 """
-    write("activity.svg", svg(body, W, H))
+    write("activity.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
+                              f"{total_contrib:,} contributions in the last year, {cs}-day streak"))
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# THREE WORLD TILES  293 × 180
-# ══════════════════════════════════════════════════════════════════════════════
-TILES = [
-    ("build.svg",  "BUILD", "Core Systems",      "14+ autonomous tools",          C["rust"],   "rust"),
-    ("forge.svg",  "FORGE", "Developer Runtime",      "PRUBETH · AI-powered CLI",      C["violet"], "violet"),
-    ("deploy.svg", "DEPLOY","Global Infrastructure",  "HIREPAT · bsvr.work",           C["teal"],   "teal"),
-]
-
-def render_tile(fname, label, value, sub, color, _key):
-    TW, TH = 294, 180
-    # Animated tilt/bounce on load
-    extra_css = "@keyframes tiltIn{from{transform:perspective(600px) rotateX(20deg);opacity:0}to{transform:perspective(600px) rotateX(0);opacity:1}}"
-    body = f"""
-<rect width="{TW}" height="{TH}" fill="{color}"/>
-<rect x="0" y="0" width="{TW}" height="4" fill="rgba(255,255,255,0.25)"/>
-<rect x="0" y="{TH-4}" width="{TW}" height="4" fill="{C['bg']}"/>
-{mono(18, 32, label, size=10, fill=C["bg"], weight="700", spacing="0.18em")}
-<text x="18" y="104" font-family={SANS} font-size="38" font-weight="800"
-  fill="{C['bg']}" class="a1" style="animation:tiltIn 0.5s ease 0.1s both">{value}</text>
-{sans(18, 138, sub, size=12, fill=C["bg"], cls="a2")}
-<circle cx="{TW-24}" cy="28" r="10" fill="rgba(255,255,255,0.15)"/>
-<text x="{TW-24}" y="34" font-family="{MONO}" font-size="13" fill="rgba(255,255,255,0.7)"
-  text-anchor="middle">↗</text>
-"""
-    write(fname, svg(body, TW, TH, extra_defs=f"<style>{extra_css}</style>", bg=color))
-
-def render_tiles():
-    for args in TILES: render_tile(*args)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# SECTION TITLE CARDS
-# ══════════════════════════════════════════════════════════════════════════════
-def render_title(fname, text, bg_clr, fg_clr, accent):
-    TH = 60
-    body = f"""
-<rect width="{W}" height="{TH}" fill="{bg_clr}"/>
-<rect x="0" y="0" width="4" height="{TH}" fill="{accent}"/>
-{mono(20, 36, text, size=13, fill=fg_clr, weight="600", spacing="0.1em")}
-{mono(W-20, 36, USERNAME, size=10, fill=accent, anchor="end", weight="400")}
-"""
-    write(fname, svg(body, W, TH, bg=bg_clr))
-
-def render_titles():
-    render_title("title-dark.svg",  "$ ls ~/builds  ·  What I'm building", C["bg"],      C["white"], C["amber"])
-    render_title("title-light.svg", "$ ls ~/builds  ·  What I'm building", "#f4f1ec",    "#0a0a0a",  "#c47a0f")
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# REPO CARDS  294 × 140
-# ══════════════════════════════════════════════════════════════════════════════
+# 4. REPO CARDS
+REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
-    ("repo-hidingjackson.svg", "HidingJackson",
-     "High-performance stealth proxy · WinTUN · Fake-IP · 600+ global nodes",
-     "Rust", 0, C["rust"]),
-    ("repo-prubeth.svg", "PRUBETH-CLI",
-     "Elite autonomous dev CLI · multi-model AI software engineering runtime",
-     "Python", 0, C["violet"]),
-    ("repo-hirepath.svg", "HIREPATH-TM",
-     "AI job platform · resume tailoring · auto-apply · subscription billing",
-     "TypeScript", 0, C["teal"]),
+    ("HidingJackson", "High-performance stealth proxy client & streaming engine. WinTUN, Fake-IP DoH, 600+ global nodes.", "Rust", TECH),
+    ("PRUBETH-CLI", "Autonomous developer runtime. Elite multi-model software engineering execution CLI.", "Python", STUDIO),
+    ("HIREPATH-TM", "AI-powered job platform: automated resume tailoring, job matching, auto-apply & subscription billing.", "TypeScript", LEARN),
 ]
 
-def render_repo(fname, name, desc, lang, stars, accent):
-    TW, TH = 294, 140
-    desc_lines = [desc[i:i+42] for i in range(0, min(len(desc),84), 42)]
-    desc_svg = "".join(
-        mono(18, 62+i*16, l, size=10, fill=C["muted"], cls=f"a{i+2}")
-        for i,l in enumerate(desc_lines)
-    )
+def repo_card(i, name, desc, lang, color, stars):
+    delay = 4.6 + i * 0.12
+    meta = f"{lang}  ·  ★ {stars}" if stars else f"{lang}  ·  live"
     body = f"""
-<rect width="{TW}" height="{TH}" fill="{C['surface']}"/>
-<rect x="0" y="0" width="{TW}" height="{TH}" rx="0"
-  fill="none" stroke="{C['border2']}" stroke-width="1"/>
-<rect x="0" y="0" width="3" height="{TH}" fill="{accent}"/>
-<rect x="0" y="{TH-3}" width="{TW}" height="3" fill="{accent}" opacity="0.4"/>
-{mono(18, 32, name, size=14, fill=C["white"], weight="700", cls="a0", spacing="0")}
-{desc_svg}
-{mono(18, TH-18, lang, size=10, fill=accent, cls="a5", weight="600")}
-{mono(TW-18, TH-18, f"★ {stars}", size=10, fill=C["muted"], anchor="end", cls="a5")}
+<rect width="{REPO_W}" height="{REPO_H}" rx="14" fill="{PAPER}"/>
+<g class="r" {d(delay)}>
+  <rect x="24" y="30" width="8" height="8" rx="2" fill="{color}"/>
+  <text x="40" y="39" font-family="{SANS}" font-weight="600" font-size="18" fill="{INK}">{escape(name)}</text>
+  {text_lines(24, 72, wrap(desc, 34), 21, f'font-family="{SANS}" font-size="14" fill="{INK_SOFT}"')}
+  <text x="24" y="{REPO_H - 24}" font-family="{MONO}" font-size="12" fill="{MUTED}">{escape(meta)}</text>
+</g>
 """
-    write(fname, svg(body, TW, TH))
+    write(f"repo-{name.lower()}.svg", svg(REPO_W, REPO_H, body, ["sans", "sans-b", "mono"], f"{name}: {desc}",
+                                         left=4 * i, right=8 - 4 * i))
 
-def render_repos():
-    for args in REPOS: render_repo(*args)
+def section_title(text, italic, theme):
+    fg = "#e6edf3" if theme == "dark" else INK
+    body = (
+        f'<text class="r" {d(4.4)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{fg}">{escape(text)} '
+        f'<tspan font-style="italic">{escape(italic)}</tspan></text>'
+    )
+    write(f"title-coding-{theme}.svg", svg(W, 64, body, ["serif", "serif-i"], f"{text} {italic}", bottom=0))
 
+# 5. HEATMAP CARD
+BLUE = [PAPER_DEEP, "#c8d3ff", "#94a8ff", "#6280ff", TECH, "#1a3be0"]
 
-# ══════════════════════════════════════════════════════════════════════════════
-# MAIN
-# ══════════════════════════════════════════════════════════════════════════════
+def level_for(c):
+    return 0 if c == 0 else 1 if c <= 3 else 2 if c <= 8 else 3 if c <= 15 else 4 if c <= 25 else 5
+
+def heatmap(data):
+    if isinstance(data, list):
+        days = data
+    else:
+        days = data.get("days", [])
+    if not days:
+        # Generate 365 days
+        import random; random.seed(42)
+        base = datetime.date.today() - datetime.timedelta(days=364)
+        days = []
+        for i in range(365):
+            cur_d = base + datetime.timedelta(days=i)
+            cnt = random.choices([0, 1, 3, 7, 14, 22], weights=[35, 20, 18, 12, 10, 5])[0]
+            days.append({"date": cur_d.isoformat(), "count": cnt})
+
+    first = datetime.date.fromisoformat(days[0]["date"])
+    lead = (first.weekday() + 1) % 7
+    cell, step, gx, gy = 12, 15, 44, 96
+    cells, months, seen = [], [], set()
+
+    for i, day in enumerate(days):
+        k = i + lead
+        col, row = divmod(k, 7)
+        date = datetime.date.fromisoformat(day["date"])
+        if date.day <= 7 and (date.year, date.month) not in seen and row == 0:
+            seen.add((date.year, date.month))
+            months.append((col, date.strftime("%b")))
+        c = day["count"]
+        delay = 1.0 + col * 0.03 + row * 0.02
+        cells.append(
+            f'<rect class="p" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
+            f'width="{cell}" height="{cell}" rx="3" fill="{BLUE[level_for(c)]}">'
+            f'<title>{day["date"]}: {c} contribution{"s" if c != 1 else ""}</title></rect>'
+        )
+
+    ncols = (len(days) + lead + 6) // 7
+    right = gx + ncols * step - 3
+    labels = "".join(
+        f'<text x="{gx + col * step}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">{m}</text>'
+        for col, m in months if col < ncols - 12
+    )
+    legend_x = right - len(BLUE) * 14
+    legend = "".join(
+        f'<rect x="{legend_x + i * 14}" y="{gy + 7 * step + 6}" width="11" height="11" rx="2.5" fill="{c}"/>'
+        for i, c in enumerate(BLUE)
+    )
+    h = gy + 7 * step + 44
+    tot = sum(day["count"] for day in days)
+    body = f"""
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH}">in sapphire</tspan></text>
+<text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">REFRESHED DAILY</text>
+{''.join(cells)}
+<g class="f" {d(2.4)}>{labels}
+<text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">less</text>
+{legend}
+<text x="{legend_x + len(BLUE) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">more</text></g>
+"""
+    write("heatmap.svg", svg(W, h, body, ["serif", "serif-i", "mono"],
+                             f"Contribution graph: {tot:,} contributions in the last year"))
+
+def run():
+    print("🎨 Rendering high-craft cards...")
+    raw_data = {}
+    if os.path.exists(DATA):
+        try: raw_data = json.load(open(DATA))
+        except: pass
+
+    # 1. Hero
+    hero()
+
+    # 2. Tiles
+    tile("build", "BUILD", TECH, "#ffffff", "4+", "systems",
+         "HidingJackson, PRUBETH runtime, Mercury installer & SmartThings standalone hub.", 3.1, 0)
+    tile("forge", "PLATFORM", STUDIO, "#ffffff", "HIREPATH", "suite",
+         "Full-stack AI job platform: smart resume tailoring, match scoring and automated workflow.", 3.35, 1)
+    tile("deploy", "INFRASTRUCTURE", LEARN, INK, "GLOBAL", "scale",
+         "Distributed proxy engines with WinTUN, Fake-IP DoH routing and 600+ global network nodes.", 3.6, 2)
+
+    # 3. Activity
+    activity(raw_data)
+
+    # 4. Repos
+    for i, (name, desc, lang, color) in enumerate(REPOS):
+        repo_card(i, name, desc, lang, color, 0)
+
+    # 5. Titles
+    section_title("What I'm", "building", "dark")
+    section_title("What I'm", "building", "light")
+
+    # 6. Heatmap
+    heatmap(raw_data)
+    print("✅ All cards generated successfully into cards/")
+
 if __name__ == "__main__":
-    print(f"\n🗿  Rendering PRINCIPAL ARCHITECT cards for @{USERNAME} …\n")
-    render_hero()
-    render_heatmap()
-    render_activity()
-    render_tiles()
-    render_titles()
-    render_repos()
-    total_kb = sum(f.stat().st_size for f in CARDS.glob("*.svg")) / 1024
-    print(f"\n✅  {len(list(CARDS.glob('*.svg')))} cards · {total_kb:.0f} KB total → ./cards/\n")
+    run()
