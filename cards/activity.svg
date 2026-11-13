@@ -1,32 +1,127 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="300" viewBox="0 0 880 300">
-<defs>
-<style>
-  @keyframes fadeUp   { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
-  @keyframes grow     { from { transform:scaleY(0); transform-origin:bottom; } to { transform:scaleY(1); transform-origin:bottom; } }
-  @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-  @keyframes shimmer  { 0% { stop-color:#f5a623; stop-opacity:0.1; } 50% { stop-color:#f5a623; stop-opacity:0.4; } 100% { stop-color:#f5a623; stop-opacity:0.1; } }
-  .fu0  { animation: fadeUp 0.5s ease 0.0s both; }
-  .fu1  { animation: fadeUp 0.5s ease 0.1s both; }
-  .fu2  { animation: fadeUp 0.5s ease 0.2s both; }
-  .fu3  { animation: fadeUp 0.5s ease 0.3s both; }
-  .fu4  { animation: fadeUp 0.5s ease 0.4s both; }
-  .fu5  { animation: fadeUp 0.5s ease 0.5s both; }
-  .fu6  { animation: fadeUp 0.5s ease 0.6s both; }
-  .fu7  { animation: fadeUp 0.5s ease 0.7s both; }
-  .fu8  { animation: fadeUp 0.5s ease 0.8s both; }
-  .fi0  { animation: fadeIn 0.6s ease 0.0s both; }
-  .fi1  { animation: fadeIn 0.6s ease 0.15s both; }
-  .fi2  { animation: fadeIn 0.6s ease 0.3s both; }
-  .fi3  { animation: fadeIn 0.6s ease 0.45s both; }
-  .fi4  { animation: fadeIn 0.6s ease 0.6s both; }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="310" viewBox="0 0 880 310">
+<defs><style>
+  @keyframes fadeUp  {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn  {from{opacity:0}to{opacity:1}}
+  @keyframes grow    {from{transform:scaleY(0.02)}to{transform:scaleY(1)}}
+  @keyframes pulse   {0%,100%{opacity:1}50%{opacity:0.3}}
+  @keyframes scan    {0%{transform:translateY(0)}100%{transform:translateY(100%)}}
+  @keyframes typing  {from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .a0{animation:fadeUp .5s ease 0.00s both}  .a1{animation:fadeUp .5s ease 0.08s both}
+  .a2{animation:fadeUp .5s ease 0.16s both}  .a3{animation:fadeUp .5s ease 0.24s both}
+  .a4{animation:fadeUp .5s ease 0.32s both}  .a5{animation:fadeUp .5s ease 0.40s both}
+  .a6{animation:fadeUp .5s ease 0.48s both}  .a7{animation:fadeUp .5s ease 0.56s both}
+  .a8{animation:fadeUp .5s ease 0.64s both}  .a9{animation:fadeUp .5s ease 0.72s both}
+  .f0{animation:fadeIn .6s ease 0.00s both}  .f1{animation:fadeIn .6s ease 0.12s both}
+  .f2{animation:fadeIn .6s ease 0.24s both}  .f3{animation:fadeIn .6s ease 0.36s both}
+  .f4{animation:fadeIn .6s ease 0.48s both}  .f5{animation:fadeIn .6s ease 0.60s both}
+</style></defs>
+<rect width="880" height="310" fill="#0a0a0a"/>
 
-</defs>
-<rect width="880" height="300" fill="#0a0a0a"/>
+<rect x="0" y="0" width="880" height="3" fill="#f5a623"/>
+<text x="28" y="36" font-family="Playfair Display",Georgia,serif font-size="15" fill="#f0ede8" font-style="italic" class="a0">The last 12 months</text>
+<text x="852" y="36" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="9" fill="#f5a623" font-weight="600" letter-spacing="0.08em" text-anchor="end" class="a0">982 CONTRIBUTIONS</text>
+<line x1="440" y1="50" x2="440" y2="280" stroke="#262626" stroke-width="1"/>
 
-<rect width="880" height="300" fill="#0a0a0a"/>
-<rect x="0" y="297" width="880" height="3" fill="#f5a623"/>
-<text x="440" y="150" text-anchor="middle" font-size="13" font-family="Geist Mono, ui-monospace, 'Cascadia Code', Menlo, monospace"
-  fill="#555555">— activity data loads after first GitHub Actions run —</text>
+<rect x="34" y="113" width="25" height="127" fill="#272320"
+  rx="2" transform-origin="47 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.00s both">
+  <title>96 contributions in Dec</title>
+</rect>
+<text x="47" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Dec</text>
+
+<rect x="65" y="126" width="25" height="114" fill="#272320"
+  rx="2" transform-origin="78 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.06s both">
+  <title>86 contributions in Jan</title>
+</rect>
+<text x="78" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Jan</text>
+
+<rect x="96" y="112" width="25" height="128" fill="#272320"
+  rx="2" transform-origin="109 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.12s both">
+  <title>97 contributions in Feb</title>
+</rect>
+<text x="109" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Feb</text>
+
+<rect x="127" y="177" width="25" height="63" fill="#272320"
+  rx="2" transform-origin="140 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.18s both">
+  <title>48 contributions in Mar</title>
+</rect>
+<text x="140" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Mar</text>
+
+<rect x="158" y="153" width="25" height="87" fill="#272320"
+  rx="2" transform-origin="171 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.24s both">
+  <title>66 contributions in Apr</title>
+</rect>
+<text x="171" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Apr</text>
+
+<rect x="189" y="141" width="25" height="99" fill="#272320"
+  rx="2" transform-origin="202 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.30s both">
+  <title>75 contributions in May</title>
+</rect>
+<text x="202" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">May</text>
+
+<rect x="220" y="133" width="25" height="107" fill="#272320"
+  rx="2" transform-origin="233 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.36s both">
+  <title>81 contributions in Jun</title>
+</rect>
+<text x="233" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Jun</text>
+
+<rect x="251" y="117" width="25" height="123" fill="#272320"
+  rx="2" transform-origin="264 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.42s both">
+  <title>93 contributions in Jul</title>
+</rect>
+<text x="264" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Jul</text>
+
+<rect x="282" y="70" width="25" height="170" fill="#f5a623"
+  rx="2" transform-origin="295 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.48s both">
+  <title>128 contributions in Aug</title>
+</rect>
+<text x="295" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Aug</text>
+<text x="295" y="64" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="9" fill="#f5a623" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="a5">128</text>
+<rect x="313" y="165" width="25" height="75" fill="#272320"
+  rx="2" transform-origin="326 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.54s both">
+  <title>57 contributions in Sep</title>
+</rect>
+<text x="326" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Sep</text>
+
+<rect x="344" y="110" width="25" height="130" fill="#272320"
+  rx="2" transform-origin="357 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.60s both">
+  <title>98 contributions in Oct</title>
+</rect>
+<text x="357" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Oct</text>
+
+<rect x="375" y="165" width="25" height="75" fill="#272320"
+  rx="2" transform-origin="388 240"
+  style="animation:grow 0.6s cubic-bezier(.4,0,.2,1) 0.66s both">
+  <title>57 contributions in Nov</title>
+</rect>
+<text x="388" y="254" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="8" fill="#6b6356" font-weight="400" letter-spacing="0.08em" text-anchor="middle" class="">Nov</text>
+
+
+<g transform="translate(472,52)" class="a0">
+  <text x="0" y="0" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="42" font-weight="700"
+    fill="#f5a623">5</text>
+  <text x="0" y="22" font-family="Geist",system-ui,-apple-system,sans-serif font-size="11" fill="#6b6356">day streak</text>
+</g>
+<g transform="translate(472,134)" class="a1">
+  <text x="0" y="0" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="42" font-weight="700"
+    fill="#f0ede8">250</text>
+  <text x="0" y="22" font-family="Geist",system-ui,-apple-system,sans-serif font-size="11" fill="#6b6356">days active / 371</text>
+</g>
+<g transform="translate(472,216)" class="a2">
+  <text x="0" y="0" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="42" font-weight="700"
+    fill="#d4c5a9">128</text>
+  <text x="0" y="22" font-family="Geist",system-ui,-apple-system,sans-serif font-size="11" fill="#6b6356">best month (Aug)</text>
+</g>
+<rect x="0" y="307" width="880" height="3" fill="#f5a623"/>
+
 </svg>

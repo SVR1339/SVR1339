@@ -1,36 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="293" height="160" viewBox="0 0 293 160">
-<defs>
-<style>
-  @keyframes fadeUp   { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
-  @keyframes grow     { from { transform:scaleY(0); transform-origin:bottom; } to { transform:scaleY(1); transform-origin:bottom; } }
-  @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-  @keyframes shimmer  { 0% { stop-color:#f5a623; stop-opacity:0.1; } 50% { stop-color:#f5a623; stop-opacity:0.4; } 100% { stop-color:#f5a623; stop-opacity:0.1; } }
-  .fu0  { animation: fadeUp 0.5s ease 0.0s both; }
-  .fu1  { animation: fadeUp 0.5s ease 0.1s both; }
-  .fu2  { animation: fadeUp 0.5s ease 0.2s both; }
-  .fu3  { animation: fadeUp 0.5s ease 0.3s both; }
-  .fu4  { animation: fadeUp 0.5s ease 0.4s both; }
-  .fu5  { animation: fadeUp 0.5s ease 0.5s both; }
-  .fu6  { animation: fadeUp 0.5s ease 0.6s both; }
-  .fu7  { animation: fadeUp 0.5s ease 0.7s both; }
-  .fu8  { animation: fadeUp 0.5s ease 0.8s both; }
-  .fi0  { animation: fadeIn 0.6s ease 0.0s both; }
-  .fi1  { animation: fadeIn 0.6s ease 0.15s both; }
-  .fi2  { animation: fadeIn 0.6s ease 0.3s both; }
-  .fi3  { animation: fadeIn 0.6s ease 0.45s both; }
-  .fi4  { animation: fadeIn 0.6s ease 0.6s both; }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="294" height="180" viewBox="0 0 294 180">
+<defs><style>
+  @keyframes fadeUp  {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn  {from{opacity:0}to{opacity:1}}
+  @keyframes grow    {from{transform:scaleY(0.02)}to{transform:scaleY(1)}}
+  @keyframes pulse   {0%,100%{opacity:1}50%{opacity:0.3}}
+  @keyframes scan    {0%{transform:translateY(0)}100%{transform:translateY(100%)}}
+  @keyframes typing  {from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .a0{animation:fadeUp .5s ease 0.00s both}  .a1{animation:fadeUp .5s ease 0.08s both}
+  .a2{animation:fadeUp .5s ease 0.16s both}  .a3{animation:fadeUp .5s ease 0.24s both}
+  .a4{animation:fadeUp .5s ease 0.32s both}  .a5{animation:fadeUp .5s ease 0.40s both}
+  .a6{animation:fadeUp .5s ease 0.48s both}  .a7{animation:fadeUp .5s ease 0.56s both}
+  .a8{animation:fadeUp .5s ease 0.64s both}  .a9{animation:fadeUp .5s ease 0.72s both}
+  .f0{animation:fadeIn .6s ease 0.00s both}  .f1{animation:fadeIn .6s ease 0.12s both}
+  .f2{animation:fadeIn .6s ease 0.24s both}  .f3{animation:fadeIn .6s ease 0.36s both}
+  .f4{animation:fadeIn .6s ease 0.48s both}  .f5{animation:fadeIn .6s ease 0.60s both}
+</style><style>@keyframes tiltIn{from{transform:perspective(600px) rotateX(20deg);opacity:0}to{transform:perspective(600px) rotateX(0);opacity:1}}</style></defs>
+<rect width="294" height="180" fill="#b83228"/>
 
-</defs>
-<rect width="293" height="160" fill="#0a0a0a"/>
+<rect width="294" height="180" fill="#b83228"/>
+<rect x="0" y="0" width="294" height="4" fill="rgba(255,255,255,0.25)"/>
+<rect x="0" y="176" width="294" height="4" fill="#0a0a0a"/>
+<text x="18" y="32" font-family="Geist Mono","Cascadia Code","Fira Code",Menlo,monospace font-size="10" fill="#0a0a0a" font-weight="700" letter-spacing="0.18em"  class="">BUILD</text>
+<text x="18" y="104" font-family="Geist",system-ui,-apple-system,sans-serif font-size="38" font-weight="800"
+  fill="#0a0a0a" class="a1" style="animation:tiltIn 0.5s ease 0.1s both">Core Systems</text>
+<text x="18" y="138" font-family="Geist",system-ui,-apple-system,sans-serif font-size="12" fill="#0a0a0a" font-weight="400"  class="a2">14+ autonomous tools</text>
+<circle cx="270" cy="28" r="10" fill="rgba(255,255,255,0.15)"/>
+<text x="270" y="34" font-family=""Geist Mono","Cascadia Code","Fira Code",Menlo,monospace" font-size="13" fill="rgba(255,255,255,0.7)"
+  text-anchor="middle">↗</text>
 
-<rect width="293" height="160" fill="#c0392b"/>
-<rect x="0" y="156" width="293" height="4" fill="#0a0a0a"/>
-<text x="20" y="36" font-size="11" font-weight="700" font-family="Geist Mono, ui-monospace, 'Cascadia Code', Menlo, monospace"
-  fill="#0a0a0a" letter-spacing="0.14em" class="fu0">BUILD · SOVEREIGN SYSTEMS</text>
-<text x="20" y="96" font-size="52" font-weight="700" font-family="Geist, system-ui, -apple-system, sans-serif"
-  fill="#0a0a0a" class="fu1">14+</text>
-<text x="20" y="130" font-size="11" font-family="Geist, system-ui, -apple-system, sans-serif"
-  fill="#0a0a0a" opacity="0.75" class="fu2">autonomous + stealth tools</text>
 </svg>
