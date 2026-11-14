@@ -1,0 +1,52 @@
+name: The Autonomous Midnight Engine
+
+on:
+  schedule:
+    # Organic schedule running strictly between 8:00 AM and 5:00 PM IST (02:30 - 11:30 UTC)
+    # 03:47 UTC = 09:17 AM IST (morning refresh)
+    # 07:23 UTC = 12:53 PM IST (lunchtime refresh)
+    # 10:41 UTC = 04:11 PM IST (evening refresh before 5pm)
+    - cron: "47 3 * * *"
+    - cron: "23 7 * * *"
+    - cron: "41 10 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-profile-art.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Autonomous Contribution Fetch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch_contributions.py
+
+      - name: Re-render Editorial Profile Cards
+        run: python scripts/render_cards.py
+
+      - name: Commit & Push Updated Visual Artifacts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "art(engine): autonomous midnight profile visual update [skip ci]"
+          file_pattern: "data/contributions.json cards/*.svg"
