@@ -359,6 +359,40 @@ def repo_card(i, name, desc, lang, color, stars):
     write(f"repo-{name.lower()}.svg", svg(REPO_W, REPO_H, body, ["sans", "sans-b", "mono"], f"{name}: {desc}",
                                          left=4 * i, right=8 - 4 * i))
 
+def specs():
+    h = 240
+    specs_data = [
+        ("CORE LANGUAGES", "Rust (Tokio, Rayon) · Python (FastAPI, PyTorch) · Go (Goroutines) · TypeScript · C++"),
+        ("LOW-LEVEL RUNTIMES", "WinTUN Drivers · eBPF Packet Filtering · SIMD Intrinsics · Lock-Free CAS Queues"),
+        ("DISTRIBUTED & CLOUD", "Zero-Copy Sockets · Fake-IP DoH DNS · Raft Consensus · Sub-ms Wire Latency"),
+        ("AUTONOMOUS SYSTEMS", "Multi-Model Agent Loops · Traceback AST Patchers · Self-Healing CI/CD Pipelines"),
+    ]
+    
+    rows = []
+    for i, (cat, val) in enumerate(specs_data):
+        y = 106 + i * 34
+        rows.append(
+            f'<g class="r" {d(3.8 + i * 0.1)}>'
+            f'<text x="40" y="{y}" font-family="{MONO}" font-size="11" letter-spacing="1.1" fill="{TECH}" font-weight="600">{escape(cat)}</text>'
+            f'<text x="235" y="{y}" font-family="{SANS}" font-size="13" fill="{INK}">{escape(val)}</text>'
+            f'</g>'
+        )
+        if i < 3:
+            rows.append(f'<line x1="40" y1="{y + 11}" x2="{W - 40}" y2="{y + 11}" stroke="{RULE}" stroke-width="0.8"/>')
+            
+    body = f"""
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="none" stroke="{RULE}" stroke-width="1"/>
+<g class="f" {d(3.6)}>
+  <rect class="live" x="40" y="32" width="7" height="7" rx="2" fill="{TECH}"/>
+  <text x="56" y="39" font-family="{MONO}" font-size="11" letter-spacing="1.2" fill="{MUTED}">SYSTEMS ARCHITECTURE  ·  PRODUCTION RUNTIMES & PRIMITIVES</text>
+</g>
+<text class="r" {d(3.7)} x="38" y="74" font-family="{SERIF}" font-size="28" fill="{INK}">Engineering Specification <tspan font-style="italic" fill="{TECH}">· Production Matrix</tspan></text>
+{''.join(rows)}
+"""
+    write("specs.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
+                           "Systems Architecture: Production Runtimes & Primitives"))
+
 def section_title(text, italic, theme):
     fg = "#e6edf3" if theme == "dark" else INK
     body = (
@@ -455,15 +489,18 @@ def run():
     # 3. Activity
     activity(raw_data)
 
-    # 4. Repos
+    # 4. Systems Architecture Specs Card
+    specs()
+
+    # 5. Repos
     for i, (name, desc, lang, color) in enumerate(REPOS):
         repo_card(i, name, desc, lang, color, 0)
 
-    # 5. Titles
+    # 6. Titles
     section_title("What I'm", "building", "dark")
     section_title("What I'm", "building", "light")
 
-    # 6. Heatmap
+    # 7. Heatmap
     heatmap(raw_data)
     print("✅ All cards generated successfully into cards/")
 
