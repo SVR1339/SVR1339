@@ -200,7 +200,7 @@ def count_up(num, word, x, y, attrs, begin, dur=1.1, frames=18):
                    f'<set attributeName="opacity" to="1" begin="{on:.3f}s"/>{off}</text>')
     return "".join(out)
 
-def tile(name, label, color, on, num, word, blurb, delay, pos):
+def tile(name, label, color, on, num, word, blurb, delay, pos, fs=44):
     lines = wrap(blurb, 34)
     blurb_svg = "".join(
         f'<text class="r" {d(delay + 0.75 + i * 0.1)} x="24" y="{150 + i * 20}" font-family="{SANS}" '
@@ -223,13 +223,16 @@ def tile(name, label, color, on, num, word, blurb, delay, pos):
   <text class="sl" {d(delay + 0.35)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{on}">{label}</text>
   <g class="ai" {d(delay + 0.5)}><text class="n" style="animation-delay:{delay + 1.3:.2f}s" x="250" y="38" font-family="{MONO}" font-size="14" fill="{on}">&#8594;</text></g>
   <g clip-path="url(#slot_{name})"><g class="ro" {d(delay + 0.45)}>
-    {count_up(num, word, 22, 112, f'font-family="{SERIF}" font-size="44" fill="{on}"', delay + 0.45)}
+    {count_up(num, word, 22, 112, f'font-family="{SERIF}" font-size="{fs}" fill="{on}"', delay + 0.45)}
   </g></g>
   {blurb_svg}
 </g>
 """
-    write(f"{name}.svg", svg(TILE_W, TILE_H, body, ["serif", "serif-i", "sans", "mono"],
-                             f"{label}: {num} {word}. {blurb}", left=4 * pos, right=8 - 4 * pos))
+    card_content = svg(TILE_W, TILE_H, body, ["serif", "serif-i", "sans", "mono"],
+                       f"{label}: {num} {word}. {blurb}", left=4 * pos, right=8 - 4 * pos)
+    write(f"{name}.svg", card_content)
+    if name == "forge":
+        write("forge-platform.svg", card_content)
 
 # 3. ACTIVITY CARD (Monthly Bars)
 def activity(data):
@@ -444,8 +447,8 @@ def run():
     # 2. Tiles
     tile("build", "EXPERIENCE", TECH, "#ffffff", "5+", "years",
          "5 years architecting high-performance distributed runtimes, low-latency proxies & autonomous tooling.", 3.1, 0)
-    tile("forge", "PLATFORM", STUDIO, "#ffffff", "HIREPATH", "suite",
-         "Full-stack AI job platform: smart resume tailoring, match scoring and automated workflow.", 3.35, 1)
+    tile("forge", "PLATFORM", STUDIO, "#ffffff", "HIREPATH", "platform",
+         "Full-stack AI job platform: smart resume tailoring, match scoring and automated workflow.", 3.35, 1, fs=36)
     tile("deploy", "INFRASTRUCTURE", LEARN, INK, "GLOBAL", "scale",
          "Distributed proxy engines with WinTUN, Fake-IP DoH routing and 600+ global network nodes.", 3.6, 2)
 
