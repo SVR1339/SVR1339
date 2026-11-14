@@ -1,0 +1,25 @@
+{
+  "name": "svr1339",
+  "version": "1.0.0",
+  "description": "Interactive Terminal Business Card for Sai Vardhan Reddy (SVR1339) · Principal Systems Engineer & Architect",
+  "main": "bin/cli.js",
+  "bin": {
+    "svr1339": "./bin/cli.js"
+  },
+  "keywords": [
+    "card",
+    "cli",
+    "business-card",
+    "portfolio",
+    "systems-engineer",
+    "rust",
+    "distributed-systems"
+  ],
+  "author": "Sai Vardhan Reddy <contact@bsvr.work> (https://bsvr.work)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SVR1339/SVR1339.git"
+  },
+  "preferGlobal": true
+}
