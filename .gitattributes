@@ -1,0 +1,4 @@
+cards/*.svg linguist-generated=true
+data/*.json linguist-generated=true
+assets/* linguist-vendored=true
+fonts/* linguist-vendored=true

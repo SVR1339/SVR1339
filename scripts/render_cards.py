@@ -339,9 +339,9 @@ def activity(data):
 # 4. REPO CARDS
 REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
-    ("HidingJackson", "High-performance stealth proxy client & streaming engine. WinTUN, Fake-IP DoH, 600+ global nodes.", "Rust", TECH),
-    ("PRUBETH-CLI", "Autonomous developer runtime. Elite multi-model software engineering execution CLI.", "Python", STUDIO),
-    ("HIREPATH-TM", "AI-powered job platform: automated resume tailoring, job matching, auto-apply & subscription billing.", "TypeScript", LEARN),
+    ("HidingJackson", "High-performance stealth proxy client & streaming engine. WinTUN, Fake-IP DoH, 600+ global nodes.", "Rust · v1.1.0", TECH),
+    ("PRUBETH-CLI", "Autonomous developer runtime. Elite multi-model software engineering execution CLI.", "Python · v1.0.0", STUDIO),
+    ("prubeth-ide", "Horizon Edition Sovereign Agentic AI Developer Studio with local inference & autonomous workflows.", "Python · v2.0.0", LEARN),
 ]
 
 def repo_card(i, name, desc, lang, color, stars):
@@ -468,6 +468,45 @@ def heatmap(data):
     write("heatmap.svg", svg(W, h, body, ["serif", "serif-i", "mono"],
                              f"Contribution graph: {tot:,} contributions in the last year"))
 
+def badges_card(data):
+    days = data if isinstance(data, list) else data.get("days", [])
+    tot = sum(day.get("count", 0) for day in days) if days else 2014
+    active_days = sum(1 for day in days if day.get("count", 0) > 0) if days else 0
+    h = 154
+
+    pills = [
+        ("HidingJackson", "v1.1.0", TECH, "#ffffff", 40, 86),
+        ("PRUBETH IDE", "v2.0.0", INK, "#ffffff", 242, 86),
+        ("PRUBETH CLI", "v1.0.0", STUDIO, "#ffffff", 444, 86),
+        ("Mercury", "v1.91", LEARN, INK, 646, 86),
+    ]
+    pill_svg = []
+    for idx, (title, ver, bg, fg, x, y) in enumerate(pills):
+        pw = 194
+        delay = 4.9 + idx * 0.08
+        pill_svg.append(
+            f'<g class="r" {d(delay)}>'
+            f'<rect x="{x}" y="{y}" width="{pw}" height="42" rx="9" fill="#ffffff" stroke="{RULE}" stroke-width="1"/>'
+            f'<rect x="{x + 10}" y="{y + 16}" width="8" height="8" rx="2" fill="{bg}"/>'
+            f'<text x="{x + 25}" y="{y + 25}" font-family="{SANS}" font-weight="600" font-size="12" fill="{INK}">{escape(title)}</text>'
+            f'<rect x="{x + pw - 58}" y="{y + 10}" width="48" height="22" rx="6" fill="{bg}"/>'
+            f'<text x="{x + pw - 34}" y="{y + 25}" text-anchor="middle" font-family="{MONO}" font-size="10.5" fill="{fg}">{escape(ver)}</text>'
+            f'</g>'
+        )
+
+    body = f"""
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="none" stroke="{RULE}" stroke-width="1"/>
+<g class="f" {d(4.7)}>
+  <rect class="live" x="40" y="28" width="7" height="7" rx="2" fill="{TECH}"/>
+  <text x="56" y="35" font-family="{MONO}" font-size="11" letter-spacing="1.2" fill="{MUTED}">VERIFIED RELEASES  ·  LIVE BADGES  ·  {tot:,} CONTRIBUTIONS ({active_days} ACTIVE DAYS)</text>
+</g>
+<text class="r" {d(4.8)} x="38" y="68" font-family="{SERIF}" font-size="26" fill="{INK}">Credentials &amp; Shipped Releases <tspan font-style="italic" fill="{TECH}">· Public Registry</tspan></text>
+{''.join(pill_svg)}
+"""
+    write("badges.svg", svg(W, h, body, ["serif", "serif-i", "sans", "sans-b", "mono"],
+                            f"Shipped releases and GitHub credentials: {tot:,} contributions"))
+
 def run():
     print("🎨 Rendering high-craft cards...")
     raw_data = {}
@@ -502,6 +541,9 @@ def run():
 
     # 7. Heatmap
     heatmap(raw_data)
+
+    # 8. Badges & Releases Strip
+    badges_card(raw_data)
     print("✅ All cards generated successfully into cards/")
 
 if __name__ == "__main__":

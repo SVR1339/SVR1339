@@ -86,6 +86,8 @@ def fetch_via_token():
     return False
 
 def main():
+    if os.environ.get("GITHUB_ACTIONS") == "true" and fetch_via_token():
+        return
     if fetch_via_gh():
         return
     if fetch_via_token():
