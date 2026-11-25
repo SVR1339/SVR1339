@@ -17,9 +17,5 @@
 </p>
 
 <p align="center">
-<code>npx svr1339</code>
-</p>
-
-<p align="center">
 <a href="https://bsvr.work">bsvr.work</a> &nbsp;/&nbsp; <a href="https://github.com/SVR1339">github</a> &nbsp;/&nbsp; <a href="https://hirepat.com">hirepat</a>
 </p>
