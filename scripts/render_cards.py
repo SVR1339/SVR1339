@@ -507,6 +507,41 @@ def badges_card(data):
     write("badges.svg", svg(W, h, body, ["serif", "serif-i", "sans", "sans-b", "mono"],
                             f"Shipped releases and GitHub credentials: {tot:,} contributions"))
 
+def achievements_card():
+    h = 154
+    items = [
+        ("YOLO", "UNLOCKED", TECH, "#ffffff", 40, 86),
+        ("Pull Shark", "2 PRs MERGED", INK, "#ffffff", 242, 86),
+        ("4 Public Releases", "SHIPPED", STUDIO, "#ffffff", 444, 86),
+        ("CI / CD Verified", "ACTIVE", LEARN, INK, 646, 86),
+    ]
+    item_svg = []
+    for idx, (title, tag, bg, fg, x, y) in enumerate(items):
+        pw = 194
+        delay = 5.1 + idx * 0.08
+        item_svg.append(
+            f'<g class="r" {d(delay)}>'
+            f'<rect x="{x}" y="{y}" width="{pw}" height="42" rx="9" fill="#ffffff" stroke="{RULE}" stroke-width="1"/>'
+            f'<rect x="{x + 10}" y="{y + 16}" width="8" height="8" rx="2" fill="{bg}"/>'
+            f'<text x="{x + 25}" y="{y + 25}" font-family="{SANS}" font-weight="600" font-size="11.5" fill="{INK}">{escape(title)}</text>'
+            f'<rect x="{x + pw - 74}" y="{y + 10}" width="64" height="22" rx="6" fill="{bg}"/>'
+            f'<text x="{x + pw - 42}" y="{y + 25}" text-anchor="middle" font-family="{MONO}" font-size="9.2" fill="{fg}">{escape(tag)}</text>'
+            f'</g>'
+        )
+
+    body = f"""
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="none" stroke="{RULE}" stroke-width="1"/>
+<g class="f" {d(5.0)}>
+  <rect class="live" x="40" y="28" width="7" height="7" rx="2" fill="{TECH}"/>
+  <text x="56" y="35" font-family="{MONO}" font-size="11" letter-spacing="1.2" fill="{MUTED}">GITHUB ACHIEVEMENTS  ·  WORKFLOW SIGNALS  ·  OPEN TO REMOTE (GLOBAL)</text>
+</g>
+<text class="r" {d(5.05)} x="38" y="68" font-family="{SERIF}" font-size="26" fill="{INK}">Achievements &amp; Verification <tspan font-style="italic" fill="{TECH}">· Engineering Proof</tspan></text>
+{''.join(item_svg)}
+"""
+    write("achievements.svg", svg(W, h, body, ["serif", "serif-i", "sans", "sans-b", "mono"],
+                                  "GitHub Achievements and Engineering Verification Signals"))
+
 def run():
     print("🎨 Rendering high-craft cards...")
     raw_data = {}
@@ -544,6 +579,9 @@ def run():
 
     # 8. Badges & Releases Strip
     badges_card(raw_data)
+
+    # 9. Achievements & Verification Card
+    achievements_card()
     print("✅ All cards generated successfully into cards/")
 
 if __name__ == "__main__":
